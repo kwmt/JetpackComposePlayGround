@@ -45,7 +45,7 @@ fun JetpackComposePlayGroundTheme(
     }
     val sysUiController = SysUiController.current
     onCommit(sysUiController, colors.background) {
-        sysUiController.setStatusBarColor(
+        sysUiController.setSystemBarsColor(
             color = colors.background// .copy(alpha = 0.95f)
         )
     }
