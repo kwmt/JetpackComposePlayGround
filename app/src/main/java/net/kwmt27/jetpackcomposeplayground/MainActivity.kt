@@ -7,20 +7,27 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Providers
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.tooling.preview.Preview
 import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.utils.SysUiController
+import net.kwmt27.jetpackcomposeplayground.utils.SystemUiController
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            JetpackComposePlayGroundTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+            val systemUiController = remember { SystemUiController(window) }
+            Providers(SysUiController provides systemUiController) {
+                JetpackComposePlayGroundTheme {
+                    // A surface container using the 'background' color from the theme
+                    Surface(color = MaterialTheme.colors.background) {
+                        Greeting("Android")
+                    }
                 }
             }
         }
