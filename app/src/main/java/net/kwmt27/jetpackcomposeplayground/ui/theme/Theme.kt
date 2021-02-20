@@ -6,7 +6,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.onCommit
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import net.kwmt27.jetpackcomposeplayground.utils.SysUiController
@@ -14,7 +14,7 @@ import net.kwmt27.jetpackcomposeplayground.utils.SysUiController
 private val DarkColorPalette = darkColors(
     primary = purple200,
     primaryVariant = purple700,
-    secondary = teal200,
+    secondary = teal200, 
     background = Color(0xff121212),
 )
 
@@ -44,10 +44,13 @@ fun JetpackComposePlayGroundTheme(
         LightColorPalette
     }
     val sysUiController = SysUiController.current
-    onCommit(sysUiController, colors.background) {
-        sysUiController.setSystemBarsColor(
-            color = colors.background// .copy(alpha = 0.95f)
-        )
+    DisposableEffect(sysUiController, colors.background) {
+        onDispose {
+            sysUiController.setSystemBarsColor(
+                color = colors.background// .copy(alpha = 0.95f)
+            )
+        }
+
     }
 
     MaterialTheme(
