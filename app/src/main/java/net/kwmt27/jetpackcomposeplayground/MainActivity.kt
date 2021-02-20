@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.tooling.preview.Preview
 import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
-import net.kwmt27.jetpackcomposeplayground.utils.SysUiController
+import net.kwmt27.jetpackcomposeplayground.utils.LocalSysUiController
 import net.kwmt27.jetpackcomposeplayground.utils.SystemUiController
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val systemUiController = remember { SystemUiController(window) }
-            Providers(SysUiController provides systemUiController) {
+            Providers(LocalSysUiController provides systemUiController) {
                 JetpackComposePlayGroundTheme {
                     // A surface container using the 'background' color from the theme
                     Surface(color = MaterialTheme.colors.background) {
