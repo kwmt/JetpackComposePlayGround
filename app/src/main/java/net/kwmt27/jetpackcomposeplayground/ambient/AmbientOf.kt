@@ -30,7 +30,10 @@ private fun Parent() {
             Child(text = ambientString)
             Child(text = "Unchanged text")
             IconButton(onClick = { count.value++ }) {
-                Icon(Icons.Default.Add)
+                Icon(
+                    Icons.Default.Add,
+                    contentDescription = null
+                )
             }
 
         }
