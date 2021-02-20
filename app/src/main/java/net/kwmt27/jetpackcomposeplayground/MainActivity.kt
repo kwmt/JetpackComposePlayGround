@@ -1,6 +1,7 @@
 package net.kwmt27.jetpackcomposeplayground
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.MaterialTheme
@@ -11,7 +12,6 @@ import androidx.compose.runtime.Providers
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
-import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.tooling.preview.Preview
 import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
 import net.kwmt27.jetpackcomposeplayground.utils.SysUiController
