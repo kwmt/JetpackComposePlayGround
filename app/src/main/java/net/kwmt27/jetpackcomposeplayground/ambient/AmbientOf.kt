@@ -12,20 +12,20 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun Child(text: String) {
-    Log.d("AmbientTest", "Child: $text")
+    Log.d("CompositionLocalTest", "Child: $text")
     Text("Count value $text")
 }
 
 
-private val AmbientCounter = staticAmbientOf<Int>()
+private val LocalCounter = staticCompositionLocalOf<Int>()
 
 
 @Composable
 private fun Parent() {
     val count = remember { mutableStateOf(0) }
 
-    Providers(AmbientCounter provides count.value) {
-        val ambientString = "Ambient Text, Counter ${AmbientCounter.current}"
+    Providers(LocalCounter provides count.value) {
+        val ambientString = "Ambient Text, Counter ${LocalCounter.current}"
         Column() {
             Child(text = ambientString)
             Child(text = "Unchanged text")
