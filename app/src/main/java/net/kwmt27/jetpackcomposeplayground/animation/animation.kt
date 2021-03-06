@@ -3,11 +3,11 @@ package net.kwmt27.jetpackcomposeplayground.animation
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDp
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
-import androidx.compose.material.Colors
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -60,7 +60,15 @@ fun UpdateTransitionDemo() {
             BoxState.Large -> Orange
         }
     }
-    val size by transition.animateDp { state ->
+    val size by transition.animateDp(
+        transitionSpec = {
+            if(targetState == BoxState.Large) {
+                tween(durationMillis = 500)
+            } else {
+                tween(durationMillis = 200)
+            }
+        }
+    ) { state ->
         when (state) {
             BoxState.Small -> 64.dp
             BoxState.Large -> 128.dp
