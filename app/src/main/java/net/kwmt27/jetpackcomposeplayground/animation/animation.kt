@@ -15,8 +15,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Blue
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 val Orange = Color(0xffffa500)
 
@@ -114,7 +118,7 @@ fun AnimatedVisibilityDemo() {
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        AnimatedVisibility (visible) {
+        AnimatedVisibility(visible) {
             Box(
                 modifier = Modifier
                     .size(128.dp)
@@ -128,4 +132,36 @@ fun AnimatedVisibilityDemo() {
 @Composable
 fun PreviewAnimatedVisibilityDemo() {
     AnimatedVisibilityDemo()
+}
+
+@Composable
+fun AnimatedContentSizeDemo() {
+    var expanded by remember { mutableStateOf(false) }
+    Column {
+        Button(
+            onClick = { expanded = !expanded }
+        ) {
+            Text(text = if (expanded) "SHRINK" else "EXPAND")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Box(
+            modifier = Modifier.background(Color.LightGray)
+        ) {
+            Text(
+                text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                fontSize = 16.sp,
+                textAlign = TextAlign.Justify,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.padding(16.dp),
+                maxLines = if (expanded) Int.MAX_VALUE else 2
+            )
+        }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewAnimatedContentSizeDemo() {
+    AnimatedContentSizeDemo()
 }
