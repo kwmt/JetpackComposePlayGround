@@ -190,17 +190,19 @@ fun CrossFadeDemo() {
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        when (scene) {
-            DemoScene.Text -> Text(
-                text = "Phone",
-                fontSize = 32.sp
-            )
-            DemoScene.Icon -> Icon(
-                imageVector = Icons.Default.Phone,
-                contentDescription = null,
-                modifier = Modifier.height(48.dp)
+        Crossfade(targetState = scene) { scene ->
+            when (scene) {
+                DemoScene.Text -> Text(
+                    text = "Phone",
+                    fontSize = 32.sp
+                )
+                DemoScene.Icon -> Icon(
+                    imageVector = Icons.Default.Phone,
+                    contentDescription = null,
+                    modifier = Modifier.height(48.dp)
 
-            )
+                )
+            }
         }
     }
 }
