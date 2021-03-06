@@ -7,7 +7,10 @@ import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -143,7 +146,8 @@ fun AnimatedContentSizeDemo() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Box(
-            modifier = Modifier.background(Color.LightGray)
+            modifier = Modifier
+                .background(Color.LightGray)
                 .animateContentSize()
         ) {
             Text(
@@ -162,4 +166,47 @@ fun AnimatedContentSizeDemo() {
 @Composable
 fun PreviewAnimatedContentSizeDemo() {
     AnimatedContentSizeDemo()
+}
+
+private enum class DemoScene {
+    Text,
+    Icon
+}
+
+@Composable
+fun CrossFadeDemo() {
+    var scene by remember { mutableStateOf(DemoScene.Text) }
+
+    Column {
+        Button(
+            onClick = {
+                scene = when (scene) {
+                    DemoScene.Text -> DemoScene.Icon
+                    DemoScene.Icon -> DemoScene.Text
+                }
+            }
+        ) {
+            Text(text = "TOGGLE")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+
+        when (scene) {
+            DemoScene.Text -> Text(
+                text = "Phone",
+                fontSize = 32.sp
+            )
+            DemoScene.Icon -> Icon(
+                imageVector = Icons.Default.Phone,
+                contentDescription = null,
+                modifier = Modifier.height(48.dp)
+
+            )
+        }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewCrossFadeDemo() {
+    CrossFadeDemo()
 }
