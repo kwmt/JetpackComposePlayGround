@@ -1,5 +1,7 @@
 package net.kwmt27.jetpackcomposeplayground.animation
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDp
@@ -62,7 +64,7 @@ fun UpdateTransitionDemo() {
     }
     val size by transition.animateDp(
         transitionSpec = {
-            if(targetState == BoxState.Large) {
+            if (targetState == BoxState.Large) {
                 tween(durationMillis = 500)
             } else {
                 tween(durationMillis = 200)
@@ -98,4 +100,32 @@ fun UpdateTransitionDemo() {
 @Preview
 fun PreviewUpdateTransitionDemo() {
     UpdateTransitionDemo()
+}
+
+@OptIn(ExperimentalAnimationApi::class)
+@Composable
+fun AnimatedVisibilityDemo() {
+    var visible by remember { mutableStateOf(true) }
+    Column {
+        Button(
+            onClick = { visible = !visible }
+        ) {
+            Text(text = if (visible) "HIDE" else "SHOW")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+
+        AnimatedVisibility (visible) {
+            Box(
+                modifier = Modifier
+                    .size(128.dp)
+                    .background(Blue)
+            )
+        }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewAnimatedVisibilityDemo() {
+    AnimatedVisibilityDemo()
 }
