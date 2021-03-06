@@ -1,6 +1,8 @@
 package net.kwmt27.jetpackcomposeplayground.animation
 
+import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -52,13 +54,17 @@ fun UpdateTransitionDemo() {
     var boxState by remember { mutableStateOf(BoxState.Small) }
 
     val transition = updateTransition(targetState = boxState)
-    val color = when (boxState) {
-        BoxState.Small -> Blue
-        BoxState.Large -> Orange
+    val color by transition.animateColor { state ->
+        when (state) {
+            BoxState.Small -> Blue
+            BoxState.Large -> Orange
+        }
     }
-    val size = when (boxState) {
-        BoxState.Small -> 64.dp
-        BoxState.Large -> 128.dp
+    val size by transition.animateDp { state ->
+        when (state) {
+            BoxState.Small -> 64.dp
+            BoxState.Large -> 128.dp
+        }
     }
 
     Column {
