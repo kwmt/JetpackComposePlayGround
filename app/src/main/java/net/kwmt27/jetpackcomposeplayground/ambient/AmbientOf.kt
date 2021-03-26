@@ -17,14 +17,16 @@ fun Child(text: String) {
 }
 
 
-private val LocalCounter = staticCompositionLocalOf<Int>()
+private val LocalCounter = staticCompositionLocalOf<Int> {
+    error("")
+}
 
 
 @Composable
 private fun Parent() {
     val count = remember { mutableStateOf(0) }
 
-    Providers(LocalCounter provides count.value) {
+    CompositionLocalProvider(LocalCounter provides count.value) {
         val ambientString = "Ambient Text, Counter ${LocalCounter.current}"
         Column() {
             Child(text = ambientString)
