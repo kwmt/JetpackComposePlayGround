@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +28,7 @@ fun SampleVerticalList() {
     }
 }
 
+
 @Composable
 fun ListItem(index: Int = 0) {
     Column {
@@ -34,6 +37,34 @@ fun ListItem(index: Int = 0) {
                 .height(200.dp)
                 .background(Color.Blue)
                 .fillMaxWidth()
+        ) {
+            Text(
+                modifier = Modifier.align(Alignment.Center),
+                text = "index: $index",
+                style = TextStyle(color = Color.White)
+            )
+        }
+        Divider(modifier = Modifier.height(8.dp))
+    }
+}
+
+@Composable
+fun SampleHorizontalList() {
+    LazyRow{
+        items(5) { index ->
+            ListHorizontalItem(index)
+        }
+    }
+}
+
+@Composable
+fun ListHorizontalItem(index: Int = 0) {
+    Column {
+        Box(
+            modifier = Modifier
+                .width(200.dp)
+                .background(Color.Blue)
+                .height(200.dp)
         ) {
             Text(
                 modifier = Modifier.align(Alignment.Center),
