@@ -1,5 +1,6 @@
 package net.kwmt27.jetpackcomposeplayground.image
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
@@ -7,13 +8,13 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.google.accompanist.coil.CoilImage
+import com.google.accompanist.coil.rememberCoilPainter
 
 @Composable
 fun NetworkImageSample(
 ) {
-    CoilImage(
-        data = "https://picsum.photos/300/300",
+    Image(
+        painter = rememberCoilPainter("https://picsum.photos/300/300"),
         contentDescription = null,
     )
 }
@@ -32,8 +33,8 @@ fun CircleImageSample() {
             .fillMaxWidth()
             .aspectRatio(1f)
     ) {
-        CoilImage(
-            data = "https://picsum.photos/300/300",
+        Image(
+            painter = rememberCoilPainter("https://picsum.photos/300/300"),
             contentDescription = null,
         )
     }
