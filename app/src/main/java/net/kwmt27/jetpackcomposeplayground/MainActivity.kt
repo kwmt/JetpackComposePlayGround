@@ -13,6 +13,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.tooling.preview.Preview
+import net.kwmt27.jetpackcomposeplayground.box.BoxSample
+import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
+import net.kwmt27.jetpackcomposeplayground.image.NetworkImageSample
+import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
+import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
+import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
 import net.kwmt27.jetpackcomposeplayground.utils.LocalSysUiController
 import net.kwmt27.jetpackcomposeplayground.utils.SystemUiController
@@ -26,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 JetpackComposePlayGroundTheme {
                     // A surface container using the 'background' color from the theme
                     Surface(color = MaterialTheme.colors.background) {
-                        Greeting("Android")
+                        MyApp()
                     }
                 }
             }
@@ -39,6 +45,16 @@ private val BlackScrimmed: (Color) -> Color = { background ->
     // これは、色を別の色の上に重ねることができ、その結果の色を返します。
     // https://android-review.googlesource.com/c/platform/frameworks/support/+/1182625
     BlackScrim.compositeOver(background)
+}
+
+@Composable
+fun MyApp() {
+    CircleImageSample()
+}
+
+@Composable
+fun Greetings(){
+    Greeting("Android")
 }
 
 @Composable
