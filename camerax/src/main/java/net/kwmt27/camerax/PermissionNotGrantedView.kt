@@ -1,4 +1,4 @@
-package net.kwmt27.presentation.compose.components
+package net.kwmt27.camerax
 
 import android.content.Context
 import android.content.Intent
@@ -24,15 +24,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import net.kwmt27.presentation.R
-import net.kwmt27.presentation.common.theme.DevChallengeTheme
-import timber.log.Timber
 
 @Composable
 fun PermissionNotGrantedView(callback: () -> Unit) {
     val launcher =
         rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            Timber.d("onActivityResult callback()")
             callback()
         }
 
@@ -49,7 +45,7 @@ fun PermissionNotGrantedView(callback: () -> Unit) {
                     stringResource(R.string.app_name),
                     stringResource(R.string.permission_camera)
                 ),
-                color = DevChallengeTheme.colors.textBody1,
+//                color = DevChallengeTheme.colors.textBody1,
                 fontSize = 14.sp,
                 modifier = Modifier.padding(start = 24.dp, end = 24.dp)
             )
@@ -59,8 +55,8 @@ fun PermissionNotGrantedView(callback: () -> Unit) {
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 onClick = { gotoSettingApp(context, launcher) },
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = DevChallengeTheme.colors.secondary,
-                    contentColor = DevChallengeTheme.colors.textButton1
+//                    backgroundColor = DevChallengeTheme.colors.secondary,
+//                    contentColor = DevChallengeTheme.colors.textButton1
                 ),
             ) {
                 Text(
