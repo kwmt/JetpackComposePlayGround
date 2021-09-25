@@ -5,30 +5,40 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import net.kwmt27.camerax.ui.theme.JetpackComposePlayGroundTheme
 
 class CameraXActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val handler = PermissionHandler(this)
         setContent {
             JetpackComposePlayGroundTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    val onGranted by handler.onGranted.collectAsState()
-                    val context = LocalContext.current
-                    if (onGranted) {
-                        CameraPreviewSampleScreen()
-                    } else {
-                        PermissionNotGrantedView {
-                            handler.request(context = context)
-                        }
-                        handler.request(context = context)
-                    }
-                }
+                CameraXScreen()
+            }
+        }
+    }
+}
+
+@Composable
+fun CameraXScreen() {
+    var onSettingBack by remember { mutableStateOf(false) }
+    var isGranted by remember { mutableStateOf(false) }
+    Surface(color = MaterialTheme.colors.background) {
+        PermissionHandler { granted ->
+            isGranted = granted
+        }
+
+        if (isGranted || onSettingBack) {
+            onSettingBack = false
+            CameraPreviewSampleScreen()
+        } else {
+            PermissionNotGrantedView {
+                onSettingBack = true
             }
         }
     }

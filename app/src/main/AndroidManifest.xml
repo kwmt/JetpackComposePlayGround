@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackComposePlayGround">
-        <activity
-            android:name=".camerax.CameraXActivity"
-            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
