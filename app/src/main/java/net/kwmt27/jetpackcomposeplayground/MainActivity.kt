@@ -13,12 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.tooling.preview.Preview
-import net.kwmt27.jetpackcomposeplayground.box.BoxSample
-import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
-import net.kwmt27.jetpackcomposeplayground.image.NetworkImageSample
-import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
-import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
-import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
+import androidx.navigation.compose.rememberNavController
 import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
 import net.kwmt27.jetpackcomposeplayground.utils.LocalSysUiController
 import net.kwmt27.jetpackcomposeplayground.utils.SystemUiController
@@ -49,11 +44,13 @@ private val BlackScrimmed: (Color) -> Color = { background ->
 
 @Composable
 fun MyApp() {
-    CircleImageSample()
+    val navController = rememberNavController()
+
+    NavHost(navController)
 }
 
 @Composable
-fun Greetings(){
+fun Greetings() {
     Greeting("Android")
 }
 
