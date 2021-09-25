@@ -1,5 +1,7 @@
 package net.kwmt27.jetpackcomposeplayground
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
@@ -8,6 +10,7 @@ import androidx.compose.material.ListItem
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -47,11 +50,16 @@ fun NavHost(navController: NavHostController) {
 
 @Composable
 fun MainList(navController: NavHostController) {
+    val context = LocalContext.current
     LazyColumn {
         mainListItem(label = "Circle Image") { navController.navigate(SAMPLES_CIRCLE_IMAGE) }
         mainListItem(label = "Vertical List") { navController.navigate(SAMPLES_VERTICAL_LIST) }
         mainListItem(label = "Animation") { navController.navigate(SAMPLES_ANIMATION) }
         mainListItem(label = "Box") { navController.navigate(SAMPLES_BOX) }
+        mainListItem(label = "Color") {
+            context.startActivity(Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/color/Color.kt")))
+        }
     }
 }
 
