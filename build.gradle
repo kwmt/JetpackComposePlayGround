@@ -1,4 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
 buildscript {
     ext {
         compose_version = '1.0.2'
@@ -16,13 +18,25 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.diffplug.spotless' version '5.15.1'
+}
+
 allprojects {
     repositories {
         google()
         jcenter()
     }
+
+    apply plugin: 'com.diffplug.spotless'
+    spotless {
+        kotlin {
+            target '**/*.kt'
+            targetExclude("$buildDir/**/*.kt")
+            targetExclude('bin/**/*.kt')
+
+            ktlint("0.42.1")
+        }
+    }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
