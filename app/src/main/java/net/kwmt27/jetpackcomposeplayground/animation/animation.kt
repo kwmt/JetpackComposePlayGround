@@ -63,8 +63,8 @@ private enum class BoxState {
 fun UpdateTransitionDemo() {
     var boxState by remember { mutableStateOf(BoxState.Small) }
 
-    val transition = updateTransition(targetState = boxState)
-    val color by transition.animateColor { state ->
+    val transition = updateTransition(targetState = boxState, label = "boxState")
+    val color by transition.animateColor(label = "color") { state ->
         when (state) {
             BoxState.Small -> Blue
             BoxState.Large -> Orange
@@ -77,7 +77,7 @@ fun UpdateTransitionDemo() {
             } else {
                 tween(durationMillis = 200)
             }
-        }
+        }, label = "size"
     ) { state ->
         when (state) {
             BoxState.Small -> 64.dp

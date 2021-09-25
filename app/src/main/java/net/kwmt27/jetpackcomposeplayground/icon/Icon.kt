@@ -16,6 +16,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
+fun UpIconSample() {
+    Up {}
+}
+@Composable
 fun Up(
     upPress: () -> Unit,
 ) {

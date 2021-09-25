@@ -22,6 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+@Composable
+fun ExpandableCardSample() {
+    ExpandingCard("hello",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+}
 
 @Composable
 fun ExpandingCard(title: String, body: String) {
@@ -52,5 +57,5 @@ fun ExpandingCard(title: String, body: String) {
 @Composable
 @Preview
 fun PreviewExpandingCard() {
-    ExpandingCard("hello", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    ExpandableCardSample()
 }
