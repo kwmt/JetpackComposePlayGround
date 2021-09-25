@@ -9,7 +9,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
@@ -19,14 +21,15 @@ object Destinations {
     private const val SAMPLES = "samples"
     private const val CIRCLE_IMAGE = "circle-image"
     private const val VERTICAL_LIST = "vertical-list"
+    const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
     const val SAMPLES_VERTICAL_LIST = "/$SAMPLES/$VERTICAL_LIST"
 }
 
 @Composable
 fun NavHost(navController: NavHostController) {
-    androidx.navigation.compose.NavHost(navController = navController, startDestination = "main") {
-        composable("main") { MainList(navController) }
+    NavHost(navController = navController, startDestination = MAIN) {
+        composable(MAIN) { MainList(navController) }
         composable(SAMPLES_CIRCLE_IMAGE) { CircleImageSample() }
         composable(SAMPLES_VERTICAL_LIST) { SampleVerticalList() }
     }
