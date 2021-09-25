@@ -1,0 +1,36 @@
+name: Build
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+      # JDKのセットアップ
+      - name: set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+      # コンパイル
+      - name: Run Compile
+        run: ./gradlew assembleDebug
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # チェックアウト
+      - uses: actions/checkout@v2
+
+      # 静的解析
+      - name: Run Inspection
+        run: ./gradlew spotlessCheck
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # チェックアウト
+      - uses: actions/checkout@v2
+      # Test
+      - name: Run Test
+        run: ./gradlew --stacktrace testDebugUnitTest
