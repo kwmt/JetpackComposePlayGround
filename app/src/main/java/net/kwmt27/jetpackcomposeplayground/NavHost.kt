@@ -12,8 +12,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
+import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 
@@ -21,9 +23,11 @@ object Destinations {
     private const val SAMPLES = "samples"
     private const val CIRCLE_IMAGE = "circle-image"
     private const val VERTICAL_LIST = "vertical-list"
+    private const val ANIMATION = "animation"
     const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
     const val SAMPLES_VERTICAL_LIST = "/$SAMPLES/$VERTICAL_LIST"
+    const val SAMPLES_ANIMATION = "/$SAMPLES/$ANIMATION"
 }
 
 @Composable
@@ -32,6 +36,7 @@ fun NavHost(navController: NavHostController) {
         composable(MAIN) { MainList(navController) }
         composable(SAMPLES_CIRCLE_IMAGE) { CircleImageSample() }
         composable(SAMPLES_VERTICAL_LIST) { SampleVerticalList() }
+        composable(SAMPLES_ANIMATION) { AnimateAsStateDemo() }
     }
 }
 
@@ -40,6 +45,7 @@ fun MainList(navController: NavHostController) {
     LazyColumn {
         mainListItem(label = "Circle Image") { navController.navigate(SAMPLES_CIRCLE_IMAGE) }
         mainListItem(label = "Vertical List") { navController.navigate(SAMPLES_VERTICAL_LIST) }
+        mainListItem(label = "Animation") { navController.navigate(SAMPLES_ANIMATION) }
     }
 }
 
