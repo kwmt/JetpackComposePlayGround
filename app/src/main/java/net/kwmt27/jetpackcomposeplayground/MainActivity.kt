@@ -45,7 +45,6 @@ private val BlackScrimmed: (Color) -> Color = { background ->
 @Composable
 fun MyApp() {
     val navController = rememberNavController()
-
     NavHost(navController)
 }
 

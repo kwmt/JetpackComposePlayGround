@@ -14,9 +14,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import net.kwmt27.camerax.CameraXScreen
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BOX
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CAMERAX
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_EXPANDABLE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
@@ -36,6 +38,7 @@ object Destinations {
     private const val BOX = "box"
     private const val EXPANDABLE = "expandable"
     private const val UP_ICON = "up_icon"
+    private const val CAMERAX = "camerax"
     const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
     const val SAMPLES_VERTICAL_LIST = "/$SAMPLES/$VERTICAL_LIST"
@@ -43,6 +46,7 @@ object Destinations {
     const val SAMPLES_BOX = "/$SAMPLES/$BOX"
     const val SAMPLES_EXPANDABLE = "/$SAMPLES/$EXPANDABLE"
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
+    const val SAMPLES_CAMERAX = "/$SAMPLES/$CAMERAX"
 }
 
 @Composable
@@ -55,6 +59,7 @@ fun NavHost(navController: NavHostController) {
         composable(SAMPLES_BOX) { BoxSample() }
         composable(SAMPLES_EXPANDABLE) { ExpandableCardSample() }
         composable(SAMPLES_UP_ICON) { UpIconSample() }
+        composable(SAMPLES_CAMERAX) { CameraXScreen() }
     }
 }
 
@@ -72,6 +77,7 @@ fun MainList(navController: NavHostController) {
             context.startActivity(Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/color/Color.kt")))
         }
+        mainListItem(label = "CameraX") { navController.navigate(SAMPLES_CAMERAX) }
     }
 }
 
