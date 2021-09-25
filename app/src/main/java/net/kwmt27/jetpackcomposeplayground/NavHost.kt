@@ -74,8 +74,12 @@ fun MainList(navController: NavHostController) {
         mainListItem(label = "Up Icon") { navController.navigate(SAMPLES_UP_ICON) }
         mainListItem(label = "Expandable Card") { navController.navigate(SAMPLES_EXPANDABLE) }
         mainListItem(label = "Color") {
-            context.startActivity(Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/color/Color.kt")))
+            context.startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/color/Color.kt")
+                )
+            )
         }
         mainListItem(label = "CameraX") { navController.navigate(SAMPLES_CAMERAX) }
     }

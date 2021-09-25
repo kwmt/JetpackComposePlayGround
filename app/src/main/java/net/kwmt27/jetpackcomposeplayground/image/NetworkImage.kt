@@ -32,7 +32,8 @@ fun NetworkImage(
     placeholderColor: Color? = Color.White,
 ) {
     Image(
-        painter = rememberCoilPainter(url,
+        painter = rememberCoilPainter(
+            url,
             requestBuilder = {
                 transformations(CircleCropTransformation())
             }

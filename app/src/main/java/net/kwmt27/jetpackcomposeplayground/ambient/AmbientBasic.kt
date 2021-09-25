@@ -6,7 +6,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.tooling.preview.Preview
 
-private val LocalCounter = compositionLocalOf<Int>{
+private val LocalCounter = compositionLocalOf<Int> {
     error("")
 }
 
