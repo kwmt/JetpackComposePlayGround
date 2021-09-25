@@ -42,7 +42,7 @@ fun PermissionNotGrantedView(callback: () -> Unit) {
             Text(
                 stringResource(
                     R.string.to_continue_give_app_access_to,
-                    stringResource(R.string.app_name),
+                    "app name",
                     stringResource(R.string.permission_camera)
                 ),
 //                color = DevChallengeTheme.colors.textBody1,

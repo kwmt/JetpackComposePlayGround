@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">camerax</string>
     <string name="go_to_settings">Go to Settings</string>
     <string name="to_continue_give_app_access_to">To continue, give %1$s access to %2$s</string>
     <string name="permission_camera">Camera</string>
