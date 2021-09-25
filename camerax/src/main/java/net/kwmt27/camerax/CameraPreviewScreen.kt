@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.camerax
+package net.kwmt27.camerax
 
 import android.view.ViewGroup
 import androidx.camera.core.AspectRatio
@@ -22,7 +22,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.google.common.util.concurrent.ListenableFuture
-import net.kwmt27.camerax.SampleImageAnalyzer
 import java.util.concurrent.Executor
 import kotlin.math.abs
 

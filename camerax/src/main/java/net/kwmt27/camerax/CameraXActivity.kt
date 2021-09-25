@@ -9,7 +9,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import net.kwmt27.camerax.ui.theme.JetpackComposePlayGroundTheme
-import net.kwmt27.jetpackcomposeplayground.camerax.CameraPreviewSampleScreen
 
 class CameraXActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
