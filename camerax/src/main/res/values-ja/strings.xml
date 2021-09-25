@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">camerax</string>
     <string name="go_to_settings">設定アプリを起動</string>
     <string name="to_continue_give_app_access_to">%1$s を使うためには、%2$s へのアクセス権限を許可してください。</string>
     <string name="permission_camera">カメラ</string>
