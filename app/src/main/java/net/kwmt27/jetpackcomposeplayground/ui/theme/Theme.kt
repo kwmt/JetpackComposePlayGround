@@ -12,7 +12,7 @@ import net.kwmt27.jetpackcomposeplayground.utils.LocalSysUiController
 private val DarkColorPalette = darkColors(
     primary = purple200,
     primaryVariant = purple700,
-    secondary = teal200, 
+    secondary = teal200,
     background = Color(0xff121212),
 )
 
@@ -45,10 +45,9 @@ fun JetpackComposePlayGroundTheme(
     DisposableEffect(sysUiController, colors.background) {
         onDispose {
             sysUiController.setSystemBarsColor(
-                color = colors.background// .copy(alpha = 0.95f)
+                color = colors.background // .copy(alpha = 0.95f)
             )
         }
-
     }
 
     MaterialTheme(

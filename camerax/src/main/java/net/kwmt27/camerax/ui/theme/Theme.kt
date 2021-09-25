@@ -51,10 +51,9 @@ fun JetpackComposePlayGroundTheme(
     DisposableEffect(systemUiController, colors.background) {
         onDispose {
             systemUiController.setSystemBarsColor(
-                color = colors.background// .copy(alpha = 0.95f)
+                color = colors.background // .copy(alpha = 0.95f)
             )
         }
-
     }
 
     MaterialTheme(

@@ -10,4 +10,3 @@ class SampleImageAnalyzer(private val onChange: () -> Unit) : ImageAnalysis.Anal
         onChange()
     }
 }
-

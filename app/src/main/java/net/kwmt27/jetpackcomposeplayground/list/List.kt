@@ -31,7 +31,6 @@ fun SampleVerticalList() {
     }
 }
 
-
 @Composable
 fun ListItem(index: Int = 0) {
     Column {

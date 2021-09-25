@@ -11,8 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.coil.rememberCoilPainter
 
 @Composable
-fun NetworkImageSample(
-) {
+fun NetworkImageSample() {
     Image(
         painter = rememberCoilPainter("https://picsum.photos/300/300"),
         contentDescription = null,
