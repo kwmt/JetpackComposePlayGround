@@ -126,19 +126,19 @@ private val destinationList = listOf(
                 SAMPLES_ANIMATION_CHANGE_COLOR,
                 "Change Color",
                 { AnimateAsStateDemo() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/1a302d5ef74ce74437d66d51ef30a9585308d665/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L40-L57"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L40-L57"
             ),
             Destination(
                 SAMPLES_ANIMATION_TRANSITION,
                 "Change Color and Size",
                 { UpdateTransitionDemo() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/1a302d5ef74ce74437d66d51ef30a9585308d665/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L70-L112"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L70-L112"
             ),
             Destination(
                 SAMPLES_EXPANDABLE,
                 "Expandable Card",
                 { ExpandableCardSample() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/list/List.kt#L25-L51"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/state/ExpandableCard.kt#L24-L56"
             ),
         )
     ),
@@ -149,7 +149,7 @@ private val destinationList = listOf(
                 SAMPLES_BOX,
                 "Box",
                 { BoxSample() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/list/List.kt#L25-L51"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/box/Box.kt#L18-L48"
             ),
         )
     ),
@@ -160,7 +160,7 @@ private val destinationList = listOf(
                 SAMPLES_UP_ICON,
                 "Up Icon",
                 { UpIconSample() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/list/List.kt#L25-L51"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/icon/Icon.kt#L22-L41"
             ),
         )
     ),
@@ -171,7 +171,7 @@ private val destinationList = listOf(
                 SAMPLES_CAMERAX,
                 "CameraX",
                 { CameraXScreen() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/list/List.kt#L25-L51"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/camerax/src/main/java/net/kwmt27/camerax/CameraXActivity.kt#L27-L45"
             ),
         )
     )
