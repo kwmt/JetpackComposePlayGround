@@ -98,13 +98,13 @@ private val destinationList = listOf(
                 "BottomSheet",
                 "Bottom Sheet",
                 { BottomSheetSample() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/image/Image.kt#L27-L40"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L27-L60"
             ),
             Destination(
                 "BottomSheetLongDataSample",
                 "BottomSheetLongDataSample",
                 { BottomSheetLongDataSample() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/image/Image.kt#L27-L40"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L62-L104"
             ),
         )
     ),
