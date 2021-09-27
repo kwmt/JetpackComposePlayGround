@@ -42,6 +42,8 @@ import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
+import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
+import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
 import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
@@ -89,6 +91,23 @@ private object Destinations {
 }
 
 private val destinationList = listOf(
+    Group(
+        groupLabel = "Layout",
+        destinations = listOf(
+            Destination(
+                "BottomSheet",
+                "Bottom Sheet",
+                { BottomSheetSample() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L27-L60"
+            ),
+            Destination(
+                "BottomSheetLongDataSample",
+                "BottomSheetLongDataSample",
+                { BottomSheetLongDataSample() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L62-L104"
+            ),
+        )
+    ),
     Group(
         groupLabel = "Image",
         destinations = listOf(
