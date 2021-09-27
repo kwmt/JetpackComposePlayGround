@@ -38,6 +38,9 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
+import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
+import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
+import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
 import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
@@ -134,6 +137,24 @@ private val destinationList = listOf(
                 "Change Color and Size",
                 { UpdateTransitionDemo() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L70-L112"
+            ),
+            Destination(
+                "Visibility",
+                "Visibility",
+                { AnimatedVisibilityDemo() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L120-L140"
+            ),
+            Destination(
+                "ChangeContentSize",
+                "Change Content Size",
+                { AnimatedContentSizeDemo() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L148-L174"
+            ),
+            Destination(
+                "CrossFade",
+                "Cross Fade",
+                { CrossFadeDemo() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/animation/animation.kt#L187-L218"
             ),
             Destination(
                 SAMPLES_EXPANDABLE,
