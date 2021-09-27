@@ -40,6 +40,7 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
+import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
@@ -149,6 +150,17 @@ private val destinationList = listOf(
                 SAMPLES_BOX,
                 "Box",
                 { BoxSample() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/box/Box.kt#L18-L48"
+            ),
+        )
+    ),
+    Group(
+        "TextField",
+        listOf(
+            Destination(
+                "OutlinedTextFieldSample",
+                "Outlined TextField",
+                { OutlinedTextFieldSample() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/box/Box.kt#L18-L48"
             ),
         )
