@@ -3,7 +3,7 @@ name: Build
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # チェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # 静的解析
       - name: Run Inspection
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # チェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Test
       - name: Run Test
         run: ./gradlew --stacktrace testDebugUnitTest
