@@ -35,6 +35,7 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_EXPANDABLE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BUTTON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
@@ -52,6 +53,7 @@ import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
+import net.kwmt27.jetpackcomposeplayground.button.ButtonSample
 
 private data class Group(
     val groupLabel: String,
@@ -77,6 +79,7 @@ private object Destinations {
     private const val EXPANDABLE = "expandable"
     private const val UP_ICON = "up_icon"
     private const val CAMERAX = "camerax"
+    private const val BUTTON = "button"
     const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
     const val SAMPLES_VERTICAL_LIST = "/$SAMPLES/$VERTICAL_LIST"
@@ -88,6 +91,7 @@ private object Destinations {
     const val SAMPLES_EXPANDABLE = "/$SAMPLES/$EXPANDABLE"
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
     const val SAMPLES_CAMERAX = "/$SAMPLES/$CAMERAX"
+    const val SAMPLES_BUTTON = "/$SAMPLES/$BUTTON"
 }
 
 private val destinationList = listOf(
@@ -98,13 +102,24 @@ private val destinationList = listOf(
                 "BottomSheet",
                 "Bottom Sheet",
                 { BottomSheetSample() },
-                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L27-L60"
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt#L29"
             ),
             Destination(
                 "BottomSheetLongDataSample",
                 "BottomSheetLongDataSample",
                 { BottomSheetLongDataSample() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L62-L104"
+            ),
+        )
+    ),
+    Group(
+        groupLabel = "Button",
+        destinations = listOf(
+            Destination(
+                SAMPLES_BUTTON,
+                "Button",
+                { ButtonSample() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L27-L60"
             ),
         )
     ),
