@@ -37,6 +37,7 @@ android {
         kotlinCompilerExtensionVersion compose_version
         kotlinCompilerVersion '1.4.32'
     }
+    namespace 'net.kwmt27.camerax'
 }
 
 dependencies {
