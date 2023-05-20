@@ -35,6 +35,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+    namespace 'net.kwmt27.jetpackcomposeplayground'
 }
 
 dependencies {
