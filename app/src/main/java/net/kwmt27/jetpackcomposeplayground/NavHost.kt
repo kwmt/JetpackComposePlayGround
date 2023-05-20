@@ -30,12 +30,12 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_CHANGE_COLOR
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_TRANSITION
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BOX
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BUTTON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CAMERAX
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_EXPANDABLE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
-import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BUTTON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
@@ -46,6 +46,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
+import net.kwmt27.jetpackcomposeplayground.button.ButtonSample
 import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
@@ -53,7 +54,6 @@ import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
-import net.kwmt27.jetpackcomposeplayground.button.ButtonSample
 
 private data class Group(
     val groupLabel: String,
