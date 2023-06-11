@@ -4,8 +4,11 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.SizeTransform
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandHorizontally
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.with
@@ -39,18 +42,19 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun AutoRollingTextSample() {
-    Column(modifier = Modifier.fillMaxWidth()) {
+    Column() {
         AutoRollingTextSample0()
         AutoRollingTextSample1()
         AutoRollingTextSample2()
         AutoRollingTextSample3()
+        AutoRollingTextSample4()
     }
 }
 
 @Composable
 private fun AutoRollingTextSample0() {
     AutoCountUp { count, isVisible ->
-        ButtonLayout(isVisible = isVisible) {
+        ButtonLayout1NoAnimation(isVisible = isVisible) {
             AnimatedContent0(count = count)
         }
     }
@@ -59,7 +63,7 @@ private fun AutoRollingTextSample0() {
 @Composable
 private fun AutoRollingTextSample1() {
     AutoCountUp { count, isVisible ->
-        ButtonLayout(isVisible = isVisible) {
+        ButtonLayout1NoAnimation(isVisible = isVisible) {
             AnimatedContent1(count = count)
         }
     }
@@ -68,7 +72,7 @@ private fun AutoRollingTextSample1() {
 @Composable
 private fun AutoRollingTextSample2() {
     AutoCountUp { count, isVisible ->
-        ButtonLayout(isVisible = isVisible) {
+        ButtonLayout1NoAnimation(isVisible = isVisible) {
             AnimatedContent2(count = count)
         }
     }
@@ -77,12 +81,22 @@ private fun AutoRollingTextSample2() {
 @Composable
 private fun AutoRollingTextSample3() {
     AutoCountUp { count, isVisible ->
-        ButtonLayout2(isVisible = isVisible) {
+        ButtonLayout2BoxContentDefaultAnimation(isVisible = isVisible) {
             AnimatedContent2(count = count)
         }
     }
 }
 
+@Composable
+private fun AutoRollingTextSample4() {
+    AutoCountUp { count, isVisible ->
+        ButtonLayout3BoxContentDefaultAnimation(isVisible = isVisible) {
+            AnimatedContent2(count = count)
+        }
+    }
+}
+
+// ---------------------------------------------
 @Composable
 private fun AnimatedContent0(count: Int) {
     Text(text = "Count: $count", fontSize = 24.sp)
@@ -94,7 +108,7 @@ private fun AnimatedContent0(count: Int) {
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent1(count: Int) {
-    AnimatedContent(targetState = count, label = "Auto rolling tet") { targetCount ->
+    AnimatedContent(targetState = count, label = "AnimatedContent1") { targetCount ->
         Text(text = "Count: $targetCount", fontSize = 24.sp)
     }
 }
@@ -105,7 +119,7 @@ private fun AnimatedContent1(count: Int) {
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent2(count: Int) {
-    AnimatedContent(targetState = count, label = "Auto rolling tet", transitionSpec = {
+    AnimatedContent(targetState = count, label = "AnimatedContent2", transitionSpec = {
         if (targetState > initialState) {
             slideInVertically { height -> height } + fadeIn() with slideOutVertically { height -> -height } + fadeOut()
         } else {
@@ -119,7 +133,7 @@ private fun AnimatedContent2(count: Int) {
 }
 
 @Composable
-fun ButtonLayout(
+private fun ButtonLayout1NoAnimation(
     isVisible: Boolean,
     content: @Composable () -> Unit,
 ) {
@@ -135,7 +149,7 @@ fun ButtonLayout(
 }
 
 @Composable
-fun ButtonLayout2(
+private fun ButtonLayout2BoxContentDefaultAnimation(
     isVisible: Boolean,
     content: @Composable () -> Unit,
 ) {
@@ -151,15 +165,36 @@ fun ButtonLayout2(
 }
 
 @Composable
+private fun ButtonLayout3BoxContentDefaultAnimation(
+    isVisible: Boolean,
+    content: @Composable () -> Unit,
+) {
+    BoxBase {
+        AnimatedVisibility(
+            visible = isVisible,
+            exit = shrinkHorizontally(tween(ANIMATION_DURATION_MILLS)) +
+                    fadeOut(tween(ANIMATION_DURATION_MILLS)),
+        ) {
+            BoxContent {
+                content()
+            }
+        }
+        val color = if (isVisible) Color.Blue else Color.Red
+        ImageSample(color = color, Modifier.align(Alignment.CenterEnd))
+    }
+}
+
+// ---------------------------------------------
+@Composable
 private fun AutoCountUp(
     content: @Composable (Int, Boolean) -> Unit,
 ) {
-    Column(modifier = Modifier.fillMaxWidth()) {
+    Column {
         var count: Int by remember { mutableStateOf(0) }
 
         if (count < 4) {
             LaunchedEffect(key1 = count) {
-                delay(1500L)
+                delay(ANIMATION_DURATION_MILLS.toLong())
                 count++
             }
         }
@@ -201,7 +236,8 @@ private fun BoxBase(
             .height(80.dp)
             .padding(horizontal = 16.dp)
             .clip(CircleShape),
-        contentAlignment = Alignment.CenterStart,
+        // shrinkHorizontallyで右にアニメーションさせるのに必要な設定
+        contentAlignment = Alignment.CenterEnd,
     ) {
         content()
     }
@@ -222,3 +258,5 @@ private fun ImageSample(color: Color, modifier: Modifier = Modifier) {
 private fun PreviewAutoRollingTextSample() {
     AutoRollingTextSample()
 }
+
+private const val ANIMATION_DURATION_MILLS = 1500
