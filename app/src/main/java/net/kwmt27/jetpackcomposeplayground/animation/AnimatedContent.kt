@@ -141,10 +141,10 @@ private fun AnimatedContent2(count: Int) {
         transitionSpec = {
             if (targetState > initialState) {
                 slideInVertically { height -> height } + fadeIn() with
-                        slideOutVertically { height -> -height } + fadeOut()
+                    slideOutVertically { height -> -height } + fadeOut()
             } else {
                 slideInVertically { height -> -height } + fadeIn() with
-                        slideOutVertically { height -> height } + fadeOut()
+                    slideOutVertically { height -> height } + fadeOut()
             }.using(
                 SizeTransform(clip = false)
             )
@@ -207,4 +207,3 @@ private fun ImageSample(color: Color, modifier: Modifier = Modifier) {
 fun PreviewAutoRollingTextSample() {
     AutoRollingTextSample()
 }
-
