@@ -109,10 +109,6 @@ private fun AutoRollingTextSampleBaseWithAddButton(
     }
 }
 
-/**
- * AnimatedContent デフォルトアニメーション
- */
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent0(count: Int) {
     Text(text = "Count: $count", fontSize = 24.sp)
