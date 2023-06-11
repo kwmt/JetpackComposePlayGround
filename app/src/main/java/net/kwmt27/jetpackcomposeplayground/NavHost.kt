@@ -27,6 +27,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import net.kwmt27.camerax.CameraXScreen
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_AUTO_ROLLING_TEXT
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_CHANGE_COLOR
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_TRANSITION
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BOX
@@ -41,6 +42,7 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
@@ -75,6 +77,7 @@ private object Destinations {
     private const val STICKY_LIST = "sticky-list"
     private const val ANIMATION = "animation"
     private const val ANIMATION_TRANSITION = "animation-transition"
+    private const val ANIMATION_AUTO_ROLLING_TEXT = "animation-auto-rolling-text"
     private const val BOX = "box"
     private const val EXPANDABLE = "expandable"
     private const val UP_ICON = "up_icon"
@@ -87,6 +90,7 @@ private object Destinations {
     const val SAMPLES_STICKY_LIST = "/$SAMPLES/$STICKY_LIST"
     const val SAMPLES_ANIMATION_CHANGE_COLOR = "/$SAMPLES/$ANIMATION"
     const val SAMPLES_ANIMATION_TRANSITION = "/$SAMPLES/$ANIMATION_TRANSITION"
+    const val SAMPLES_ANIMATION_AUTO_ROLLING_TEXT = "/$SAMPLES/$ANIMATION_AUTO_ROLLING_TEXT"
     const val SAMPLES_BOX = "/$SAMPLES/$BOX"
     const val SAMPLES_EXPANDABLE = "/$SAMPLES/$EXPANDABLE"
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
@@ -194,6 +198,12 @@ private val destinationList = listOf(
                 SAMPLES_EXPANDABLE,
                 "Expandable Card",
                 { ExpandableCardSample() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/state/ExpandableCard.kt#L24-L56"
+            ),
+            Destination(
+                SAMPLES_ANIMATION_AUTO_ROLLING_TEXT,
+                "Auto Rolling Text",
+                { AutoRollingTextSample() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/state/ExpandableCard.kt#L24-L56"
             ),
         )
