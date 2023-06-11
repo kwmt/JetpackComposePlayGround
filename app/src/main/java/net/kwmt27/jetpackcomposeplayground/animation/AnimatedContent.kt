@@ -2,10 +2,10 @@ package net.kwmt27.jetpackcomposeplayground.animation
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.Crossfade
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.expandHorizontally
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkHorizontally
@@ -48,6 +48,7 @@ fun AutoRollingTextSample() {
         AutoRollingTextSample2()
         AutoRollingTextSample3()
         AutoRollingTextSample4()
+        AutoRollingTextSample5()
     }
 }
 
@@ -90,7 +91,16 @@ private fun AutoRollingTextSample3() {
 @Composable
 private fun AutoRollingTextSample4() {
     AutoCountUp { count, isVisible ->
-        ButtonLayout3BoxContentDefaultAnimation(isVisible = isVisible) {
+        ButtonLayout3BoxContentShrinkAnimation(isVisible = isVisible) {
+            AnimatedContent2(count = count)
+        }
+    }
+}
+
+@Composable
+private fun AutoRollingTextSample5() {
+    AutoCountUp { count, isVisible ->
+        ButtonLayout4BoxContentShrinkAndImageCrossFadeAnimation(isVisible = isVisible) {
             AnimatedContent2(count = count)
         }
     }
@@ -165,7 +175,7 @@ private fun ButtonLayout2BoxContentDefaultAnimation(
 }
 
 @Composable
-private fun ButtonLayout3BoxContentDefaultAnimation(
+private fun ButtonLayout3BoxContentShrinkAnimation(
     isVisible: Boolean,
     content: @Composable () -> Unit,
 ) {
@@ -181,6 +191,32 @@ private fun ButtonLayout3BoxContentDefaultAnimation(
         }
         val color = if (isVisible) Color.Blue else Color.Red
         ImageSample(color = color, Modifier.align(Alignment.CenterEnd))
+    }
+}
+
+@Composable
+private fun ButtonLayout4BoxContentShrinkAndImageCrossFadeAnimation(
+    isVisible: Boolean,
+    content: @Composable () -> Unit,
+) {
+    BoxBase {
+        AnimatedVisibility(
+            visible = isVisible,
+            exit = shrinkHorizontally(tween(ANIMATION_DURATION_MILLS)) +
+                    fadeOut(tween(ANIMATION_DURATION_MILLS)),
+        ) {
+            BoxContent {
+                content()
+            }
+        }
+        val color = if (isVisible) Color.Blue else Color.Red
+        Crossfade(
+            targetState = color,
+            animationSpec = tween(ANIMATION_DURATION_MILLS),
+            label = "CrossfadeImage"
+        ) {
+            ImageSample(color = it, Modifier.align(Alignment.CenterEnd))
+        }
     }
 }
 
