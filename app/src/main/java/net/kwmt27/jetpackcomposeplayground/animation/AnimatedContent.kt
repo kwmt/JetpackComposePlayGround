@@ -10,7 +10,10 @@ import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.with
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -34,6 +37,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun AutoRollingTextSample() {
     Column(modifier = Modifier.fillMaxWidth()) {
+        AutoRollingTextSample0()
         AutoRollingTextSample1()
         AutoRollingTextSample2()
         AutoRollingTextSample3()
@@ -41,61 +45,69 @@ fun AutoRollingTextSample() {
 }
 
 @Composable
+private fun AutoRollingTextSample0() {
+    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+        ButtonLayout(isVisible = isVisible) {
+            AnimatedContent0(count = count)
+        }
+    }
+}
+
+@Composable
 private fun AutoRollingTextSample1() {
-    AutoRollingTextSampleBaseWithAddButton {
-        AutoRollingTextSampleBase {
-            AnimatedContent1(count = it)
+    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+        ButtonLayout(isVisible = isVisible) {
+            AnimatedContent1(count = count)
         }
     }
 }
 
 @Composable
 private fun AutoRollingTextSample2() {
-    AutoRollingTextSampleBaseWithAddButton {
-        AutoRollingTextSampleBase {
-            AnimatedContent2(count = it)
+    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+        ButtonLayout(isVisible = isVisible) {
+            AnimatedContent2(count = count)
         }
     }
 }
 
 @Composable
 private fun AutoRollingTextSample3() {
-    AutoRollingTextSampleBaseWithAddButton {
-        BoxBase {
-            AutoRollingTextSampleBase {
-                AnimatedContent2(count = it)
-            }
+    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+        ButtonLayout(isVisible = isVisible) {
+            AnimatedContent2(count = count)
         }
     }
 }
 
 @Composable
 private fun AutoRollingTextSampleBaseWithAddButton(
-    content: @Composable (Int) -> Unit,
+    content: @Composable (Int, Boolean) -> Unit,
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         var count: Int by remember { mutableStateOf(0) }
 
-        content(count)
+        content(count, count != 4)
 
-        Button(onClick = { count++ }, modifier = Modifier.padding(horizontal = 16.dp)) {
-            Text("Add")
+        Row() {
+            Button(onClick = { count++ }, modifier = Modifier.padding(horizontal = 16.dp)) {
+                Text("Add")
+            }
+
+            Button(onClick = { count = 0 }) {
+                Text("Clear")
+            }
         }
     }
 }
 
+/**
+ * AnimatedContent デフォルトアニメーション
+ */
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
-private fun AutoRollingTextSampleBase(
-    content: @Composable () -> Unit,
-) {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color(0xFFF2F2F2))
-            .padding(16.dp),
-    ) {
-        content()
-    }
+private fun AnimatedContent0(count: Int) {
+    Text(text = "Count: $count", fontSize = 24.sp)
 }
 
 /**
@@ -135,20 +147,37 @@ private fun AnimatedContent2(count: Int) {
 }
 
 @Composable
-fun LipsAIButtonLayout() {
+fun ButtonLayout(
+    isVisible: Boolean,
+    content: @Composable () -> Unit,
+) {
+    BoxBase {
+        if (isVisible) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color(0xFFF2F2F2))
+                    .padding(start = 16.dp),
+                contentAlignment = Alignment.CenterStart
+            ) {
+                content()
+            }
+        }
+        val color = if (isVisible) Color.Blue else Color.Red
+        ImageSample(color = color, Modifier.align(Alignment.CenterEnd))
+    }
 }
 
 @Composable
 fun BoxBase(
-    content: @Composable () -> Unit,
+    content: @Composable BoxScope.() -> Unit,
 ) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(80.dp)
             .padding(horizontal = 16.dp)
-            .clip(CircleShape)
-            .background(Color(0xFFF2F2F2)),
+            .clip(CircleShape),
         contentAlignment = Alignment.CenterStart,
     ) {
         content()
@@ -156,14 +185,18 @@ fun BoxBase(
 }
 
 @Composable
-private fun ImageSample() {
-    Box(modifier = Modifier
-        .size(56.dp)
-        .clip(CircleShape))
+private fun ImageSample(color: Color, modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .size(80.dp)
+            .clip(CircleShape)
+            .background(color)
+    )
 }
 
 @Preview
 @Composable
-fun PreviewBoxBase() {
+fun PreviewAutoRollingTextSample() {
     AutoRollingTextSample()
 }
+
