@@ -1,6 +1,7 @@
 package net.kwmt27.jetpackcomposeplayground.animation
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.fadeIn
@@ -48,7 +49,7 @@ fun AutoRollingTextSample() {
 
 @Composable
 private fun AutoRollingTextSample0() {
-    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+    AutoCountUp { count, isVisible ->
         ButtonLayout(isVisible = isVisible) {
             AnimatedContent0(count = count)
         }
@@ -57,7 +58,7 @@ private fun AutoRollingTextSample0() {
 
 @Composable
 private fun AutoRollingTextSample1() {
-    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+    AutoCountUp { count, isVisible ->
         ButtonLayout(isVisible = isVisible) {
             AnimatedContent1(count = count)
         }
@@ -66,7 +67,7 @@ private fun AutoRollingTextSample1() {
 
 @Composable
 private fun AutoRollingTextSample2() {
-    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
+    AutoCountUp { count, isVisible ->
         ButtonLayout(isVisible = isVisible) {
             AnimatedContent2(count = count)
         }
@@ -75,36 +76,9 @@ private fun AutoRollingTextSample2() {
 
 @Composable
 private fun AutoRollingTextSample3() {
-    AutoRollingTextSampleBaseWithAddButton { count, isVisible ->
-        ButtonLayout(isVisible = isVisible) {
+    AutoCountUp { count, isVisible ->
+        ButtonLayout2(isVisible = isVisible) {
             AnimatedContent2(count = count)
-        }
-    }
-}
-
-@Composable
-private fun AutoRollingTextSampleBaseWithAddButton(
-    content: @Composable (Int, Boolean) -> Unit,
-) {
-    Column(modifier = Modifier.fillMaxWidth()) {
-        var count: Int by remember { mutableStateOf(0) }
-
-        if (count < 4) {
-            LaunchedEffect(key1 = count) {
-                delay(1500L)
-                count++
-            }
-        }
-
-        content(count, count < 4)
-
-        Row() {
-            OutlinedButton(
-                onClick = { count = 0 },
-                modifier = Modifier.padding(horizontal = 16.dp)
-            ) {
-                Text("Clear")
-            }
         }
     }
 }
@@ -131,21 +105,15 @@ private fun AnimatedContent1(count: Int) {
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent2(count: Int) {
-    AnimatedContent(
-        targetState = count,
-        label = "Auto rolling tet",
-        transitionSpec = {
-            if (targetState > initialState) {
-                slideInVertically { height -> height } + fadeIn() with
-                    slideOutVertically { height -> -height } + fadeOut()
-            } else {
-                slideInVertically { height -> -height } + fadeIn() with
-                    slideOutVertically { height -> height } + fadeOut()
-            }.using(
-                SizeTransform(clip = false)
-            )
-        }
-    ) { targetCount ->
+    AnimatedContent(targetState = count, label = "Auto rolling tet", transitionSpec = {
+        if (targetState > initialState) {
+            slideInVertically { height -> height } + fadeIn() with slideOutVertically { height -> -height } + fadeOut()
+        } else {
+            slideInVertically { height -> -height } + fadeIn() with slideOutVertically { height -> height } + fadeOut()
+        }.using(
+            SizeTransform(clip = false)
+        )
+    }) { targetCount ->
         Text(text = "Count: $targetCount", fontSize = 24.sp)
     }
 }
@@ -157,13 +125,7 @@ fun ButtonLayout(
 ) {
     BoxBase {
         if (isVisible) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color(0xFFF2F2F2))
-                    .padding(start = 16.dp),
-                contentAlignment = Alignment.CenterStart
-            ) {
+            BoxContent {
                 content()
             }
         }
@@ -173,7 +135,64 @@ fun ButtonLayout(
 }
 
 @Composable
-fun BoxBase(
+fun ButtonLayout2(
+    isVisible: Boolean,
+    content: @Composable () -> Unit,
+) {
+    BoxBase {
+        AnimatedVisibility(visible = isVisible) {
+            BoxContent {
+                content()
+            }
+        }
+        val color = if (isVisible) Color.Blue else Color.Red
+        ImageSample(color = color, Modifier.align(Alignment.CenterEnd))
+    }
+}
+
+@Composable
+private fun AutoCountUp(
+    content: @Composable (Int, Boolean) -> Unit,
+) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        var count: Int by remember { mutableStateOf(0) }
+
+        if (count < 4) {
+            LaunchedEffect(key1 = count) {
+                delay(1500L)
+                count++
+            }
+        }
+
+        content(count, count < 4)
+
+        Row {
+            OutlinedButton(
+                onClick = { count = 0 }, modifier = Modifier.padding(horizontal = 16.dp)
+            ) {
+                Text("Clear")
+            }
+        }
+    }
+}
+
+@Composable
+private fun BoxContent(
+    content: @Composable () -> Unit,
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFF2F2F2))
+            .padding(start = 16.dp),
+        contentAlignment = Alignment.CenterStart
+    ) {
+        content()
+    }
+}
+
+@Composable
+private fun BoxBase(
     content: @Composable BoxScope.() -> Unit,
 ) {
     Box(
@@ -200,6 +219,6 @@ private fun ImageSample(color: Color, modifier: Modifier = Modifier) {
 
 @Preview
 @Composable
-fun PreviewAutoRollingTextSample() {
+private fun PreviewAutoRollingTextSample() {
     AutoRollingTextSample()
 }
