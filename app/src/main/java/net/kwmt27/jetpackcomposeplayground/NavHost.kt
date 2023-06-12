@@ -39,12 +39,15 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
+import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE
+import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
+import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
@@ -82,6 +85,7 @@ private object Destinations {
     private const val EXPANDABLE = "expandable"
     private const val UP_ICON = "up_icon"
     private const val CAMERAX = "camerax"
+    const val SLIDE = "slide"
     private const val BUTTON = "button"
     const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
@@ -96,6 +100,7 @@ private object Destinations {
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
     const val SAMPLES_CAMERAX = "/$SAMPLES/$CAMERAX"
     const val SAMPLES_BUTTON = "/$SAMPLES/$BUTTON"
+    const val SLIDE_POTATOTIPS82 = "/$SLIDE/SLIDE_POTATOTIPS82"
 }
 
 private val destinationList = listOf(
@@ -253,6 +258,19 @@ private val destinationList = listOf(
         )
     )
 )
+private val slideDestination = listOf(
+    Group(
+        groupLabel = "slide",
+        destinations = listOf(
+            Destination(
+                route = SLIDE_POTATOTIPS82,
+                label = "Slide",
+                content = { SlideApp() },
+                codeUrl = "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt#L29"
+            )
+        )
+    ),
+)
 
 @Composable
 fun NavHost(navController: NavHostController) {
@@ -272,13 +290,18 @@ fun NavHost(navController: NavHostController) {
                 }, destination.content)
             }
         }
+        slideDestination.flatMap { it.destinations }.forEach { destination ->
+            composable(route = destination.route) {
+                destination.content()
+            }
+        }
     }
 }
 
 @Composable
 private fun MainList(navController: NavHostController) {
     LazyColumn {
-        destinationList.forEach { group ->
+        (destinationList + slideDestination).forEach { group ->
             header(group.groupLabel)
 
             group.destinations.forEach { destination ->
