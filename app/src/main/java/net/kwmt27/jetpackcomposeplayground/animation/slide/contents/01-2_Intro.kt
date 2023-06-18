@@ -22,7 +22,7 @@ fun Intro2() {
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        SlideImage(data = "${ASSET_BASE_PATH}giphy.gif")
+        SlideImage(data = "${ASSET_BASE_PATH}lips-ba.gif")
         Spacer(modifier = Modifier.size(16.dp))
         Column {
             Text("1.テキストが下から上に回転するようなアニメーション", style = SlideTypography.body1)
