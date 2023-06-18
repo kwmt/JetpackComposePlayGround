@@ -7,13 +7,19 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import com.google.accompanist.coil.rememberCoilPainter
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
 fun NetworkImageSample() {
-    Image(
-        painter = rememberCoilPainter("https://picsum.photos/300/300"),
+    AsyncImage(
+        model = ImageRequest
+            .Builder(LocalContext.current)
+            .data("https://picsum.photos/300/300")
+            .crossfade(true)
+            .build(),
         contentDescription = null,
     )
 }
@@ -32,8 +38,12 @@ fun CircleImageSample() {
             .fillMaxWidth()
             .aspectRatio(1f)
     ) {
-        Image(
-            painter = rememberCoilPainter("https://picsum.photos/300/300"),
+        AsyncImage(
+            model = ImageRequest
+                .Builder(LocalContext.current)
+                .data("https://picsum.photos/300/300")
+                .crossfade(true)
+                .build(),
             contentDescription = null,
         )
     }

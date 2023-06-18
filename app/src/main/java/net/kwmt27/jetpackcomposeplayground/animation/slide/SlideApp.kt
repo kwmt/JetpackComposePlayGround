@@ -52,7 +52,7 @@ fun SlideApp() {
         mutableStateOf(5000)
     }
     val pageCount = slides.size
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState { pageCount }
 
     if (currentIndex < slides.size) {
 //        LaunchedEffect(key1 = currentIndex) {
@@ -70,7 +70,6 @@ fun SlideApp() {
         if (currentIndex < slides.size) {
             Box {
                 HorizontalPager(
-                    pageCount = slides.size,
                     state = pagerState,
                 ) { pageIndex ->
                     SlidePage(
