@@ -41,7 +41,6 @@ fun SlideApp() {
     val activity = LocalContext.current as Activity
 
     LaunchedEffect(key1 = Unit) {
-
         activity.window.run {
             WindowCompat.setDecorFitsSystemWindows(this, false)
             setFlags(
@@ -106,7 +105,7 @@ private fun BoxScope.PageIndicator(pageCount: Int, pagerState: PagerState) {
                     .padding(2.dp)
                     .clip(CircleShape)
                     .background(color)
-                    .size(20.dp)
+                    .size(10.dp)
             )
         }
     }
@@ -125,9 +124,9 @@ private fun TimerView(currentMillSec: Int) {
     Text("$currentMillSec")
 }
 
-@Preview(heightDp = 360, widthDp = 800, showBackground = true)
+@Preview(heightDp = 1080, widthDp = 1920, showBackground = true)
 @Composable
 private fun PreviewSlideApp() {
-    SlidePage(slides[0], 5000)
+    SlideApp()
 }
 
