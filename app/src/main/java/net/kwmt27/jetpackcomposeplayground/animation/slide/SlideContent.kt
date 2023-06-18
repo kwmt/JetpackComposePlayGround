@@ -1,6 +1,7 @@
 package net.kwmt27.jetpackcomposeplayground.animation.slide
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,7 +26,9 @@ internal fun SlideContent(slide: Slide) {
             .padding(top = 24.dp, start = 16.dp, end = 16.dp, bottom = 16.dp),
     ) {
         Text(text = slide.title, style = SlideTypography.h1)
-        slide.content()
+        Box(modifier = Modifier.padding(16.dp)) {
+            slide.content()
+        }
     }
 }
 

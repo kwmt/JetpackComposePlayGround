@@ -116,7 +116,7 @@ private fun BoxScope.PageIndicator(pageCount: Int, pagerState: PagerState) {
 private fun SlidePage(slide: Slide, currentMillSec: Int) {
     Box {
         SlideContent(slide)
-        TimerView(currentMillSec)
+//        TimerView(currentMillSec)
     }
 }
 
