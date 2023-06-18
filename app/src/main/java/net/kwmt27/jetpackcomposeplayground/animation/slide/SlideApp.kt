@@ -58,22 +58,27 @@ fun SlideApp() {
     Scaffold {
         HorizontalPager(pageCount = slides.size) {
             if (currentIndex < slides.size) {
-                Box {
-                    SlideContent(slides[currentIndex])
-                    TimerView(currentMillSec)
-                }
+                SlidePage(currentIndex, currentMillSec)
             }
         }
     }
 }
 
 @Composable
-fun TimerView(currentMillSec: Int) {
+private fun SlidePage(currentIndex: Int, currentMillSec: Int) {
+    Box {
+        SlideContent(slides[currentIndex])
+        TimerView(currentMillSec)
+    }
+}
+
+@Composable
+private fun TimerView(currentMillSec: Int) {
     Text("$currentMillSec")
 }
 
 @Composable
-fun SlideContent(slide: Slide) {
+private fun SlideContent(slide: Slide) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -88,13 +93,13 @@ fun SlideContent(slide: Slide) {
 
 @Preview(heightDp = 360, widthDp = 800, showBackground = true)
 @Composable
-fun PreviewSlideApp() {
-    SlideApp()
+private fun PreviewSlideApp() {
+    SlidePage(0, 5000)
 }
 
-data class Slide(val title: String, val content: String)
+private data class Slide(val title: String, val content: String)
 
-val slides = listOf(
+private val slides = listOf(
     Slide("イントロダクション", "自己紹介"),
     Slide("具体的なアニメーションの実装例", "テキストのアニメーションの説明"),
     Slide("実装の詳細とポイントの解説", "他のアニメーションAPIの比較とパフォーマンスについて"),
