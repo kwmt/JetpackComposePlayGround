@@ -34,7 +34,7 @@ internal fun SlideContent(slide: Slide) {
         horizontalAlignment = horizontalAlignment,
     ) {
         if (slide.title != null) {
-            Text(text = slide.title, style = SlideTypography.h1)
+            Text(text = slide.title, style = SlideTypography.h2)
         }
         Box(modifier = Modifier.padding(16.dp)) {
             slide.content()

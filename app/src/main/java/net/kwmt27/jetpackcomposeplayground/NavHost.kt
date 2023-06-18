@@ -301,7 +301,7 @@ fun NavHost(navController: NavHostController) {
 @Composable
 private fun MainList(navController: NavHostController) {
     LazyColumn {
-        (destinationList + slideDestination).forEach { group ->
+        (slideDestination + destinationList ).forEach { group ->
             header(group.groupLabel)
 
             group.destinations.forEach { destination ->

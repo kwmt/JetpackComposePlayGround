@@ -9,6 +9,11 @@ import androidx.compose.ui.unit.sp
 val SlideTypography = Typography(
     h1 = TextStyle(
         fontWeight = FontWeight.Normal,
+        fontSize = 56.sp,
+        letterSpacing = 0.sp
+    ),
+    h2 = TextStyle(
+        fontWeight = FontWeight.Normal,
         fontSize = 48.sp,
         letterSpacing = 0.sp
     ),

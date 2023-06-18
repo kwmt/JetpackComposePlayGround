@@ -35,20 +35,26 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun SlideApp() {
     val activity = LocalContext.current as Activity
 
-    LaunchedEffect(key1 = Unit) {
-        activity.window.run {
-            WindowCompat.setDecorFitsSystemWindows(this, false)
-            setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-            )
-        }
-    }
+//    LaunchedEffect(key1 = Unit) {
+//        activity.window.run {
+//            WindowCompat.setDecorFitsSystemWindows(this, false)
+//            setFlags(
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+//            )
+//        }
+//    }
+    SlideScreen()
+}
+
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@Composable
+@OptIn(ExperimentalFoundationApi::class)
+private fun SlideScreen() {
     var currentIndex by remember {
         mutableStateOf(0)
     }
@@ -69,8 +75,9 @@ fun SlideApp() {
 //            currentMillSec -= 1000
 //        }
     }
-
-    Scaffold {
+    Scaffold(
+//        drawerBackgroundColor = Color.Transparent
+    ) {
         if (currentIndex < slides.size) {
             Box {
                 HorizontalPager(
@@ -127,6 +134,6 @@ private fun TimerView(currentMillSec: Int) {
 @Preview(heightDp = 1080, widthDp = 1920, showBackground = true)
 @Composable
 private fun PreviewSlideApp() {
-    SlideApp()
+    SlideScreen()
 }
 
