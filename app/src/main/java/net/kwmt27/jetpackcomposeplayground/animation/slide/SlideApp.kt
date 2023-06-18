@@ -38,7 +38,6 @@ import androidx.core.view.WindowCompat
 @Composable
 fun SlideApp() {
     val activity = LocalContext.current as Activity
-
 //    LaunchedEffect(key1 = Unit) {
 //        activity.window.run {
 //            WindowCompat.setDecorFitsSystemWindows(this, false)
@@ -120,7 +119,9 @@ private fun BoxScope.PageIndicator(pageCount: Int, pagerState: PagerState) {
 
 @Composable
 private fun SlidePage(slide: Slide, currentMillSec: Int) {
-    Box {
+    Box(
+        modifier = Modifier.padding(32.dp)
+    ) {
         SlideContent(slide)
 //        TimerView(currentMillSec)
     }
