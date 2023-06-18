@@ -33,6 +33,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
+import net.kwmt27.jetpackcomposeplayground.animation.slide.components.SlideContent
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable

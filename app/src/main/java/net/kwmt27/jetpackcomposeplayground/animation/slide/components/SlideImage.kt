@@ -7,6 +7,8 @@ import androidx.compose.ui.platform.LocalContext
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
+const val ASSET_BASE_PATH = "file:///android_asset/"
+
 @Composable
 internal fun SlideImage(
     data: Any?,
