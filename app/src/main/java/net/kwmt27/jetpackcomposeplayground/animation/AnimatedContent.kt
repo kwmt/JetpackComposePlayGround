@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
@@ -98,7 +99,7 @@ private fun AutoRollingTextSample4() {
 }
 
 @Composable
-private fun AutoRollingTextSample5() {
+fun AutoRollingTextSample5() {
     AutoCountUp { count, isVisible ->
         ButtonLayout4BoxContentShrinkAndImageCrossFadeAnimation(isVisible = isVisible) {
             AnimatedContent2(count = count)
@@ -225,7 +226,7 @@ private fun ButtonLayout4BoxContentShrinkAndImageCrossFadeAnimation(
 private fun AutoCountUp(
     content: @Composable (Int, Boolean) -> Unit,
 ) {
-    Column {
+    Column(modifier = Modifier.width(500.dp)) {
         var count: Int by remember { mutableStateOf(0) }
 
         if (count < 4) {
