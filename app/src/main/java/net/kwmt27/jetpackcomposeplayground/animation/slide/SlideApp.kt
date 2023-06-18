@@ -2,9 +2,9 @@ package net.kwmt27.jetpackcomposeplayground.animation.slide
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.view.WindowManager
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -14,25 +14,30 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.key.Key
+import androidx.compose.ui.input.key.KeyEventType
+import androidx.compose.ui.input.key.key
+import androidx.compose.ui.input.key.onKeyEvent
+import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.view.WindowCompat
 import net.kwmt27.jetpackcomposeplayground.animation.slide.components.SlideContent
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -61,9 +66,6 @@ private fun SlideScreen() {
     var currentMillSec by remember {
         mutableStateOf(5000)
     }
-    val pageCount = slides.size
-    val pagerState = rememberPagerState { pageCount }
-
     if (currentIndex < slides.size) {
 //        LaunchedEffect(key1 = currentIndex) {
 //            delay(5000)
@@ -75,29 +77,72 @@ private fun SlideScreen() {
 //            currentMillSec -= 1000
 //        }
     }
+    val requester = remember { FocusRequester() }
+    val scope = rememberCoroutineScope()
     Scaffold(
-//        drawerBackgroundColor = Color.Transparent
+        modifier = Modifier
+            .onKeyEvent {
+                when (it.key) {
+                    Key.DirectionRight,
+                    Key.DirectionDown,
+                    Key.SoftRight,
+                    Key.Enter,
+                    -> {
+                        if (it.type == KeyEventType.KeyUp) {
+                            if (canShowNext(currentIndex)) {
+                                currentIndex++
+                            }
+                        }
+                        true
+                    }
+
+                    Key.DirectionLeft,
+                    Key.DirectionUp,
+                    Key.SoftLeft,
+                    -> {
+                        if (it.type == KeyEventType.KeyUp) {
+                            if (canShowPrev(currentIndex)) {
+                                currentIndex--
+                            }
+                        }
+                        true
+                    }
+
+                    else -> {
+                        false
+                    }
+                }
+            }
+            .focusRequester(requester)
+            .focusable()
     ) {
         if (currentIndex < slides.size) {
-            Box {
+            Box() {
                 HorizontalPager(
-                    state = pagerState,
-                ) { pageIndex ->
+                    state = rememberPagerState { slides.size },
+                ) {
                     SlidePage(
-                        slides[pageIndex],
+                        slides[currentIndex],
                         currentMillSec,
                     )
                 }
 
-                PageIndicator(pageCount, pagerState)
+                PageIndicator(slides.size, currentIndex)
             }
         }
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+private fun canShowNext(currentIndex: Int): Boolean {
+    return currentIndex < slides.size - 1
+}
+
+private fun canShowPrev(currentIndex: Int): Boolean {
+    return currentIndex > 0
+}
+
 @Composable
-private fun BoxScope.PageIndicator(pageCount: Int, pagerState: PagerState) {
+private fun BoxScope.PageIndicator(pageCount: Int, currentPageIndex: Int) {
     Row(
         Modifier
             .height(50.dp)
@@ -106,10 +151,10 @@ private fun BoxScope.PageIndicator(pageCount: Int, pagerState: PagerState) {
         horizontalArrangement = Arrangement.Center
     ) {
         repeat(pageCount) { iteration ->
-            val color = if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
+            val color = if (currentPageIndex == iteration) Color.DarkGray else Color.LightGray
             Box(
                 modifier = Modifier
-                    .padding(2.dp)
+                    .padding(8.dp)
                     .clip(CircleShape)
                     .background(color)
                     .size(10.dp)
