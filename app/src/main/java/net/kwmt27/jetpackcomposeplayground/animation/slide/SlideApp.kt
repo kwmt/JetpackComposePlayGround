@@ -8,9 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -34,7 +32,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.delay
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @OptIn(ExperimentalFoundationApi::class)
@@ -124,32 +121,9 @@ private fun TimerView(currentMillSec: Int) {
     Text("$currentMillSec")
 }
 
-@Composable
-private fun SlideContent(slide: Slide) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(text = slide.title)
-        Text(text = slide.content)
-    }
-}
-
 @Preview(heightDp = 360, widthDp = 800, showBackground = true)
 @Composable
 private fun PreviewSlideApp() {
     SlidePage(slides[0], 5000)
 }
 
-private data class Slide(val title: String, val content: String)
-
-private val slides = listOf(
-    Slide("イントロダクション", "自己紹介"),
-    Slide("具体的なアニメーションの実装例", "テキストのアニメーションの説明"),
-    Slide("実装の詳細とポイントの解説", "他のアニメーションAPIの比較とパフォーマンスについて"),
-    Slide("成果と学び", "アニメーションの成果と今後の展望"),
-    Slide("まとめと質疑応答", "プレゼンのまとめと質問への対応")
-)
