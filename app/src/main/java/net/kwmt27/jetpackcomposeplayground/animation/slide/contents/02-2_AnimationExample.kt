@@ -42,5 +42,5 @@ fun AnimationExample2() {
 @SlidePreview
 @Composable
 private fun PreviewAnimationExample() {
-    AnimationExample()
+    AnimationExample2()
 }
