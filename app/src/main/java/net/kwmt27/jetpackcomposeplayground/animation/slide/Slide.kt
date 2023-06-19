@@ -3,6 +3,7 @@ package net.kwmt27.jetpackcomposeplayground.animation.slide
 import androidx.compose.runtime.Composable
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample2
+import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample3
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro3
@@ -20,4 +21,5 @@ internal val slides = listOf(
     Slide("どんなアニメーションか？（アニメーション部分のみ・簡略化）") { Intro3() },
     Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample() },
     Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample2() },
+    Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample3() },
 )

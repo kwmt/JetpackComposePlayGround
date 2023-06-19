@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample0
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample1
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography

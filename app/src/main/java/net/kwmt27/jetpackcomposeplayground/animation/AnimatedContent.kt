@@ -76,7 +76,7 @@ fun AutoRollingTextSample1() {
 }
 
 @Composable
-private fun AutoRollingTextSample2() {
+fun AutoRollingTextSample2() {
     AutoCountUp { count, isVisible ->
         ButtonLayout1NoAnimation(isVisible = isVisible) {
             AnimatedContent2(count = count)
