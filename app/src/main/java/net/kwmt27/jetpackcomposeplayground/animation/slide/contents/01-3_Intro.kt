@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample5
+import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
 
 @Composable
@@ -31,4 +32,10 @@ fun Intro3() {
             Text("3.右側の青色が赤色に切り替わるアニメーション", style = SlideTypography.body1)
         }
     }
+}
+
+@SlidePreview
+@Composable
+private fun PreviewIntro3() {
+    Intro3()
 }

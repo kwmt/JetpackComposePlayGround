@@ -178,7 +178,7 @@ private fun TimerView(currentMillSec: Int) {
     Text("$currentMillSec")
 }
 
-@Preview(heightDp = 1080, widthDp = 1920, showBackground = true)
+@SlidePreview
 @Composable
 private fun PreviewSlideApp() {
     SlideScreen()

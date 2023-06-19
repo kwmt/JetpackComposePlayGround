@@ -2,6 +2,7 @@ package net.kwmt27.jetpackcomposeplayground.animation.slide.contents
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
 
 @Composable
@@ -16,4 +17,10 @@ fun Intro() {
         """.trimIndent(),
         style = SlideTypography.body1,
     )
+}
+
+@SlidePreview
+@Composable
+private fun PreviewIntro() {
+    Intro()
 }
