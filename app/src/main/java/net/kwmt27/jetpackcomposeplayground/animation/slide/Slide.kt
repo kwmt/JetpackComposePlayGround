@@ -5,6 +5,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExa
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample1_2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample1_3
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample2_1
+import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample2_2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro3
@@ -24,4 +25,5 @@ internal val slides = listOf(
     Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample1_2() },
     Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample1_3() },
     Slide("例2: 緑のボックスが左から右にかけて消えていくアニメーション") { AnimationExample2_1() },
+    Slide("例2: 緑のボックスが左から右にかけて消えていくアニメーション") { AnimationExample2_2() },
 )
