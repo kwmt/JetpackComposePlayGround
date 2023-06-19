@@ -17,7 +17,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.animation.slide.components.Code
 
 @Composable
-fun AnimationExample2() {
+fun AnimationExample1_2() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
@@ -28,7 +28,7 @@ fun AnimationExample2() {
         Column {
             Text("AnimatedContent関数を使います。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-2_AnimateExample.html")
+            Code(path = "02-1-2_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
             Text(
                 "TextをAnimatedContentで囲うだけでアニメーションしてくれますが、まだ下から上のアニメーションにはなっていません。",
@@ -41,5 +41,5 @@ fun AnimationExample2() {
 @SlidePreview
 @Composable
 private fun PreviewAnimationExample() {
-    AnimationExample2()
+    AnimationExample1_2()
 }

@@ -21,7 +21,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.animation.slide.components.Code
 
 @Composable
-fun AnimationExample3() {
+fun AnimationExample1_3() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
@@ -33,7 +33,7 @@ fun AnimationExample3() {
         Column {
             Text("トランジションをデフォルトから変更します。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-3_AnimateExample.html")
+            Code(path = "02-1-3_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
             Text(
                 text = "※androidx.compose.animation:animation-*:1.5.0-alpha03でwithがtogetherWithにリネームの変更が入っています。",
@@ -70,5 +70,5 @@ fun AnimationExample3() {
 @SlidePreview
 @Composable
 private fun PreviewAnimationExample() {
-    AnimationExample3()
+    AnimationExample1_3()
 }

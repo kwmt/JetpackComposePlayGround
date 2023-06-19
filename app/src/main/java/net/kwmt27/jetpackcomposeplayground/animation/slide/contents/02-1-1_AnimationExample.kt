@@ -28,7 +28,7 @@ fun AnimationExample() {
         Column {
             Text("アニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-1_AnimateExample.html")
+            Code(path = "02-1-1_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
             Text("Text Composable関数があるだけ。", style = SlideTypography.body1)
         }
