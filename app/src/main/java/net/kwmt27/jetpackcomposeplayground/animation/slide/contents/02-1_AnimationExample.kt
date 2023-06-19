@@ -11,9 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample5
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample0
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.animation.slide.components.Code
 
 @Composable
 fun AnimationExample() {
@@ -22,14 +23,14 @@ fun AnimationExample() {
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        AutoRollingTextSample5()
+        AutoRollingTextSample0()
         Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("1.テキストが下から上に回転するようなアニメーション", style = SlideTypography.body1)
+            Text("アニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Text("2.グレーのボックスが左から右にかけて消えていくアニメーション", style = SlideTypography.body1)
+            Code(path = "02-1_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
-            Text("3.右側の青色が赤色に切り替わるアニメーション", style = SlideTypography.body1)
+            Text("Text Composable関数があるだけ。", style = SlideTypography.body1)
         }
     }
 }
