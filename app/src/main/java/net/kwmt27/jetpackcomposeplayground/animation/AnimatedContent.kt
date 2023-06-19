@@ -13,6 +13,9 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.with
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
@@ -29,6 +32,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -54,7 +58,7 @@ fun AutoRollingTextSample() {
 }
 
 @Composable
-private fun AutoRollingTextSample0() {
+fun AutoRollingTextSample0() {
     AutoCountUp { count, isVisible ->
         ButtonLayout1NoAnimation(isVisible = isVisible) {
             AnimatedContent0(count = count)
@@ -226,25 +230,25 @@ private fun ButtonLayout4BoxContentShrinkAndImageCrossFadeAnimation(
 private fun AutoCountUp(
     content: @Composable (Int, Boolean) -> Unit,
 ) {
-    Column(modifier = Modifier.width(500.dp)) {
-        var count: Int by remember { mutableStateOf(0) }
+    var count: Int by remember { mutableIntStateOf(0) }
 
-        if (count < 4) {
-            LaunchedEffect(key1 = count) {
-                delay(ANIMATION_DURATION_MILLS.toLong())
-                count++
-            }
+    if (count < 4) {
+        LaunchedEffect(key1 = count) {
+            delay(ANIMATION_DURATION_MILLS.toLong())
+            count++
         }
-
+    }
+    Column(
+        modifier = Modifier
+            .width(500.dp)
+            .clickable(
+                // desktop appでのhover無効化
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null,
+            ) { count = 0 }
+            .padding(16.dp)
+    ) {
         content(count, count < 4)
-
-        Row {
-            OutlinedButton(
-                onClick = { count = 0 }, modifier = Modifier.padding(horizontal = 16.dp)
-            ) {
-                Text("Clear")
-            }
-        }
     }
 }
 
