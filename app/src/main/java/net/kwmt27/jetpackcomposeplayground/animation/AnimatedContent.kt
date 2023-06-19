@@ -258,7 +258,7 @@ private fun BoxContent(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFF2F2F2))
+            .background(Color.Green)
             .padding(start = 16.dp),
         contentAlignment = Alignment.CenterStart
     ) {
