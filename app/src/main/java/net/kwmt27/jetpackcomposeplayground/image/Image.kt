@@ -1,6 +1,5 @@
 package net.kwmt27.jetpackcomposeplayground.image
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape

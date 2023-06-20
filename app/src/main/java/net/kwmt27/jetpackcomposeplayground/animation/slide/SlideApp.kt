@@ -36,7 +36,6 @@ import androidx.compose.ui.input.key.key
 import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.animation.slide.components.SlideContent
 
@@ -183,4 +182,3 @@ private fun TimerView(currentMillSec: Int) {
 private fun PreviewSlideApp() {
     SlideScreen()
 }
-

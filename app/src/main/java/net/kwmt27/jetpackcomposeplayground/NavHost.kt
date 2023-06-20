@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -39,7 +40,6 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
-import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
@@ -280,14 +280,18 @@ fun NavHost(navController: NavHostController) {
 
         destinationList.flatMap { it.destinations }.forEach { destination ->
             composable(route = destination.route) {
-                FabLayout(onClick = {
-                    context.startActivity(
-                        Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse(destination.codeUrl)
+                FabLayout(
+                    onClick = {
+                        context.startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse(destination.codeUrl)
+                            )
                         )
-                    )
-                }, destination.content)
+                    }
+                ) {
+                    destination.content
+                }
             }
         }
         slideDestination.flatMap { it.destinations }.forEach { destination ->
@@ -301,7 +305,7 @@ fun NavHost(navController: NavHostController) {
 @Composable
 private fun MainList(navController: NavHostController) {
     LazyColumn {
-        (slideDestination + destinationList ).forEach { group ->
+        (slideDestination + destinationList).forEach { group ->
             header(group.groupLabel)
 
             group.destinations.forEach { destination ->
@@ -312,7 +316,7 @@ private fun MainList(navController: NavHostController) {
 }
 
 @Composable
-private fun FabLayout(onClick: () -> Unit, content: @Composable () -> Unit) {
+private fun FabLayout(onClick: () -> Unit, content: @Composable (PaddingValues) -> Unit) {
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClick = onClick) {
@@ -321,10 +325,9 @@ private fun FabLayout(onClick: () -> Unit, content: @Composable () -> Unit) {
                     contentDescription = null,
                 )
             }
-        }
-    ) {
-        content()
-    }
+        },
+        content = content
+    )
 }
 
 @OptIn(ExperimentalFoundationApi::class)
