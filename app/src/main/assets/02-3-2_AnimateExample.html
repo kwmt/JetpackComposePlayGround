@@ -5,9 +5,16 @@
 <meta name="viewport" content="width=1920, height=1080, user-scalable=no" />
 
 <pre style="font-size: 32pt;"><code class="kotlin">val color = if (isVisible) Color.Blue else Color.Red
-Box(
-    modifier = Modifier.align(Alignment.CenterEnd)
-        .size(80.dp)
-        .clip(CircleShape)
-        .background(color)
-)</code></pre>
+Crossfade(
+    targetState = color,
+    animationSpec = tween(ANIMATION_DURATION_MILLS),
+    label = "CrossfadeImage"
+) {
+    Box(
+        modifier = Modifier.align(Alignment.CenterEnd)
+            .size(80.dp)
+            .clip(CircleShape)
+            .background(it)
+    )
+}
+</code></pre>
