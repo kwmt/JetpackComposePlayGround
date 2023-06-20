@@ -10,6 +10,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExa
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample3_1
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample3_2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.DetailsAndPoints3_1
+import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.DetailsAndPoints3_2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro3
@@ -34,4 +35,5 @@ internal val slides = listOf(
     Slide("例3: 右の円が青から赤にクロスフェードするアニメーション") { AnimationExample3_1() },
     Slide("例3: 右の円が青から赤にクロスフェードするアニメーション") { AnimationExample3_2() },
     Slide("他のアニメーションAPIは？") { DetailsAndPoints3_1() },
+    Slide("アニメーションのパフォーマンスについて") { DetailsAndPoints3_2() },
 )

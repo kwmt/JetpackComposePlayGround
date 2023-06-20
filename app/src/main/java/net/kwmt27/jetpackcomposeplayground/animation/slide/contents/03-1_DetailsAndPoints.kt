@@ -16,11 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.R
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.animation.slide.components.ASSET_BASE_PATH
-import net.kwmt27.jetpackcomposeplayground.animation.slide.components.Code
 import net.kwmt27.jetpackcomposeplayground.animation.slide.components.SlideImage
 
 @Composable
