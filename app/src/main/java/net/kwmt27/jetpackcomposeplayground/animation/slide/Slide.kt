@@ -15,6 +15,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro2
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro3
 import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.SlideTitle
+import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Summary
 
 internal data class Slide(
     val title: String? = null,
@@ -36,4 +37,5 @@ internal val slides = listOf(
     Slide("例3: 右の円が青から赤にクロスフェードするアニメーション") { AnimationExample3_2() },
     Slide("他のアニメーションAPIは？") { DetailsAndPoints3_1() },
     Slide("アニメーションのパフォーマンスについて") { DetailsAndPoints3_2() },
+    Slide("まとめ") { Summary() },
 )
