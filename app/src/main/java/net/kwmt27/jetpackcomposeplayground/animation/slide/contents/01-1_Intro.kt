@@ -12,7 +12,7 @@ fun Intro() {
         - 河本泰孝
         - AppBrew所属
         - Androidエンジニア
-        - LIPSというアプリを作っている
+        - LIPSというコスメクチコミアプリを作っている
         - Jetpack Composeを使ってアニメーションを実装したので紹介したい
         """.trimIndent(),
         style = SlideTypography.body1,

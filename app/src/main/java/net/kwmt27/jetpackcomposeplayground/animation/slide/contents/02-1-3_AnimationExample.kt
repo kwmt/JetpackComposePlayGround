@@ -52,7 +52,7 @@ fun AnimationExample1_3() {
 
             Spacer(modifier = Modifier.size(16.dp))
             Text(
-                text = "実は公式ドキュメント(https://developer.android.com/jetpack/compose/animation?hl=ja#animatedcontent)にそのまま載っているので参考にしてください。",
+                text = "実は公式ドキュメント(https://developer.android.com/jetpack/compose/animation#animatedcontent)にそのまま載っているので参考にしてください。",
                 style = SlideTypography.body1,
                 modifier = Modifier.clickable {
                     context.startActivity(

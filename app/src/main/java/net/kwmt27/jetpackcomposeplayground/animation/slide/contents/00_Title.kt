@@ -14,6 +14,6 @@ fun SlideTitle() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text("LIPSでのJetpack Composeアニメーション実装事例",  style = SlideTypography.h1)
-        Text("potatotips #82")
+        Text("potatotips #82", style = SlideTypography.body1)
     }
 }
