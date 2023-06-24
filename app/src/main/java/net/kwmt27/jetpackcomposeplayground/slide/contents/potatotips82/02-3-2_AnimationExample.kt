@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,27 +11,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample4
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample5
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 
 @Composable
-fun AnimationExample2_3() {
+fun AnimationExample3_2() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        AutoRollingTextSample4()
+        AutoRollingTextSample5()
         Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("exitトランジションを設定します。", style = SlideTypography.body1)
+            Text("Crossfade関数で囲うだけです。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-2-3_AnimateExample.html")
+            Code(path = "02-3-2_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
             Text(
-                "緑のボックスが左から右にかけて消えていくアニメーション完成",
+                "青色がフェードアウトしながら赤がフェードインしてくるようなアニメーションが完成",
                 style = SlideTypography.body1
             )
         }
@@ -41,5 +41,5 @@ fun AnimationExample2_3() {
 @SlidePreview
 @Composable
 private fun PreviewAnimationExample() {
-    AnimationExample2_3()
+    AnimationExample3_2()
 }

@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,32 +11,32 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample2
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.slide.components.ASSET_BASE_PATH
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 
 @Composable
-fun AnimationExample2_1() {
+fun Intro2() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        AutoRollingTextSample2()
+        SlideImage(data = "${ASSET_BASE_PATH}lips-ba.gif")
         Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("これもアニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
+            Text("1.テキストが下から上に回転するようなアニメーション", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-2-1_AnimateExample.html")
+            Text("2.横幅いっぱいのレイアウトが左から右にかけて消えていくアニメーション", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Text("Boxの表示をisVisibleフラグで切り替えています。", style = SlideTypography.body1)
+            Text("3.右のアイコンが色付きアイコンを色なしアイコンに変更する", style = SlideTypography.body1)
         }
     }
 }
 
 @SlidePreview
 @Composable
-private fun PreviewAnimationExample() {
-    AnimationExample2_1()
+private fun PreviewIntro() {
+    Intro2()
 }

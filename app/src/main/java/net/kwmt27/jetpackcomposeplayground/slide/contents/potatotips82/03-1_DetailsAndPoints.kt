@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
 import android.content.Intent
 import android.net.Uri

@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,28 +11,39 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample3
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 
 @Composable
-fun Summary() {
+fun AnimationExample2_2() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
+        AutoRollingTextSample3()
+        Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("- Composeでアニメーションを実装するために、Wrapするだけなどの簡単な関数が用意されている", style = SlideTypography.body1)
+            Text("AnimatedVisibility関数を使います。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Text("- アニメーションの関数の決定は公式ドキュメントのフローチャートがわかりやすい", style = SlideTypography.body1)
+            Code(path = "02-2-2_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
-            Text("- 楽しい", style = SlideTypography.body1)
+            Text(
+                "if文をAnimatedVisibilityに置き換えるだけです。",
+                style = SlideTypography.body1
+            )
+            Text(
+                "フェードアウトするのはいいが、高さが小さくなっていくのはやめたい。幅だけ小さくしたい。’",
+                style = SlideTypography.body1
+            )
         }
     }
 }
 
 @SlidePreview
 @Composable
-private fun PreviewSummary() {
-    Summary()
+private fun PreviewAnimationExample() {
+    AnimationExample2_2()
 }

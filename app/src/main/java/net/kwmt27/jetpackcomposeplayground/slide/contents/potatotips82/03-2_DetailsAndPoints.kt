@@ -1,5 +1,8 @@
-package net.kwmt27.jetpackcomposeplayground.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,33 +13,36 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample3
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 
 @Composable
-fun AnimationExample2_2() {
+fun DetailsAndPoints3_2() {
+    val context = LocalContext.current
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        AutoRollingTextSample3()
-        Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("AnimatedVisibility関数を使います。", style = SlideTypography.body1)
-            Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-2-2_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
             Text(
-                "if文をAnimatedVisibilityに置き換えるだけです。",
+                "More performance tips for Jetpack Compose",
                 style = SlideTypography.body1
             )
+            Spacer(modifier = Modifier.size(16.dp))
             Text(
-                "フェードアウトするのはいいが、高さが小さくなっていくのはやめたい。幅だけ小さくしたい。’",
-                style = SlideTypography.body1
+                "https://youtu.be/ahXLwg2JYpc",
+                style = SlideTypography.body1,
+                modifier = Modifier.clickable {
+                    context.startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://youtu.be/ahXLwg2JYpc")
+                        )
+                    )
+                }
             )
         }
     }
@@ -44,6 +50,6 @@ fun AnimationExample2_2() {
 
 @SlidePreview
 @Composable
-private fun PreviewAnimationExample() {
-    AnimationExample2_2()
+private fun PreviewDetailsAndPoints() {
+    DetailsAndPoints3_2()
 }
