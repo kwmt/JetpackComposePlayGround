@@ -47,7 +47,6 @@ import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
-import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
@@ -58,6 +57,7 @@ import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
+import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
 
 private data class Group(
