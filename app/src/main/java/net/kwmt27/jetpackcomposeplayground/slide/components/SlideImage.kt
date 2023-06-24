@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.components
+package net.kwmt27.jetpackcomposeplayground.slide.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

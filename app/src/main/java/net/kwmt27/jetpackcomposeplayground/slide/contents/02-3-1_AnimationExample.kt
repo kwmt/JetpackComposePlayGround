@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,26 +11,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample0
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.animation.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample4
+import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 
 @Composable
-fun AnimationExample() {
+fun AnimationExample3_1() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        AutoRollingTextSample0()
+        AutoRollingTextSample4()
         Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("アニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
+            Text("isVisibleフラグで色を切り替えてるだけでアニメーションなし", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-1-1_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
-            Text("Text Composable関数があるだけ。", style = SlideTypography.body1)
+            Code(path = "02-3-1_AnimateExample.html")
         }
     }
 }
@@ -38,5 +36,5 @@ fun AnimationExample() {
 @SlidePreview
 @Composable
 private fun PreviewAnimationExample() {
-    AnimationExample()
+    AnimationExample3_1()
 }

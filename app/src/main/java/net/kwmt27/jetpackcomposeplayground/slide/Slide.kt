@@ -1,22 +1,22 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide
+package net.kwmt27.jetpackcomposeplayground.slide
 
 import androidx.compose.runtime.Composable
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample1_2
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample1_3
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample2_1
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample2_2
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample2_3
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample3_1
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.AnimationExample3_2
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.DetailsAndPoints3_1
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.DetailsAndPoints3_2
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro2
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Intro3
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.SlideTitle
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.Summary
-import net.kwmt27.jetpackcomposeplayground.animation.slide.contents.ThankYou
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample1_2
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample1_3
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample2_1
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample2_2
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample2_3
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample3_1
+import net.kwmt27.jetpackcomposeplayground.slide.contents.AnimationExample3_2
+import net.kwmt27.jetpackcomposeplayground.slide.contents.DetailsAndPoints3_1
+import net.kwmt27.jetpackcomposeplayground.slide.contents.DetailsAndPoints3_2
+import net.kwmt27.jetpackcomposeplayground.slide.contents.Intro
+import net.kwmt27.jetpackcomposeplayground.slide.contents.Intro2
+import net.kwmt27.jetpackcomposeplayground.slide.contents.Intro3
+import net.kwmt27.jetpackcomposeplayground.slide.contents.SlideTitle
+import net.kwmt27.jetpackcomposeplayground.slide.contents.Summary
+import net.kwmt27.jetpackcomposeplayground.slide.contents.ThankYou
 
 internal data class Slide(
     val title: String? = null,

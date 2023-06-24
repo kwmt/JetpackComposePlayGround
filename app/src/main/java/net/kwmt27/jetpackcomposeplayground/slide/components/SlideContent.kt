@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.components
+package net.kwmt27.jetpackcomposeplayground.slide.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.slide.Slide
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.Slide
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 
 @Composable
 internal fun SlideContent(slide: Slide) {

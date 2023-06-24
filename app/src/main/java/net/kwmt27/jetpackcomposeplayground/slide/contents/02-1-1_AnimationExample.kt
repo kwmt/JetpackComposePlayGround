@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,29 +11,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample1
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.animation.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample0
+import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 
 @Composable
-fun AnimationExample1_2() {
+fun AnimationExample() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        AutoRollingTextSample1()
+        AutoRollingTextSample0()
         Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("AnimatedContent関数を使います。", style = SlideTypography.body1)
+            Text("アニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-1-2_AnimateExample.html")
+            Code(path = "02-1-1_AnimateExample.html")
             Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                "TextをAnimatedContentで囲うだけでアニメーションしてくれますが、まだ下から上のアニメーションにはなっていません。",
-                style = SlideTypography.body1
-            )
+            Text("Text Composable関数があるだけ。", style = SlideTypography.body1)
         }
     }
 }
@@ -41,5 +38,5 @@ fun AnimationExample1_2() {
 @SlidePreview
 @Composable
 private fun PreviewAnimationExample() {
-    AnimationExample1_2()
+    AnimationExample()
 }

@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents
 
 import android.content.Intent
 import android.net.Uri
@@ -15,13 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.R
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.animation.slide.components.SlideImage
+import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 
 @Composable
-fun DetailsAndPoints3_1() {
+fun DetailsAndPoints3_2() {
     val context = LocalContext.current
     Row(
         modifier = Modifier.fillMaxSize(),
@@ -29,25 +27,23 @@ fun DetailsAndPoints3_1() {
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Column {
-            Text("今回はアニメーションの関数を３つだけ紹介しましたが、他にもいろいろあります。", style = SlideTypography.body1)
-            Spacer(modifier = Modifier.size(16.dp))
             Text(
-                "どれを使えばいいかは公式ドキュメントに決定する際のフローチャートがあるので参考にするとよいと思います。",
+                "More performance tips for Jetpack Compose",
                 style = SlideTypography.body1
             )
+            Spacer(modifier = Modifier.size(16.dp))
             Text(
-                "https://developer.android.com/jetpack/compose/animation",
+                "https://youtu.be/ahXLwg2JYpc",
                 style = SlideTypography.body1,
                 modifier = Modifier.clickable {
                     context.startActivity(
                         Intent(
                             Intent.ACTION_VIEW,
-                            Uri.parse("https://developer.android.com/jetpack/compose/animation")
+                            Uri.parse("https://youtu.be/ahXLwg2JYpc")
                         )
                     )
                 }
             )
-            SlideImage(data = R.drawable.animation_flowchart)
         }
     }
 }
@@ -55,5 +51,5 @@ fun DetailsAndPoints3_1() {
 @SlidePreview
 @Composable
 private fun PreviewDetailsAndPoints() {
-    DetailsAndPoints3_1()
+    DetailsAndPoints3_2()
 }

@@ -47,7 +47,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideApp
+import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample

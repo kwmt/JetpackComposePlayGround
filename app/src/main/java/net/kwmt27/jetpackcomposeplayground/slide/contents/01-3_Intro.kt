@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,28 +11,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample5
+import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 
 @Composable
-fun Summary() {
+fun Intro3() {
     Row(
         modifier = Modifier.fillMaxSize(),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
     ) {
+        AutoRollingTextSample5()
+        Spacer(modifier = Modifier.size(16.dp))
         Column {
-            Text("- Composeでアニメーションを実装するために、Wrapするだけなどの簡単な関数が用意されている", style = SlideTypography.body1)
+            Text("1.テキストが下から上に回転するようなアニメーション", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Text("- アニメーションの関数の決定は公式ドキュメントのフローチャートがわかりやすい", style = SlideTypography.body1)
+            Text("2.緑のボックスが左から右にかけて消えていくアニメーション", style = SlideTypography.body1)
             Spacer(modifier = Modifier.size(16.dp))
-            Text("- 楽しい", style = SlideTypography.body1)
+            Text("3.右側の青色が赤色に切り替わるアニメーション", style = SlideTypography.body1)
         }
     }
 }
 
 @SlidePreview
 @Composable
-private fun PreviewSummary() {
-    Summary()
+private fun PreviewIntro3() {
+    Intro3()
 }

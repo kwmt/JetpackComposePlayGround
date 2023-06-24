@@ -1,9 +1,9 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide.contents
+package net.kwmt27.jetpackcomposeplayground.slide.contents
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.animation.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 
 @Composable
 fun Intro() {

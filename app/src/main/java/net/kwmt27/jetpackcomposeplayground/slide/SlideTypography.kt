@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation.slide
+package net.kwmt27.jetpackcomposeplayground.slide
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.graphics.Color
