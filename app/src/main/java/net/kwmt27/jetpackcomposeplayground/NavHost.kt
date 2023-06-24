@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -27,6 +28,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import net.kwmt27.camerax.CameraXScreen
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_AUTO_ROLLING_TEXT
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_CHANGE_COLOR
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_TRANSITION
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BOX
@@ -38,9 +40,11 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
+import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
+import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
@@ -53,6 +57,7 @@ import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
+import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
 
 private data class Group(
@@ -75,10 +80,12 @@ private object Destinations {
     private const val STICKY_LIST = "sticky-list"
     private const val ANIMATION = "animation"
     private const val ANIMATION_TRANSITION = "animation-transition"
+    private const val ANIMATION_AUTO_ROLLING_TEXT = "animation-auto-rolling-text"
     private const val BOX = "box"
     private const val EXPANDABLE = "expandable"
     private const val UP_ICON = "up_icon"
     private const val CAMERAX = "camerax"
+    const val SLIDE = "slide"
     private const val BUTTON = "button"
     const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
@@ -87,11 +94,13 @@ private object Destinations {
     const val SAMPLES_STICKY_LIST = "/$SAMPLES/$STICKY_LIST"
     const val SAMPLES_ANIMATION_CHANGE_COLOR = "/$SAMPLES/$ANIMATION"
     const val SAMPLES_ANIMATION_TRANSITION = "/$SAMPLES/$ANIMATION_TRANSITION"
+    const val SAMPLES_ANIMATION_AUTO_ROLLING_TEXT = "/$SAMPLES/$ANIMATION_AUTO_ROLLING_TEXT"
     const val SAMPLES_BOX = "/$SAMPLES/$BOX"
     const val SAMPLES_EXPANDABLE = "/$SAMPLES/$EXPANDABLE"
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
     const val SAMPLES_CAMERAX = "/$SAMPLES/$CAMERAX"
     const val SAMPLES_BUTTON = "/$SAMPLES/$BUTTON"
+    const val SLIDE_POTATOTIPS82 = "/$SLIDE/SLIDE_POTATOTIPS82"
 }
 
 private val destinationList = listOf(
@@ -196,6 +205,12 @@ private val destinationList = listOf(
                 { ExpandableCardSample() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/state/ExpandableCard.kt#L24-L56"
             ),
+            Destination(
+                SAMPLES_ANIMATION_AUTO_ROLLING_TEXT,
+                "Auto Rolling Text",
+                { AutoRollingTextSample() },
+                "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/state/ExpandableCard.kt#L24-L56"
+            ),
         )
     ),
     Group(
@@ -243,6 +258,19 @@ private val destinationList = listOf(
         )
     )
 )
+private val slideDestination = listOf(
+    Group(
+        groupLabel = "slide",
+        destinations = listOf(
+            Destination(
+                route = SLIDE_POTATOTIPS82,
+                label = "Slide",
+                content = { SlideApp() },
+                codeUrl = "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt#L29"
+            )
+        )
+    ),
+)
 
 @Composable
 fun NavHost(navController: NavHostController) {
@@ -252,14 +280,23 @@ fun NavHost(navController: NavHostController) {
 
         destinationList.flatMap { it.destinations }.forEach { destination ->
             composable(route = destination.route) {
-                FabLayout(onClick = {
-                    context.startActivity(
-                        Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse(destination.codeUrl)
+                FabLayout(
+                    onClick = {
+                        context.startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse(destination.codeUrl)
+                            )
                         )
-                    )
-                }, destination.content)
+                    }
+                ) {
+                    destination.content
+                }
+            }
+        }
+        slideDestination.flatMap { it.destinations }.forEach { destination ->
+            composable(route = destination.route) {
+                destination.content()
             }
         }
     }
@@ -268,7 +305,7 @@ fun NavHost(navController: NavHostController) {
 @Composable
 private fun MainList(navController: NavHostController) {
     LazyColumn {
-        destinationList.forEach { group ->
+        (slideDestination + destinationList).forEach { group ->
             header(group.groupLabel)
 
             group.destinations.forEach { destination ->
@@ -279,7 +316,7 @@ private fun MainList(navController: NavHostController) {
 }
 
 @Composable
-private fun FabLayout(onClick: () -> Unit, content: @Composable () -> Unit) {
+private fun FabLayout(onClick: () -> Unit, content: @Composable (PaddingValues) -> Unit) {
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClick = onClick) {
@@ -288,10 +325,9 @@ private fun FabLayout(onClick: () -> Unit, content: @Composable () -> Unit) {
                     contentDescription = null,
                 )
             }
-        }
-    ) {
-        content()
-    }
+        },
+        content = content
+    )
 }
 
 @OptIn(ExperimentalFoundationApi::class)

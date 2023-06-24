@@ -15,13 +15,13 @@
  */
 package net.kwmt27.jetpackcomposeplayground.image
 
-import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import coil.transform.CircleCropTransformation
-import com.google.accompanist.coil.rememberCoilPainter
+import androidx.compose.ui.platform.LocalContext
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
 fun NetworkImage(
@@ -31,15 +31,14 @@ fun NetworkImage(
     contentScale: ContentScale = ContentScale.Crop,
     placeholderColor: Color? = Color.White,
 ) {
-    Image(
-        painter = rememberCoilPainter(
-            url,
-            requestBuilder = {
-                transformations(CircleCropTransformation())
-            }
-        ),
-        modifier = modifier,
+    AsyncImage(
+        model = ImageRequest
+            .Builder(LocalContext.current)
+            .data(url)
+            .crossfade(true)
+            .build(),
         contentDescription = contentDescription,
+        modifier = modifier,
         contentScale = contentScale,
     )
 }
