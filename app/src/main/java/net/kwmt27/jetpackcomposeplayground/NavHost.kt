@@ -290,7 +290,7 @@ fun NavHost(navController: NavHostController) {
                         )
                     }
                 ) {
-                    destination.content
+                    destination.content()
                 }
             }
         }
