@@ -1,3 +1,0 @@
-rootProject.name = "JetpackComposePlayGround"
-include ':app'
-include ':camerax'
