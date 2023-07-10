@@ -1,6 +1,7 @@
 package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,22 +16,25 @@ import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample2
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun AnimationExample2_1() {
-    Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        AutoRollingTextSample2()
-        Spacer(modifier = Modifier.size(16.dp))
-        Column {
-            Text("これもアニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
+    SlideBase("例2: 緑のボックスが左から右にかけて消えていくアニメーション") {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            AutoRollingTextSample2()
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-2-1_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
-            Text("Boxの表示をisVisibleフラグで切り替えています。", style = SlideTypography.body1)
+            Column {
+                Text("これもアニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
+                Spacer(modifier = Modifier.size(16.dp))
+                Code(path = "02-2-1_AnimateExample.html")
+                Spacer(modifier = Modifier.size(16.dp))
+                Text("Boxの表示をisVisibleフラグで切り替えています。", style = SlideTypography.body1)
+            }
         }
     }
 }

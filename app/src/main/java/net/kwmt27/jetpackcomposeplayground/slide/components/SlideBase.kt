@@ -10,12 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.slide.Slide
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 
 @Composable
-internal fun SlideContent(slide: Slide) {
-    val (verticalArrangement, horizontalAlignment) = if (slide.title != null) Arrangement.Top to Alignment.Start else {
+fun SlideBase(title: String? = null, content: @Composable () -> Unit) {
+    val (verticalArrangement, horizontalAlignment) = if (title != null) Arrangement.Top to Alignment.Start else {
         Arrangement.Center to Alignment.CenterHorizontally
     }
 
@@ -26,11 +25,11 @@ internal fun SlideContent(slide: Slide) {
         verticalArrangement = verticalArrangement,
         horizontalAlignment = horizontalAlignment,
     ) {
-        if (slide.title != null) {
-            Text(text = slide.title, style = SlideTypography.h2)
+        if (title != null) {
+            Text(text = title, style = SlideTypography.h2)
         }
         Box(modifier = Modifier.padding(16.dp)) {
-            slide.content()
+            content()
         }
     }
 }

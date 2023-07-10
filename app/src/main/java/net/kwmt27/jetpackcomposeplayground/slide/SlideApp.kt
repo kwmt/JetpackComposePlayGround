@@ -37,7 +37,6 @@ import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideContent
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -167,10 +166,13 @@ private fun SlidePage(slide: Slide, currentMillSec: Int) {
     Box(
         modifier = Modifier.padding(32.dp)
     ) {
-        SlideContent(slide)
+        slide.content()
 //        TimerView(currentMillSec)
     }
 }
+
+
+
 
 @Composable
 private fun TimerView(currentMillSec: Int) {
