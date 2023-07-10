@@ -1,3 +1,5 @@
+[![Build](https://github.com/kwmt/JetpackComposePlayGround/actions/workflows/build_android.yaml/badge.svg?branch=main)](https://github.com/kwmt/JetpackComposePlayGround/actions/workflows/build_android.yaml)
+
 # JetpackComposePlayGround
 jetpack composeの遊び場
 
