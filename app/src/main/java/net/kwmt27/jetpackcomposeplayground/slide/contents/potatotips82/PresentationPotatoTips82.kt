@@ -23,5 +23,3 @@ object PotatoTips82 : Presentation {
         Slide { ThankYou() },
     )
 }
-
-
