@@ -16,11 +16,10 @@ fun Intro() {
         - Androidエンジニア
         - LIPSというコスメクチコミアプリを作っている
         - Jetpack Composeを使ってアニメーションを実装したので紹介したい
-        """.trimIndent(),
+            """.trimIndent(),
             style = SlideTypography.body1,
         )
     }
-
 }
 
 @SlidePreview

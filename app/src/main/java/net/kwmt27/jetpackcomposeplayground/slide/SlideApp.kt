@@ -171,9 +171,6 @@ private fun SlidePage(slide: Slide, currentMillSec: Int) {
     }
 }
 
-
-
-
 @Composable
 private fun TimerView(currentMillSec: Int) {
     Text("$currentMillSec")
