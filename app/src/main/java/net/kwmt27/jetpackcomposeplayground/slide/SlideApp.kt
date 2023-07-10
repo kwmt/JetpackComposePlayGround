@@ -37,10 +37,13 @@ import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import net.kwmt27.jetpackcomposeplayground.slide.components.Presentation
+import net.kwmt27.jetpackcomposeplayground.slide.components.Slide
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun SlideApp() {
+fun Presentation.SlideApp() {
     val activity = LocalContext.current as Activity
 //    LaunchedEffect(key1 = Unit) {
 //        activity.window.run {
@@ -51,20 +54,20 @@ fun SlideApp() {
 //            )
 //        }
 //    }
-    SlideScreen()
+    SlideScreen(presentation = this)
 }
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 @OptIn(ExperimentalFoundationApi::class)
-private fun SlideScreen() {
+private fun SlideScreen(presentation: Presentation) {
     var currentIndex by remember {
         mutableStateOf(0)
     }
     var currentMillSec by remember {
         mutableStateOf(5000)
     }
-    if (currentIndex < slides.size) {
+    if (currentIndex < presentation.slides.size) {
 //        LaunchedEffect(key1 = currentIndex) {
 //            delay(5000)
 //            currentIndex++
@@ -87,7 +90,7 @@ private fun SlideScreen() {
                     Key.Enter,
                     -> {
                         if (it.type == KeyEventType.KeyUp) {
-                            if (canShowNext(currentIndex)) {
+                            if (canShowNext(currentIndex, presentation.slides.size)) {
                                 currentIndex++
                             }
                         }
@@ -114,25 +117,25 @@ private fun SlideScreen() {
             .focusRequester(requester)
             .focusable()
     ) {
-        if (currentIndex < slides.size) {
+        if (currentIndex < presentation.slides.size) {
             Box() {
                 HorizontalPager(
-                    state = rememberPagerState { slides.size },
+                    state = rememberPagerState { presentation.slides.size },
                 ) {
                     SlidePage(
-                        slides[currentIndex],
+                        presentation.slides[currentIndex],
                         currentMillSec,
                     )
                 }
 
-                PageIndicator(slides.size, currentIndex)
+                PageIndicator(presentation.slides.size, currentIndex)
             }
         }
     }
 }
 
-private fun canShowNext(currentIndex: Int): Boolean {
-    return currentIndex < slides.size - 1
+private fun canShowNext(currentIndex: Int, slideSize: Int): Boolean {
+    return currentIndex < slideSize - 1
 }
 
 private fun canShowPrev(currentIndex: Int): Boolean {
@@ -179,5 +182,17 @@ private fun TimerView(currentMillSec: Int) {
 @SlidePreview
 @Composable
 private fun PreviewSlideApp() {
-    SlideScreen()
+    SlideScreen(
+        object : Presentation {
+            override val slides: List<Slide> = listOf(
+                Slide(
+                    content = {
+                        SlideBase {
+                            Text("Content")
+                        }
+                    }
+                )
+            )
+        }
+    )
 }

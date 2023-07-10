@@ -58,6 +58,7 @@ import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
+import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
 
 private data class Group(
@@ -265,7 +266,7 @@ private val slideDestination = listOf(
             Destination(
                 route = SLIDE_POTATOTIPS82,
                 label = "Slide",
-                content = { SlideApp() },
+                content = { PotatoTips82.SlideApp() },
                 codeUrl = "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt#L29"
             )
         )
