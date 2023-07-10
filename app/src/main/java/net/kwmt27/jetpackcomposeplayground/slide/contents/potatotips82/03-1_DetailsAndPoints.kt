@@ -18,36 +18,39 @@ import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.R
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 
 @Composable
 fun DetailsAndPoints3_1() {
-    val context = LocalContext.current
-    Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Column {
-            Text("今回はアニメーションの関数を３つだけ紹介しましたが、他にもいろいろあります。", style = SlideTypography.body1)
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                "どれを使えばいいかは公式ドキュメントに決定する際のフローチャートがあるので参考にするとよいと思います。",
-                style = SlideTypography.body1
-            )
-            Text(
-                "https://developer.android.com/jetpack/compose/animation",
-                style = SlideTypography.body1,
-                modifier = Modifier.clickable {
-                    context.startActivity(
-                        Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse("https://developer.android.com/jetpack/compose/animation")
+    SlideBase("他のアニメーションAPIは？") {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            val context = LocalContext.current
+            Column {
+                Text("今回はアニメーションの関数を３つだけ紹介しましたが、他にもいろいろあります。", style = SlideTypography.body1)
+                Spacer(modifier = Modifier.size(16.dp))
+                Text(
+                    "どれを使えばいいかは公式ドキュメントに決定する際のフローチャートがあるので参考にするとよいと思います。",
+                    style = SlideTypography.body1
+                )
+                Text(
+                    "https://developer.android.com/jetpack/compose/animation",
+                    style = SlideTypography.body1,
+                    modifier = Modifier.clickable {
+                        context.startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("https://developer.android.com/jetpack/compose/animation")
+                            )
                         )
-                    )
-                }
-            )
-            SlideImage(data = R.drawable.animation_flowchart)
+                    }
+                )
+                SlideImage(data = R.drawable.animation_flowchart)
+            }
         }
     }
 }

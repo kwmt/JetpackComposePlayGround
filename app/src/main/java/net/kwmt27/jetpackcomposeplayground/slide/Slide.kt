@@ -18,26 +18,25 @@ import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.SlideTitl
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.Summary
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.ThankYou
 
-internal data class Slide(
-    val title: String? = null,
+data class Slide(
     val content: @Composable () -> Unit,
 )
 
 internal val slides = listOf(
     Slide { SlideTitle() },
-    Slide("自己紹介") { Intro() },
-    Slide("どんなアニメーションか？") { Intro2() },
-    Slide("どんなアニメーションか？（アニメーション部分のみ・簡略化）") { Intro3() },
-    Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample() },
-    Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample1_2() },
-    Slide("例1: テキストが下から上に回転するようなアニメーション") { AnimationExample1_3() },
-    Slide("例2: 緑のボックスが左から右にかけて消えていくアニメーション") { AnimationExample2_1() },
-    Slide("例2: 緑のボックスが左から右にかけて消えていくアニメーション") { AnimationExample2_2() },
-    Slide("例2: 緑のボックスが左から右にかけて消えていくアニメーション") { AnimationExample2_3() },
-    Slide("例3: 右の円が青から赤にクロスフェードするアニメーション") { AnimationExample3_1() },
-    Slide("例3: 右の円が青から赤にクロスフェードするアニメーション") { AnimationExample3_2() },
-    Slide("他のアニメーションAPIは？") { DetailsAndPoints3_1() },
-    Slide("アニメーションのパフォーマンスについて") { DetailsAndPoints3_2() },
-    Slide("まとめ") { Summary() },
+    Slide { Intro() },
+    Slide { Intro2() },
+    Slide { Intro3() },
+    Slide { AnimationExample() },
+    Slide { AnimationExample1_2() },
+    Slide { AnimationExample1_3() },
+    Slide { AnimationExample2_1() },
+    Slide { AnimationExample2_2() },
+    Slide { AnimationExample2_3() },
+    Slide { AnimationExample3_1() },
+    Slide { AnimationExample3_2() },
+    Slide { DetailsAndPoints3_1() },
+    Slide { DetailsAndPoints3_2() },
+    Slide { Summary() },
     Slide { ThankYou() },
 )

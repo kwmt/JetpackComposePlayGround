@@ -15,29 +15,32 @@ import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample3
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun AnimationExample2_2() {
-    Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        AutoRollingTextSample3()
-        Spacer(modifier = Modifier.size(16.dp))
-        Column {
-            Text("AnimatedVisibility関数を使います。", style = SlideTypography.body1)
+    SlideBase("例2: 緑のボックスが左から右にかけて消えていくアニメーション") {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            AutoRollingTextSample3()
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-2-2_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                "if文をAnimatedVisibilityに置き換えるだけです。",
-                style = SlideTypography.body1
-            )
-            Text(
-                "フェードアウトするのはいいが、高さが小さくなっていくのはやめたい。幅だけ小さくしたい。’",
-                style = SlideTypography.body1
-            )
+            Column {
+                Text("AnimatedVisibility関数を使います。", style = SlideTypography.body1)
+                Spacer(modifier = Modifier.size(16.dp))
+                Code(path = "02-2-2_AnimateExample.html")
+                Spacer(modifier = Modifier.size(16.dp))
+                Text(
+                    "if文をAnimatedVisibilityに置き換えるだけです。",
+                    style = SlideTypography.body1
+                )
+                Text(
+                    "フェードアウトするのはいいが、高さが小さくなっていくのはやめたい。幅だけ小さくしたい。’",
+                    style = SlideTypography.body1
+                )
+            }
         }
     }
 }
