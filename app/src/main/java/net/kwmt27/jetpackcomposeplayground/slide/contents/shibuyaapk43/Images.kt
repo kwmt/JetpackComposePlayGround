@@ -14,15 +14,13 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun SlideImages() {
-    SlideBase {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            FlowRow {
-                images.forEach {
-                    SlideImage(it)
-                }
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        FlowRow {
+            images.forEach {
+                SlideImage(it)
             }
         }
     }
