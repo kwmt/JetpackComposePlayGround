@@ -17,6 +17,16 @@ val SlideTypography = Typography(
         fontSize = 56.sp,
         letterSpacing = 0.sp
     ),
+    h3 = TextStyle(
+        fontWeight = FontWeight.Normal,
+        fontSize = 48.sp,
+        letterSpacing = 0.sp
+    ),
+    h4 = TextStyle(
+        fontWeight = FontWeight.Normal,
+        fontSize = 40.sp,
+        letterSpacing = 0.sp
+    ),
     body1 = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 32.sp,
