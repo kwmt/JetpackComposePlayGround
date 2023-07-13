@@ -1,42 +1,27 @@
 package net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-internal fun SlideImages() {
+internal fun SlideImages2() {
+     val image = images.subList(20, 40)
+
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.verticalScroll(rememberScrollState())
     ) {
-        var images by remember { mutableStateOf(images) }
-        ImageContent(images) {
-            images = images.shuffled()
-        }
-    }
-}
-
-@Composable
-@OptIn(ExperimentalLayoutApi::class)
-private fun ImageContent(images: List<String>, onClick: () -> Unit) {
-    Box(modifier = Modifier.clickable(onClick = onClick)) {
-        FlowRow() {
-            images.forEach {
+        FlowRow {
+            image.forEach {
                 SlideImage(it)
             }
         }
