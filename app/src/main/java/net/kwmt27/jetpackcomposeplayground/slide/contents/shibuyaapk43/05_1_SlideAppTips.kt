@@ -16,7 +16,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 internal fun SlideAppTips1() {
     SlideBase(
         title = "スライドアプリTips",
-        subTitle = "コードハイライト"
+        subTitle = "コードのシンタックスハイライト"
     ) {
         Row {
             SlideImage(data = R.drawable.shibuyaapk43_codehiglight)
