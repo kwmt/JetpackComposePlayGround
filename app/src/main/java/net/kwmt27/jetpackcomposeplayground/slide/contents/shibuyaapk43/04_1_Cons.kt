@@ -16,7 +16,7 @@ internal const val CONS1_SUB_TITLE = "スライドのコードを書く必要が
 @Composable
 internal fun Cons1() {
     SlideBase(
-        title = "Cons",
+        title = "デメリット",
         subTitle = CONS1_SUB_TITLE
     ) {
         Column {

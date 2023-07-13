@@ -17,7 +17,7 @@ internal const val PROS2_SUB_TITLE = "コードをさわりながらスライド
 @Composable
 internal fun Pros2() {
     SlideBase(
-        title = "Pros",
+        title = "メリット",
         subTitle = PROS2_SUB_TITLE
     ) {
         Row {
@@ -48,6 +48,8 @@ internal fun Pros2() {
                     style = SlideTypography.body1
                 )
             }
+            Spacer(modifier = Modifier.size(16.dp))
+
             PieChartScreen()
         }
     }

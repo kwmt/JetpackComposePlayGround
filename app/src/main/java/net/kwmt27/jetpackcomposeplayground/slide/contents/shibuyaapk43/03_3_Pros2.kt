@@ -24,7 +24,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 @Composable
 internal fun Pros3_2() {
     SlideBase(
-        title = "Pros",
+        title = "メリット",
         subTitle = PROS3_SUB_TITLE
     ) {
         Column {

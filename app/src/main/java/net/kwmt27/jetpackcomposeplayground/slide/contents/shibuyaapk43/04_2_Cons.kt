@@ -16,7 +16,7 @@ internal const val CONS2_SUB_TITLE = "コードのリファクタリングに集
 @Composable
 internal fun Cons2() {
     SlideBase(
-        title = "Cons",
+        title = "デメリット",
         subTitle = CONS2_SUB_TITLE
     ) {
         Column {

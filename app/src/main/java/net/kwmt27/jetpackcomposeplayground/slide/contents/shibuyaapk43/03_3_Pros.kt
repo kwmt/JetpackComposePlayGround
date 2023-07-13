@@ -25,7 +25,7 @@ internal const val PROS3_SUB_TITLE = "スマートフォンアプリ開発では
 @Composable
 internal fun Pros3() {
     SlideBase(
-        title = "Pros",
+        title = "メリット",
         subTitle = PROS3_SUB_TITLE
     ) {
         Row {

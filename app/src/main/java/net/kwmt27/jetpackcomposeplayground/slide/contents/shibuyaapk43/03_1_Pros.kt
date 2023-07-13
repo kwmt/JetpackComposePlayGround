@@ -18,7 +18,7 @@ internal const val PROS1_SUB_TITLE = "Android アプリのコードをそのま�
 @Composable
 internal fun Pros1() {
     SlideBase(
-        title = "Pros",
+        title = "メリット",
         subTitle = PROS1_SUB_TITLE
     ) {
         Row {
