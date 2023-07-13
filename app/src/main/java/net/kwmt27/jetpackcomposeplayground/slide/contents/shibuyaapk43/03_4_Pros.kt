@@ -11,7 +11,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
-internal const val PROS4_SUB_TITLE = "プログラムなのである程度なんでもつくれる"
+internal const val PROS4_SUB_TITLE = "AndroidなのでAndroidでできることはできる"
 
 @Composable
 internal fun Pros4() {
