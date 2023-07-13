@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
@@ -26,43 +27,32 @@ internal fun Pros3_2() {
         title = "Pros",
         subTitle = "スマートフォンアプリ開発ではなかなか調べない知識を得ることができる"
     ) {
-        Row {
-            Column {
+        Column {
+            Row {
                 Spacer(modifier = Modifier.size(16.dp))
                 Text(
                     text = "ハードウェアキーボード入力イベントの実装ってどうやるの？",
                     style = SlideTypography.body1
                 )
                 Spacer(modifier = Modifier.size(16.dp))
-                Text(
-                    text = "    Modifier.onKeyEvent { keyEvent -> when(keeEvent.key) {} } ",
-                    style = SlideTypography.body1,
-                )
+                Code(path = "shibuyaapk43_03_3_Pros2_1.html")
+            }
+            Spacer(modifier = Modifier.size(16.dp))
+
+            Text(
+                text = "ClickableなComposableにマウスでホバーすると、色がかわるのですが、それを無効化したいときどうするんだ？とか",
+                style = SlideTypography.body1
+            )
+            Spacer(modifier = Modifier.size(64.dp))
+
+            Row {
+                HoverSample()
                 Spacer(modifier = Modifier.size(16.dp))
+                HoverDisableSample()
 
-                Text(
-                    text = "ClickableなComposableにマウスでホバーすると、色がかわるのですが、それを無効化したいときどうするんだ？とか",
-                    style = SlideTypography.body1
-                )
-                Spacer(modifier = Modifier.size(64.dp))
+                Spacer(modifier = Modifier.size(32.dp))
+                Code(path = "shibuyaapk43_03_3_Pros2_2.html")
 
-                Row {
-                    HoverSample()
-                    Spacer(modifier = Modifier.size(16.dp))
-                    HoverDisableSample()
-
-                    Spacer(modifier = Modifier.size(32.dp))
-                    Text(
-                        text = """
-                Modifier.clickable(
-                    interactionSource = remember { MutableInteractionSource() },
-                    indication = null
-                ) {}
-                        """.trimIndent(),
-                        style = SlideTypography.body1,
-                    )
-
-                }
             }
         }
     }
@@ -75,7 +65,7 @@ private fun HoverSample() {
             .size(200.dp)
             .clip(CircleShape)
             .background(Color.Green)
-            .clickable{}
+            .clickable {}
     )
 }
 @Composable
