@@ -4,11 +4,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.material.Text
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
+import androidx.compose.ui.Modifier
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -17,6 +17,7 @@ internal fun SlideImages() {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.verticalScroll(rememberScrollState())
     ) {
         FlowRow {
             images.forEach {
