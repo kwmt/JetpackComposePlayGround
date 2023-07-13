@@ -20,11 +20,13 @@ import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
+internal const val PROS3_SUB_TITLE = "スマートフォンアプリ開発ではなかなか調べない知識を得ることができる"
+
 @Composable
 internal fun Pros3() {
     SlideBase(
         title = "Pros",
-        subTitle = "スマートフォンアプリ開発ではなかなか調べない知識を得ることができる"
+        subTitle = PROS3_SUB_TITLE
     ) {
         Row {
             Column {
@@ -63,7 +65,6 @@ internal fun Pros3() {
                         style = SlideTypography.body1,
                         color = Color.White,
                     )
-
                 }
             }
         }
@@ -77,9 +78,10 @@ private fun HoverSample() {
             .size(200.dp)
             .clip(CircleShape)
             .background(Color.Green)
-            .clickable{}
+            .clickable {}
     )
 }
+
 @Composable
 private fun HoverDisableSample() {
     Box(

@@ -25,7 +25,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 internal fun Pros3_2() {
     SlideBase(
         title = "Pros",
-        subTitle = "スマートフォンアプリ開発ではなかなか調べない知識を得ることができる"
+        subTitle = PROS3_SUB_TITLE
     ) {
         Column {
             Row {
@@ -52,7 +52,6 @@ internal fun Pros3_2() {
 
                 Spacer(modifier = Modifier.size(32.dp))
                 Code(path = "shibuyaapk43_03_3_Pros2_2.html")
-
             }
         }
     }
@@ -68,6 +67,7 @@ private fun HoverSample() {
             .clickable {}
     )
 }
+
 @Composable
 private fun HoverDisableSample() {
     Box(

@@ -1,8 +1,6 @@
 package net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -16,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,7 +27,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 internal fun Pros4_3() {
     SlideBase(
         title = "Pros",
-        subTitle = "プログラムなのである程度なんでもつくれる"
+        subTitle = PROS4_SUB_TITLE
     ) {
         Column {
             Spacer(modifier = Modifier.size(16.dp))

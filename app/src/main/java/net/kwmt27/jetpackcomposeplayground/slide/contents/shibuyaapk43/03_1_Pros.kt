@@ -14,11 +14,12 @@ import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
+internal const val PROS1_SUB_TITLE = "Android アプリのコードをそのまま実行できる"
 @Composable
 internal fun Pros1() {
     SlideBase(
         title = "Pros",
-        subTitle = "Android アプリのコードをそのまま実行できる"
+        subTitle = PROS1_SUB_TITLE
     ) {
         Row {
             AutoRollingTextSample()
