@@ -13,6 +13,7 @@ object ShibuyaApk43Presentation : Presentation {
 //        Slide { Intro4() },
         Slide { Intro5() },
         Slide { Intro6() },
+        Slide { SelfIntro1() },
         Slide { SlideImages() },
     )
 }
