@@ -40,6 +40,16 @@ internal fun Cons1() {
             )
             Spacer(modifier = Modifier.size(16.dp))
             Text(
+                text = "かっこいいトランジションが使えなかったり",
+                style = SlideTypography.body1
+            )
+            Spacer(modifier = Modifier.size(16.dp))
+            Text(
+                text = "発表中のメモがみれなかったり",
+                style = SlideTypography.body1
+            )
+            Spacer(modifier = Modifier.size(16.dp))
+            Text(
                 text = "だが、実装すればいい！",
                 style = SlideTypography.body1
             )
