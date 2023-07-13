@@ -16,6 +16,8 @@ object ShibuyaApk43Presentation : Presentation {
         Slide { SelfIntro1() },
         Slide { Pros1() },
         Slide { Pros2() },
+        Slide { Pros3() },
+        Slide { Pros3_2() },
         Slide { SlideImages() },
     )
 }
