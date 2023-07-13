@@ -20,5 +20,8 @@ object ShibuyaApk43Presentation : Presentation {
         Slide { Pros3_2() },
         Slide { Pros4() },
         Slide { Pros4_2() },
+        Slide { Cons1() },
+        Slide { Cons2() },
+        Slide { Cons3() },
     )
 }
