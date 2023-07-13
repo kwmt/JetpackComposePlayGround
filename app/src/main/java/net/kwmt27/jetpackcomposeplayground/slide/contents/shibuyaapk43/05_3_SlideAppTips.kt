@@ -11,7 +11,6 @@ import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.R
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 

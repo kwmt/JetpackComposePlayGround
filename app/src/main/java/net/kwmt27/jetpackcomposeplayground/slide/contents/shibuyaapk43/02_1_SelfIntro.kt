@@ -26,7 +26,7 @@ fun SelfIntro1() {
          - 株式会社AppBrew所属
          - Androidエンジニア
          - LIPSというコスメクチコミアプリ開発
-             """.trimIndent(),
+                """.trimIndent(),
                 style = SlideTypography.body1,
             )
 

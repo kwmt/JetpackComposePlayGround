@@ -22,7 +22,6 @@ internal fun Intro6() {
             Text("プレゼンスライドをAndroidアプリで作る", style = SlideTypography.h1)
             Spacer(modifier = Modifier.size(16.dp))
             Text("(以下、スライドアプリと呼びます)", style = SlideTypography.h3)
-
         }
     }
 }
