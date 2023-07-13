@@ -25,6 +25,7 @@ object ShibuyaApk43Presentation : Presentation {
         Slide { Cons1() },
         Slide { Cons2() },
         Slide { Cons3() },
+        Slide { SlideAppTips() },
         Slide { SlideAppTips1() },
         Slide { SlideAppTips2() },
         Slide { SlideAppTips3() },
