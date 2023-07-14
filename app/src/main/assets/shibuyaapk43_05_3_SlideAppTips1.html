@@ -4,21 +4,14 @@
 <script>hljs.highlightAll();</script>
 <meta name="viewport" content="width=1920, height=1080, user-scalable=no" />
 
-<pre style="font-size: 32pt;"><code class="html">&lt;link rel="stylesheet" href="styles/github.min.css"&gt;
-&lt;link rel="stylesheet" href="slide-code.css"&gt;
-&lt;script src="highlight.min.js">&lt;/script&gt;
-&lt;script>hljs.highlightAll();&lt;/script&gt;
-&lt;meta name="viewport" content="width=1920, height=1080, user-scalable=no" /&gt;
-
-&lt;pre style="font-size: 32pt;"&gt;&lt;code class="kotlin"&gt;@Composable
-fun AutoRollingTextSample() {
-    Column() {
-        AutoRollingTextSample0()
-        AutoRollingTextSample1()
-        AutoRollingTextSample2()
-        AutoRollingTextSample3()
-        AutoRollingTextSample4()
-        AutoRollingTextSample5()
+<pre style="font-size: 32pt;"><code class="kotlin">Box() {
+    HorizontalPager(
+        state = rememberPagerState { presentation.slides.size },
+    ) {
+        SlidePage(
+            presentation.slides[currentIndex],
+            currentMillSec,
+        )
     }
-}&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
+    PageIndicator(presentation.slides.size, currentIndex)
+}</code></pre>

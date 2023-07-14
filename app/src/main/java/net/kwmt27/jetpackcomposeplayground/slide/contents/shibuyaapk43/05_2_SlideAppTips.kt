@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import net.kwmt27.jetpackcomposeplayground.R
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
+import net.kwmt27.jetpackcomposeplayground.slide.components.Code
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 
@@ -15,11 +16,12 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 internal fun SlideAppTips2() {
     SlideBase(
         title = "スライドアプリTips",
-        subTitle = "発表時はLarge Desktopのエミュレータを使う"
+        subTitle = "コードのシンタックスハイライト"
     ) {
         Row {
-            SlideImage(data = R.drawable.shibuyaapk43_emulator)
+            SlideImage(data = R.drawable.shibuyaapk43_codehiglight)
             Spacer(modifier = Modifier.size(16.dp))
+            Code(path = "shibuyaapk43_05_3_SlideAppTips2.html")
         }
     }
 }

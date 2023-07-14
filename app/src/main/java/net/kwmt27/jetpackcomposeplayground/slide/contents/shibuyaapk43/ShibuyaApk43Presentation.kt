@@ -29,6 +29,7 @@ object ShibuyaApk43Presentation : Presentation {
         Slide { SlideAppTips1() },
         Slide { SlideAppTips2() },
         Slide { SlideAppTips3() },
+        Slide { SlideAppTips4() },
         Slide { Summary() },
         Slide { ThankYou() },
     )

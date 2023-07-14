@@ -16,11 +16,9 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 internal fun SlideAppTips1() {
     SlideBase(
         title = "スライドアプリTips",
-        subTitle = "コードのシンタックスハイライト"
+        subTitle = "スライド全体の作りはHorizontalPagerを使用"
     ) {
         Row {
-            SlideImage(data = R.drawable.shibuyaapk43_codehiglight)
-            Spacer(modifier = Modifier.size(16.dp))
             Code(path = "shibuyaapk43_05_3_SlideAppTips1.html")
         }
     }
