@@ -26,18 +26,12 @@ fun Summary() {
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 Text(
-                    text = "スライドのコードを書く必要があるため、手間がかかることや、スライドをシェアする際に若干面倒。",
+                    text = "この方法はスライドのコードを書く必要があるため、手間がかかることや、スライドをシェアする際に若干の面倒。",
                     style = SlideTypography.body1
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 Text(
-                    text = "しかし、Android好きでコード書きたくて発表もしたい皆さんであれば、スライドアプリを作成するという方法は魅力的ではないでしょうか？",
-                    style = SlideTypography.body1
-                )
-
-                Spacer(modifier = Modifier.size(16.dp))
-                Text(
-                    text = "皆さんもぜひ、Androidアプリを活用したプレゼンスライド作成に挑戦してみてはいかがでしょうか！",
+                    text = "しかし、Android好きでコード書きたくて発表もしたい皆さんであれば、スライドアプリを作成するという方法に挑戦してみてはいかがでしょうか！",
                     style = SlideTypography.body1
                 )
             }
