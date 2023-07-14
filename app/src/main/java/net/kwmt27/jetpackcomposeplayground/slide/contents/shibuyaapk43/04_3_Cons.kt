@@ -14,7 +14,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 internal const val CONS2_SUB_TITLE = "コードのリファクタリングに集中しすぎて、スライド作成の時間がなくなることがある"
 
 @Composable
-internal fun Cons2() {
+internal fun Cons3() {
     SlideBase(
         title = "デメリット",
         subTitle = CONS2_SUB_TITLE
@@ -32,5 +32,5 @@ internal fun Cons2() {
 @SlidePreview
 @Composable
 private fun PreviewPros() {
-    Cons2()
+    Cons3()
 }

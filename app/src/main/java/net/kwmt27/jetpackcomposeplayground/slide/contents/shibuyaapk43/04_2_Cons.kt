@@ -13,7 +13,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 internal const val CONS3_SUB_TITLE = "スライドをシェアするのが若干面倒"
 @Composable
-internal fun Cons3() {
+internal fun Cons2() {
     SlideBase(
         title = "デメリット",
         subTitle = CONS3_SUB_TITLE
@@ -46,5 +46,5 @@ internal fun Cons3() {
 @SlidePreview
 @Composable
 private fun PreviewPros() {
-    Cons3()
+    Cons2()
 }
