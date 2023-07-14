@@ -11,32 +11,18 @@ import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
-internal const val CONS3_SUB_TITLE = "スライドをシェアするのが若干面倒"
+internal const val CONS2_SUB_TITLE = "コードのリファクタリングに集中しすぎて、スライド作成の時間がなくなることがある"
+
 @Composable
-internal fun Cons3() {
+internal fun Cons2() {
     SlideBase(
         title = "デメリット",
-        subTitle = CONS3_SUB_TITLE
+        subTitle = CONS2_SUB_TITLE
     ) {
         Column {
             Spacer(modifier = Modifier.size(16.dp))
             Text(
-                text = "Speaker Deckやconnpassに登録しにくい",
-                style = SlideTypography.body1
-            )
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                text = "→ PDFにExportできる機能を実装すれば解決するかも？",
-                style = SlideTypography.body1
-            )
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                text = "Play Storeに上げる？",
-                style = SlideTypography.body1
-            )
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                text = "→Full HDに最適化してるので、スマホでは見れない",
+                text = "ご利用は計画的に。",
                 style = SlideTypography.body1
             )
         }
@@ -46,5 +32,5 @@ internal fun Cons3() {
 @SlidePreview
 @Composable
 private fun PreviewPros() {
-    Cons3()
+    Cons2()
 }
