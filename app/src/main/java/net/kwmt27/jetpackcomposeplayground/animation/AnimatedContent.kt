@@ -233,6 +233,11 @@ private fun AutoCountUp(
             delay(ANIMATION_DURATION_MILLS.toLong())
             count++
         }
+    } else {
+        LaunchedEffect(key1 = count) {
+            delay(2000L)
+            count = 0
+        }
     }
     Column(
         modifier = Modifier
