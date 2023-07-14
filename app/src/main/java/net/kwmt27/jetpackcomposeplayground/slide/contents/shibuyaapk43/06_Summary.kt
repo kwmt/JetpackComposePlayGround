@@ -37,7 +37,7 @@ fun Summary() {
 
                 Spacer(modifier = Modifier.size(16.dp))
                 Text(
-                    text = "皆さんもぜひ、Androidアプリを活用したプレゼンスライド作成に挑戦してみてください！",
+                    text = "皆さんもぜひ、Androidアプリを活用したプレゼンスライド作成に挑戦してみてはいかがでしょうか！",
                     style = SlideTypography.body1
                 )
             }
