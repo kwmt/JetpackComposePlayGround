@@ -16,7 +16,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun Intro4() {
-    SlideBase("いきなりですが質問です！") {
+    SlideBase("いきなりですが質問というか確認です！") {
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
