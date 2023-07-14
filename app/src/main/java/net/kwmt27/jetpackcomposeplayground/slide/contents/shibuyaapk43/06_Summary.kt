@@ -21,17 +21,17 @@ fun Summary() {
         ) {
             Column {
                 Text(
-                    text = "「スライドアプリをAndroidアプリとして作る」方法についてご紹介しました",
+                    text = "「スライドをAndroidアプリとして作る」方法についてご紹介しました。",
                     style = SlideTypography.body1
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 Text(
-                    text = "スライドのコードを書く必要があるため、手間がかかることや、スライドをシェアする際に若干の面倒が生じることもあります。",
+                    text = "スライドのコードを書く必要があるため、手間がかかることや、スライドをシェアする際に若干面倒。",
                     style = SlideTypography.body1
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 Text(
-                    text = "しかし、Android好きでコード書きたくて発表もしたい皆さんであれば、、スライドアプリを作成するという方法は魅力的ではないでしょうか？",
+                    text = "しかし、Android好きでコード書きたくて発表もしたい皆さんであれば、スライドアプリを作成するという方法は魅力的ではないでしょうか？",
                     style = SlideTypography.body1
                 )
 
