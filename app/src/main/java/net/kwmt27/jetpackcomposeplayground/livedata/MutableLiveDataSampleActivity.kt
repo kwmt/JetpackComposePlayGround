@@ -3,10 +3,10 @@ package net.kwmt27.jetpackcomposeplayground.livedata
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import net.kwmt27.jetpackcomposeplayground.R
 
 class MutableLiveDataSampleActivity :

@@ -1,6 +1,5 @@
 package net.kwmt27.jetpackcomposeplayground.livedata
 
-import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -41,7 +40,3 @@ fun SampleMutableLiveDataScreen() {
 fun SampleMutableLiveDataItem(title: String) {
     Text(text = title)
 }
-//@Composable
-//private fun SampleMutableLiveDataScreen() {
-//
-//}
