@@ -15,25 +15,28 @@ import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample5
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun AnimationExample3_2() {
-    Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        AutoRollingTextSample5()
-        Spacer(modifier = Modifier.size(16.dp))
-        Column {
-            Text("Crossfade関数で囲うだけです。", style = SlideTypography.body1)
+    SlideBase("例3: 右の円が青から赤にクロスフェードするアニメーション") {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            AutoRollingTextSample5()
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-3-2_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                "青色がフェードアウトしながら赤がフェードインしてくるようなアニメーションが完成",
-                style = SlideTypography.body1
-            )
+            Column {
+                Text("Crossfade関数で囲うだけです。", style = SlideTypography.body1)
+                Spacer(modifier = Modifier.size(16.dp))
+                Code(path = "02-3-2_AnimateExample.html")
+                Spacer(modifier = Modifier.size(16.dp))
+                Text(
+                    "青色がフェードアウトしながら赤がフェードインしてくるようなアニメーションが完成",
+                    style = SlideTypography.body1
+                )
+            }
         }
     }
 }

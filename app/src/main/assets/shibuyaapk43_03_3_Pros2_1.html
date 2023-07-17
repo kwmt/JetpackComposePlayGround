@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="styles/github.min.css">
+<link rel="stylesheet" href="slide-code.css">
+<script src="highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<meta name="viewport" content="width=1920, height=1080, user-scalable=no" />
+
+<pre style="font-size: 32pt;"><code class="kotlin">Modifier.onKeyEvent { keyEvent ->
+    when(keeEvent.key) {
+        Key.Enter -> {
+            // do something
+            true
+        }
+        else -> false
+    }
+}</code></pre>

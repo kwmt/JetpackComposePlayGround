@@ -15,22 +15,25 @@ import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample0
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun AnimationExample() {
-    Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        AutoRollingTextSample0()
-        Spacer(modifier = Modifier.size(16.dp))
-        Column {
-            Text("アニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
+    SlideBase("例1: テキストが下から上に回転するようなアニメーション") {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            AutoRollingTextSample0()
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-1-1_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
-            Text("Text Composable関数があるだけ。", style = SlideTypography.body1)
+            Column {
+                Text("アニメーションが何もないところから始めたいと思います。", style = SlideTypography.body1)
+                Spacer(modifier = Modifier.size(16.dp))
+                Code(path = "02-1-1_AnimateExample.html")
+                Spacer(modifier = Modifier.size(16.dp))
+                Text("Text Composable関数があるだけ。", style = SlideTypography.body1)
+            }
         }
     }
 }

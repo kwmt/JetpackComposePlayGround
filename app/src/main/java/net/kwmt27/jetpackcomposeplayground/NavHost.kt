@@ -37,10 +37,12 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CAMERAX
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_EXPANDABLE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_LIVEDATA
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_STICKY_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
+import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_SHIBUYAAPK43
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
@@ -57,7 +59,10 @@ import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
+import net.kwmt27.jetpackcomposeplayground.livedata.SampleMutableLiveDataScreen
 import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
+import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
+import net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43.ShibuyaApk43Presentation
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
 
 private data class Group(
@@ -87,6 +92,7 @@ private object Destinations {
     private const val CAMERAX = "camerax"
     const val SLIDE = "slide"
     private const val BUTTON = "button"
+    private const val LIVEDATA = "livedata"
     const val MAIN = "main"
     const val SAMPLES_CIRCLE_IMAGE = "/$SAMPLES/$CIRCLE_IMAGE"
     const val SAMPLES_VERTICAL_LIST = "/$SAMPLES/$VERTICAL_LIST"
@@ -100,7 +106,9 @@ private object Destinations {
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
     const val SAMPLES_CAMERAX = "/$SAMPLES/$CAMERAX"
     const val SAMPLES_BUTTON = "/$SAMPLES/$BUTTON"
+    const val SAMPLES_LIVEDATA = "/$SAMPLES/$LIVEDATA"
     const val SLIDE_POTATOTIPS82 = "/$SLIDE/SLIDE_POTATOTIPS82"
+    const val SLIDE_SHIBUYAAPK43 = "/$SLIDE/SLIDE_SHIBUYAAPK43"
 }
 
 private val destinationList = listOf(
@@ -256,6 +264,17 @@ private val destinationList = listOf(
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/camerax/src/main/java/net/kwmt27/camerax/CameraXActivity.kt#L27-L45"
             ),
         )
+    ),
+    Group(
+        "livedata",
+        listOf(
+            Destination(
+                SAMPLES_LIVEDATA,
+                "MutableLivedata",
+                { SampleMutableLiveDataScreen() },
+                ""
+            ),
+        ),
     )
 )
 private val slideDestination = listOf(
@@ -264,8 +283,14 @@ private val slideDestination = listOf(
         destinations = listOf(
             Destination(
                 route = SLIDE_POTATOTIPS82,
-                label = "Slide",
-                content = { SlideApp() },
+                label = "potatotips #82",
+                content = { PotatoTips82.SlideApp() },
+                codeUrl = ""
+            ),
+            Destination(
+                route = SLIDE_SHIBUYAAPK43,
+                label = "Shibuya.apk #43",
+                content = { ShibuyaApk43Presentation.SlideApp() },
                 codeUrl = "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt#L29"
             )
         )
@@ -290,7 +315,7 @@ fun NavHost(navController: NavHostController) {
                         )
                     }
                 ) {
-                    destination.content
+                    destination.content()
                 }
             }
         }

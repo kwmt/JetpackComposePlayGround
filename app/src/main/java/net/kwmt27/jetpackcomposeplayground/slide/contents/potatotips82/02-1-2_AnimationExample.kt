@@ -15,25 +15,28 @@ import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample1
 import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
 import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.slide.components.Code
+import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun AnimationExample1_2() {
-    Row(
-        modifier = Modifier.fillMaxSize(),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        AutoRollingTextSample1()
-        Spacer(modifier = Modifier.size(16.dp))
-        Column {
-            Text("AnimatedContent関数を使います。", style = SlideTypography.body1)
+    SlideBase("例1: テキストが下から上に回転するようなアニメーション") {
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            AutoRollingTextSample1()
             Spacer(modifier = Modifier.size(16.dp))
-            Code(path = "02-1-2_AnimateExample.html")
-            Spacer(modifier = Modifier.size(16.dp))
-            Text(
-                "TextをAnimatedContentで囲うだけでアニメーションしてくれますが、まだ下から上のアニメーションにはなっていません。",
-                style = SlideTypography.body1
-            )
+            Column {
+                Text("AnimatedContent関数を使います。", style = SlideTypography.body1)
+                Spacer(modifier = Modifier.size(16.dp))
+                Code(path = "02-1-2_AnimateExample.html")
+                Spacer(modifier = Modifier.size(16.dp))
+                Text(
+                    "TextをAnimatedContentで囲うだけでアニメーションしてくれますが、まだ下から上のアニメーションにはなっていません。",
+                    style = SlideTypography.body1
+                )
+            }
         }
     }
 }
