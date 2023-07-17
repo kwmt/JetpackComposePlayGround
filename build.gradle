@@ -4,12 +4,12 @@
 buildscript {
     dependencies {
         classpath libs.android.gradlePlugin
-        classpath libs.kotlin.gradlePlugin
     }
 }
 
 plugins {
     id 'com.diffplug.spotless' version '5.15.1'
+    alias(libs.plugins.kotlin.jvm) apply false
 }
 
 spotless {

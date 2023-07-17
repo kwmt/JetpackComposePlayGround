@@ -14,6 +14,7 @@ accompanist = "0.31.3-beta"
 androidxNavigation = "2.6.0-beta01"
 junit = "1.1.2"
 espresso = "3.3.0"
+constraintlayout = "2.1.4"
 [libraries]
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation" }
@@ -35,6 +36,7 @@ espresso = { group = "androidx.test.espresso", name = "espresso-core", version.r
 
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
