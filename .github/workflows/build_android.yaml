@@ -19,16 +19,16 @@ jobs:
 
       # コンパイル
       - name: Run Compile1
-        run: ./gradlew assembleDebug -no-build-cache -scan
+        run: ./gradlew clean assembleDebug -no-build-cache -scan
 
       - name: Run Compile2
-        run: ./gradlew assembleDebug -no-build-cache -scan
+        run: ./gradlew clean assembleDebug -no-build-cache -scan
 
       - name: Run Compile3
-        run: ./gradlew assembleDebug -no-build-cache -scan
+        run: ./gradlew clean assembleDebug -no-build-cache -scan
 
       - name: Run Compile4
-        run: ./gradlew assembleDebug -no-build-cache -scan
+        run: ./gradlew clean assembleDebug -no-build-cache -scan
 
       - name: Run Compile5
-        run: ./gradlew assembleDebug -no-build-cache -scan
+        run: ./gradlew clean assembleDebug -no-build-cache -scan
