@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdkVersion 33
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId "net.kwmt27.jetpackcomposeplayground"
