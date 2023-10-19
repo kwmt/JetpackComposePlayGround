@@ -1,5 +1,6 @@
 package net.kwmt27.jetpackcomposeplayground.list
 
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -24,15 +26,29 @@ import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundThem
 
 @Composable
 fun SampleVerticalList() {
+    val list = listOf("AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG", "HHH")
+    SampleUnstableList(
+        list
+    )
+
+//    VerticalGridSample()
+}
+
+@Composable
+private fun SampleUnstableList(
+    list: List<String>,
+) {
+    Log.d("SampleUnstableList","list: $list")
     LazyColumn {
-        items(5) { index ->
-            ListItem(index)
+        itemsIndexed(list) { index: Int, item: String ->
+            Log.d("SampleUnstableList","index: $index, item: $item")
+            ListItem(item)
         }
     }
 }
 
 @Composable
-fun ListItem(index: Int = 0) {
+fun ListItem(text: String) {
     Column {
         Box(
             modifier = Modifier
@@ -42,7 +58,7 @@ fun ListItem(index: Int = 0) {
         ) {
             Text(
                 modifier = Modifier.align(Alignment.Center),
-                text = "index: $index",
+                text = text,
                 style = TextStyle(color = Color.White)
             )
         }
