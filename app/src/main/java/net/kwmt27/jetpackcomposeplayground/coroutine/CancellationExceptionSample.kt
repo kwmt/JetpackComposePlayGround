@@ -102,7 +102,6 @@ class CancellationExceptionSampleViewModel : ViewModel() {
         data class Success(
             val text: String = "",
         ) : State
-
         data class Error(val e: Exception) : State
     }
 
