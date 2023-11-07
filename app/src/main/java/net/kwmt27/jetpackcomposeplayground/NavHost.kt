@@ -27,6 +27,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import net.kwmt27.camerax.CameraXScreen
+import net.kwmt27.jetpackcomposeplayground.Destinations.LAYOUT_TAB
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_AUTO_ROLLING_TEXT
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_CHANGE_COLOR
@@ -66,6 +67,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
 import net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43.ShibuyaApk43Presentation
 import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
+import net.kwmt27.jetpackcomposeplayground.tablayout.TabLayoutSample
 
 private data class Group(
     val groupLabel: String,
@@ -113,6 +115,7 @@ private object Destinations {
     const val SAMPLES_LIVEDATA = "/$SAMPLES/$LIVEDATA"
     const val SLIDE_POTATOTIPS82 = "/$SLIDE/SLIDE_POTATOTIPS82"
     const val SLIDE_SHIBUYAAPK43 = "/$SLIDE/SLIDE_SHIBUYAAPK43"
+    const val LAYOUT_TAB = "/Layout/tab_layout"
 }
 
 private val destinationList = listOf(
@@ -130,6 +133,12 @@ private val destinationList = listOf(
                 "BottomSheetLongDataSample",
                 { BottomSheetLongDataSample() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/bottomsheet/BottomSheet.kt.kt#L62-L104"
+            ),
+            Destination(
+                LAYOUT_TAB,
+                "Tab Layout",
+                { TabLayoutSample() },
+                ""
             ),
         )
     ),
