@@ -30,7 +30,6 @@ fun SampleVerticalList() {
     SampleUnstableList(
         list
     )
-
 //    VerticalGridSample()
 }
 
@@ -38,10 +37,10 @@ fun SampleVerticalList() {
 private fun SampleUnstableList(
     list: List<String>,
 ) {
-    Log.d("SampleUnstableList","list: $list")
+    Log.d("SampleUnstableList", "list: $list")
     LazyColumn {
         itemsIndexed(list) { index: Int, item: String ->
-            Log.d("SampleUnstableList","index: $index, item: $item")
+            Log.d("SampleUnstableList", "index: $index, item: $item")
             ListItem(item)
         }
     }
