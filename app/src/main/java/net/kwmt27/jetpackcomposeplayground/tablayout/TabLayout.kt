@@ -35,7 +35,10 @@ fun TabLayoutSample(viewModel: TabLayoutViewModel = TabLayoutViewModel()) {
     val pagerState = rememberPagerState { viewModel.list.size }
 
     Column {
-        TabLayout(tabs = viewModel.titles, pagerState = pagerState)
+        TabLayout(
+            tabs = viewModel.titles,
+            pagerState = pagerState
+        )
         HorizontalPager(state = pagerState) {
             TextScreen(text = viewModel.contents[pagerState.currentPage])
         }
@@ -63,7 +66,8 @@ private fun TabLayout(tabs: List<String>, pagerState: PagerState) {
             .wrapContentHeight()
     ) {
         tabs.forEachIndexed { index, text ->
-            Tab(selected = pagerState.currentPage == index,
+            Tab(
+                selected = pagerState.currentPage == index,
                 onClick = {
                     scope.launch {
                         pagerState.animateScrollToPage(index)
@@ -107,6 +111,3 @@ class TabLayoutViewModel : ViewModel() {
 fun PreviewTabLayoutSample() {
     TabLayoutSample()
 }
-
-
-
