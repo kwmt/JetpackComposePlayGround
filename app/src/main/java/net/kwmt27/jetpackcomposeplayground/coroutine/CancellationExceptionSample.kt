@@ -40,7 +40,8 @@ fun CancellationExceptionSample(
         modifier = Modifier.fillMaxSize()
     ) {
         Column {
-            CancellationExceptionSampleSuccess(text = (state as? State.Success)?.text ?: "initial",
+            CancellationExceptionSampleSuccess(
+                text = (state as? State.Success)?.text ?: "initial",
                 onButtonClick = {
                     viewModel.updateText()
                 },

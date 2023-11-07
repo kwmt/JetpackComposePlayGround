@@ -35,6 +35,7 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BOX
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_BUTTON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CAMERAX
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_CIRCLE_IMAGE
+import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_COROUTINE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_EXPANDABLE
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_HORIZONTAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_LIVEDATA
@@ -53,6 +54,7 @@ import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
 import net.kwmt27.jetpackcomposeplayground.button.ButtonSample
+import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
 import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
@@ -87,6 +89,7 @@ private object Destinations {
     private const val ANIMATION_TRANSITION = "animation-transition"
     private const val ANIMATION_AUTO_ROLLING_TEXT = "animation-auto-rolling-text"
     private const val BOX = "box"
+    private const val COROUTINE = "coroutine"
     private const val EXPANDABLE = "expandable"
     private const val UP_ICON = "up_icon"
     private const val CAMERAX = "camerax"
@@ -102,6 +105,7 @@ private object Destinations {
     const val SAMPLES_ANIMATION_TRANSITION = "/$SAMPLES/$ANIMATION_TRANSITION"
     const val SAMPLES_ANIMATION_AUTO_ROLLING_TEXT = "/$SAMPLES/$ANIMATION_AUTO_ROLLING_TEXT"
     const val SAMPLES_BOX = "/$SAMPLES/$BOX"
+    const val SAMPLES_COROUTINE = "/$SAMPLES/$COROUTINE"
     const val SAMPLES_EXPANDABLE = "/$SAMPLES/$EXPANDABLE"
     const val SAMPLES_UP_ICON = "/$SAMPLES/$UP_ICON"
     const val SAMPLES_CAMERAX = "/$SAMPLES/$CAMERAX"
@@ -229,6 +233,17 @@ private val destinationList = listOf(
                 "Box",
                 { BoxSample() },
                 "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/box/Box.kt#L18-L48"
+            ),
+        )
+    ),
+    Group(
+        "coroutine",
+        listOf(
+            Destination(
+                SAMPLES_COROUTINE,
+                "CancellationExceptionSample",
+                { CancellationExceptionSample() },
+                ""
             ),
         )
     ),
