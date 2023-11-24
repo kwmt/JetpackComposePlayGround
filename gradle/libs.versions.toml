@@ -1,5 +1,5 @@
 [versions]
-androidGradlePlugin = "8.3.0-alpha01"
+androidGradlePlugin = "8.3.0-alpha13"
 cameraCore = "1.4.0-alpha02"
 kotlin = "1.9.10"
 compose = "1.4.3"
