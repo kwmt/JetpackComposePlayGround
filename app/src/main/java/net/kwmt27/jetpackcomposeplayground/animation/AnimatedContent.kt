@@ -3,7 +3,6 @@ package net.kwmt27.jetpackcomposeplayground.animation
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -11,7 +10,7 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.with
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -116,7 +115,6 @@ private fun AnimatedContent0(count: Int) {
 /**
  * AnimatedContent デフォルトアニメーション
  */
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent1(count: Int) {
     AnimatedContent(targetState = count, label = "AnimatedContent1") { targetCount ->
@@ -127,14 +125,13 @@ private fun AnimatedContent1(count: Int) {
 /**
  * ローリングアニメーション
  */
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent2(count: Int) {
     AnimatedContent(targetState = count, label = "AnimatedContent2", transitionSpec = {
         if (targetState > initialState) {
-            slideInVertically { height -> height } + fadeIn() with slideOutVertically { height -> -height } + fadeOut()
+            slideInVertically { height -> height } + fadeIn() togetherWith slideOutVertically { height -> -height } + fadeOut()
         } else {
-            slideInVertically { height -> -height } + fadeIn() with slideOutVertically { height -> height } + fadeOut()
+            slideInVertically { height -> -height } + fadeIn() togetherWith slideOutVertically { height -> height } + fadeOut()
         }.using(
             SizeTransform(clip = false)
         )
