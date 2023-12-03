@@ -8,14 +8,23 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Divider
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Person
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -111,6 +120,7 @@ fun PreviewSampleHorizontalList() {
 
 private data class Contact(val firstName: String)
 
+private const val TAG: String = "LIST"
 private val contacts =
     listOf<Contact>(
         Contact("AAA"),
@@ -176,3 +186,83 @@ fun PreviewStickyListSample() {
         StickyListSample()
     }
 }
+
+@Composable
+fun ListWithUpdatableItem() {
+    val list = listOf("AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG", "HHH")
+    Log.d("ListWithUpdatableItem", "list: $list")
+    val listState = rememberLazyListState()
+//    val index : Boolean = listState.firstVisibleItemIndex > 0
+//    Log.d("LIST", "ListWithUpdatableItem: listState.firstVisibleItemIndex: ${listState.firstVisibleItemIndex}")
+//    listState.firstVisibleItemIndex
+//
+    val firstVisibleCompletelyItem: Int by remember {
+        derivedStateOf {
+            listState.firstVisibleCompletelyItem()
+        }
+    }
+    Log.d(TAG, "ListWithUpdatableItem: firstVisibleCompletelyItem=$firstVisibleCompletelyItem")
+
+    LazyColumn(
+        state = listState,
+    ) {
+        itemsIndexed(list) { index: Int, item: String ->
+            Log.d("ListWithUpdatableItem", "index: $index, item: $item")
+            MyCard {
+                UpdatableItem(item, index == firstVisibleCompletelyItem)
+            }
+        }
+    }
+}
+
+@Composable
+private fun MyCard(content: @Composable () -> Unit) {
+    content()
+}
+
+@Composable
+private fun UpdatableItem(
+    text: String,
+    showBadge: Boolean,
+) {
+    Column {
+        Box(
+            modifier = Modifier
+                .height(200.dp)
+                .background(Color.Blue)
+                .fillMaxWidth()
+        ) {
+            Text(
+                modifier = Modifier.align(Alignment.Center),
+                text = text,
+                style = TextStyle(color = Color.White)
+            )
+
+            if (showBadge) {
+                Icon(
+                    imageVector = Icons.Rounded.Person,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .size(32.dp)
+                )
+            }
+        }
+        Divider(modifier = Modifier.height(8.dp))
+    }
+}
+
+@Preview
+@Composable
+private fun PreviewListWithUpdatableItem() {
+    JetpackComposePlayGroundTheme {
+        ListWithUpdatableItem()
+    }
+}
+
+private fun LazyListState.firstVisibleCompletelyItem(): Int =
+    if (firstVisibleItemScrollOffset == 0) {
+        firstVisibleItemIndex
+    } else {
+        firstVisibleItemIndex + 1
+    }

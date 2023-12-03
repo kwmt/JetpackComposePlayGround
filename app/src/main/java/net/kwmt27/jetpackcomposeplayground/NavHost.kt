@@ -45,6 +45,7 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_UP_ICON
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_SHIBUYAAPK43
+import net.kwmt27.jetpackcomposeplayground.Destinations.UPDATABLE_ITEM_LIST
 import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
@@ -59,6 +60,7 @@ import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
 import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
+import net.kwmt27.jetpackcomposeplayground.list.ListWithUpdatableItem
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
@@ -87,6 +89,7 @@ private object Destinations {
     private const val VERTICAL_LIST = "vertical-list"
     private const val HORIZONTAL_LIST = "horizontal-list"
     private const val STICKY_LIST = "sticky-list"
+    private const val UPDATABLE_LIST = "ListWithUpdatableItem"
     private const val ANIMATION = "animation"
     private const val ANIMATION_TRANSITION = "animation-transition"
     private const val ANIMATION_AUTO_ROLLING_TEXT = "animation-auto-rolling-text"
@@ -103,6 +106,7 @@ private object Destinations {
     const val SAMPLES_VERTICAL_LIST = "/$SAMPLES/$VERTICAL_LIST"
     const val SAMPLES_HORIZONTAL_LIST = "/$SAMPLES/$HORIZONTAL_LIST"
     const val SAMPLES_STICKY_LIST = "/$SAMPLES/$STICKY_LIST"
+    const val UPDATABLE_ITEM_LIST = "/$SAMPLES/$UPDATABLE_LIST"
     const val SAMPLES_ANIMATION_CHANGE_COLOR = "/$SAMPLES/$ANIMATION"
     const val SAMPLES_ANIMATION_TRANSITION = "/$SAMPLES/$ANIMATION_TRANSITION"
     const val SAMPLES_ANIMATION_AUTO_ROLLING_TEXT = "/$SAMPLES/$ANIMATION_AUTO_ROLLING_TEXT"
@@ -184,6 +188,12 @@ private val destinationList = listOf(
                 label = "Sticky List",
                 content = { StickyListSample() },
                 codeUrl = "https://github.com/kwmt/JetpackComposePlayGround/blob/main/app/src/main/java/net/kwmt27/jetpackcomposeplayground/list/List.kt#L116-L155"
+            ),
+            Destination(
+                route = UPDATABLE_ITEM_LIST,
+                label = "ListWithUpdatableItem",
+                content = { ListWithUpdatableItem() },
+                codeUrl = ""
             ),
         )
     ),
