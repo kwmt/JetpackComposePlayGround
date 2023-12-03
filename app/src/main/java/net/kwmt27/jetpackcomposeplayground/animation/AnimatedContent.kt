@@ -3,7 +3,6 @@ package net.kwmt27.jetpackcomposeplayground.animation
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -116,7 +115,6 @@ private fun AnimatedContent0(count: Int) {
 /**
  * AnimatedContent デフォルトアニメーション
  */
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent1(count: Int) {
     AnimatedContent(targetState = count, label = "AnimatedContent1") { targetCount ->
@@ -127,7 +125,6 @@ private fun AnimatedContent1(count: Int) {
 /**
  * ローリングアニメーション
  */
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun AnimatedContent2(count: Int) {
     AnimatedContent(targetState = count, label = "AnimatedContent2", transitionSpec = {
