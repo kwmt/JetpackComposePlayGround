@@ -15,3 +15,25 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
+
+dependencies {
+    compileOnly(libs.android.gradlePlugin)
+//    compileOnly(libs.android.tools.common)
+//    compileOnly(libs.firebase.crashlytics.gradlePlugin)
+//    compileOnly(libs.firebase.performance.gradlePlugin)
+    compileOnly(libs.kotlin.gradlePlugin)
+//    compileOnly(libs.ksp.gradlePlugin)
+}
+
+gradlePlugin {
+    plugins {
+        register("androidApplicationCompose") {
+            id = "net.kwmt27.jetpackcomposeplayground.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+        register("androidApplication") {
+            id = "net.kwmt27.jetpackcomposeplayground.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+    }
+}

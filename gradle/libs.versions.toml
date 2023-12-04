@@ -1,5 +1,6 @@
 [versions]
 androidGradlePlugin = "8.3.0-alpha16"
+androidTools = "31.1.3"
 cameraCore = "1.4.0-alpha02"
 kotlin = "1.9.10"
 compose = "1.4.3"
@@ -21,7 +22,7 @@ androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.r
 androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "cameraCore" }
 androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "cameraCore" }
 androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraCore" }
-androidx-camera-mlkit-vision = { module = "androidx.camera:camera-mlkit-vision", version ="1.4.0-alpha02" }
+androidx-camera-mlkit-vision = { module = "androidx.camera:camera-mlkit-vision", version = "1.4.0-alpha02" }
 androidx-camera-video = { module = "androidx.camera:camera-video", version.ref = "cameraCore" }
 androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraCore" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -45,10 +46,14 @@ espresso = { group = "androidx.test.espresso", name = "espresso-core", version.r
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
+# Plugins defined by this project
+jetpackcomposeplayground-android-application = { id = "net.kwmt27.jetpackcomposeplayground.application", version = "unspecified" }
+jetpackcomposeplayground-android-application-compose = { id = "net.kwmt27.jetpackcomposeplayground.application.compose", version = "unspecified" }
 [bundles]
 

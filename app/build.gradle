@@ -1,15 +1,11 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    alias(libs.plugins.jetpackcomposeplayground.android.application)
+    alias(libs.plugins.jetpackcomposeplayground.android.application.compose)
 }
 
 android {
-    compileSdkVersion 34
-
     defaultConfig {
         applicationId "net.kwmt27.jetpackcomposeplayground"
-        minSdkVersion 23
-        targetSdkVersion 34
         versionCode 1
         versionName "0.0.1"
 
@@ -22,25 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion libs.versions.composeCompiler.get()
-    }
     namespace 'net.kwmt27.jetpackcomposeplayground'
 }
 
 dependencies {
     implementation project(":camerax")
-    implementation platform(libs.androidx.compose.bom)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.material)
     implementation(libs.constraintlayout)
