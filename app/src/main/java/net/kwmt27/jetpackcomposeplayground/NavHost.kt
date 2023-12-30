@@ -63,7 +63,7 @@ import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.ListWithUpdatableItem
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
-import net.kwmt27.jetpackcomposeplayground.list.SampleInstagramSearchListLayout
+import net.kwmt27.jetpackcomposeplayground.list.instagram.SampleInstagramSearchListLayout
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.livedata.SampleMutableLiveDataScreen
