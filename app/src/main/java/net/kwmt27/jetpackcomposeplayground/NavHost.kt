@@ -27,6 +27,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import net.kwmt27.camerax.CameraXScreen
+import net.kwmt27.jetpackcomposeplayground.Destinations.INSTAGRAM_SEARCH_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.LAYOUT_TAB
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
 import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_ANIMATION_AUTO_ROLLING_TEXT
@@ -62,6 +63,7 @@ import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.ListWithUpdatableItem
 import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
+import net.kwmt27.jetpackcomposeplayground.list.instagram.SampleInstagramSearchListLayout
 import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
 import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.livedata.SampleMutableLiveDataScreen
@@ -90,6 +92,7 @@ private object Destinations {
     private const val HORIZONTAL_LIST = "horizontal-list"
     private const val STICKY_LIST = "sticky-list"
     private const val UPDATABLE_LIST = "ListWithUpdatableItem"
+    private const val INSTAGRAM_SEARCH_LIST_LAYOUT = "InstagramSearchListLayout"
     private const val ANIMATION = "animation"
     private const val ANIMATION_TRANSITION = "animation-transition"
     private const val ANIMATION_AUTO_ROLLING_TEXT = "animation-auto-rolling-text"
@@ -107,6 +110,7 @@ private object Destinations {
     const val SAMPLES_HORIZONTAL_LIST = "/$SAMPLES/$HORIZONTAL_LIST"
     const val SAMPLES_STICKY_LIST = "/$SAMPLES/$STICKY_LIST"
     const val UPDATABLE_ITEM_LIST = "/$SAMPLES/$UPDATABLE_LIST"
+    const val INSTAGRAM_SEARCH_LIST = "/$SAMPLES/$INSTAGRAM_SEARCH_LIST_LAYOUT"
     const val SAMPLES_ANIMATION_CHANGE_COLOR = "/$SAMPLES/$ANIMATION"
     const val SAMPLES_ANIMATION_TRANSITION = "/$SAMPLES/$ANIMATION_TRANSITION"
     const val SAMPLES_ANIMATION_AUTO_ROLLING_TEXT = "/$SAMPLES/$ANIMATION_AUTO_ROLLING_TEXT"
@@ -193,6 +197,12 @@ private val destinationList = listOf(
                 route = UPDATABLE_ITEM_LIST,
                 label = "ListWithUpdatableItem",
                 content = { ListWithUpdatableItem() },
+                codeUrl = ""
+            ),
+            Destination(
+                route = INSTAGRAM_SEARCH_LIST,
+                label = "InstagramSearchListLayout",
+                content = { SampleInstagramSearchListLayout() },
                 codeUrl = ""
             ),
         )
