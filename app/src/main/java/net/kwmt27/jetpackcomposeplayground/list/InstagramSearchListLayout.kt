@@ -32,7 +32,12 @@ import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundThem
 private const val TAG = "InstagramSearchList"
 
 @Composable
-fun InstagramSearchListLayout(
+fun SampleInstagramSearchListLayout() {
+    InstagramSearchListLayout(GridListData.createData())
+}
+
+@Composable
+private fun InstagramSearchListLayout(
     gridListData: GridListData,
 ) {
     val listState = rememberLazyListState()
@@ -40,12 +45,12 @@ fun InstagramSearchListLayout(
     // listState.firstVisibleItemScrollOffsetやlistState.firstVisibleItemIndexはスクロールの状態によって変化するもので、
     // この場合だと、firstVisibleItemScrollOffsetが0かそれ以外かでしか関心がないが、
     // このコードだとスクロールのたびにRecomposeされてします。
-//    val playMovieIndex =
-//        if (listState.firstVisibleItemScrollOffset == 0) {
-//            listState.firstVisibleItemIndex
-//        } else {
-//            listState.firstVisibleItemIndex + 1
-//        }
+    val playMovieIndex =
+        if (listState.firstVisibleItemScrollOffset == 0) {
+            listState.firstVisibleItemIndex
+        } else {
+            listState.firstVisibleItemIndex + 1
+        }
     // OK例
 //    val playMovieIndex by remember {
 //        derivedStateOf {
@@ -78,7 +83,7 @@ fun InstagramSearchListLayout(
 //                    // [isPlay]はスクロールの状態によって変化するため、
 //                    // Booleanを直接渡すと、recomposeされてしまう。
 //                    // そのため、関数を渡すことによりCompositionを防ぐ
-//                    isPlay = { index == playMovieIndex }
+                    isPlay = index == playMovieIndex
                 )
             }
         }
@@ -96,7 +101,7 @@ private fun GridRowItem(
     moviePosition: MoviePosition,
     listState: LazyListState,
     index: Int,
-//    isPlay: () -> Boolean,
+    isPlay: Boolean,
 ) {
 //    val playMovieIndex by remember {
 //        derivedStateOf {
@@ -109,7 +114,6 @@ private fun GridRowItem(
 //    }
 //
 //    val isPlay = { playMovieIndex ==index }
-
     /**
      * [item][item][ItemImage]
      * [item][item] ---
@@ -121,15 +125,14 @@ private fun GridRowItem(
         horizontalArrangement = Arrangement.spacedBy(1.dp),
     ) {
         if (moviePosition == MoviePosition.LEFT) {
-//            ItemMovie(itemMovieData, width, isPlay)
-            ItemMovie(itemMovieData, width, listState, index)
-
+            ItemMovie(itemMovieData, width, isPlay)
+//            ItemMovie(itemMovieData, width, listState, index)
         }
         GridItemImages(itemImageDataList, width)
 
         if (moviePosition == MoviePosition.RIGHT) {
-//            ItemMovie(itemMovieData, width, isPlay)
-            ItemMovie(itemMovieData, width, listState, index)
+            ItemMovie(itemMovieData, width, isPlay)
+//            ItemMovie(itemMovieData, width, listState, index)
         }
     }
 }
@@ -170,11 +173,9 @@ private fun ItemImage(item: ItemData, width: Dp) {
 }
 
 @Composable
-private fun ItemMovie(item: ItemData, width: Dp, isPlay: () -> Boolean) {
-
-
-    Log.d(TAG, "ItemMovie: id=${item.id},  isPlay=${isPlay()}")
-    val color = if (isPlay()) Color.Green else Color.Red
+private fun ItemMovie(item: ItemData, width: Dp, isPlay: Boolean) {
+    Log.d(TAG, "ItemMovie: id=${item.id},  isPlay=${isPlay}")
+    val color = if (isPlay) Color.Green else Color.Red
     Column(
         modifier = Modifier
             .size(width = width, height = width * 2 + 1.dp)
@@ -186,13 +187,14 @@ private fun ItemMovie(item: ItemData, width: Dp, isPlay: () -> Boolean) {
             text = "${item.id} 動画",
             style = TextStyle(fontSize = 20.sp, color = Color.White)
         )
-        val text = if (isPlay()) "Playing" else "Stop"
+        val text = if (isPlay) "Playing" else "Stop"
         Text(
             text = text,
             style = TextStyle(fontSize = 20.sp, color = Color.White)
         )
     }
 }
+
 @Composable
 private fun ItemMovie(item: ItemData, width: Dp, listState: LazyListState, index: Int) {
     val isPlay by remember {
@@ -232,7 +234,7 @@ data class GridListData(
 ) {
     companion object {
         fun createData(): GridListData {
-            return (1..50).mapIndexed { index, i ->
+            return (1..1000).mapIndexed { index, i ->
                 if (index % 5 == 0 && index != 0) {
                     ItemData.ItemMovie(i)
                 } else {
@@ -278,7 +280,10 @@ private fun PreviewInstagramSearchList() {
 fun PreviewGridItemImages() {
     JetpackComposePlayGroundTheme {
         BoxWithConstraints {
-            GridItemImages(GridListData.createData().list.get(2).list.take(4).chunked(2), 320.dp / 3)
+            GridItemImages(
+                GridListData.createData().list.get(2).list.take(4).chunked(2),
+                320.dp / 3
+            )
         }
     }
 }
@@ -288,7 +293,7 @@ fun PreviewGridItemImages() {
 fun PreviewItemMovie() {
     JetpackComposePlayGroundTheme {
         BoxWithConstraints {
-            ItemMovie(GridListData.createData().list.get(2).list.last(), 320.dp / 3, isPlay = { false })
+            ItemMovie(GridListData.createData().list.get(2).list.last(), 320.dp / 3, isPlay = false)
         }
     }
 }
