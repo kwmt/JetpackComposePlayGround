@@ -1,5 +1,6 @@
 plugins {
-    id("net.kwmt27.jetpackcomposeplayground.library")
+    alias(libs.plugins.jetpackcomposeplayground.android.library)
+    alias(libs.plugins.jetpackcomposeplayground.android.library.compose)
 }
 
 android {
