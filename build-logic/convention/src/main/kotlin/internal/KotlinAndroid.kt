@@ -39,7 +39,6 @@ internal fun Project.configureKotlinAndroid(
     configureKotlin()
 }
 
-
 /**
  * Configure base Kotlin options
  */
