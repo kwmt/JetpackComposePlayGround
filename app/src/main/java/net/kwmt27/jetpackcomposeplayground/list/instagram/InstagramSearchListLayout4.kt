@@ -132,7 +132,6 @@ private fun ItemImage(item: ItemData, width: Dp) {
     }
 }
 
-
 @Composable
 private fun ItemMovie(item: ItemData, width: Dp, listState: LazyListState, index: Int) {
     val isPlay by remember {
@@ -146,7 +145,7 @@ private fun ItemMovie(item: ItemData, width: Dp, listState: LazyListState, index
         }
     }
 
-    Log.d(TAG, "ItemMovie: id=${item.id},  isPlay=${isPlay}")
+    Log.d(TAG, "ItemMovie: id=${item.id},  isPlay=$isPlay")
     val color = if (isPlay) Color.Green else Color.Red
     Column(
         modifier = Modifier
