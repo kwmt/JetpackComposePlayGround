@@ -31,5 +31,9 @@ gradlePlugin {
             id = "net.kwmt27.jetpackcomposeplayground.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("androidLibrary") {
+            id = "net.kwmt27.jetpackcomposeplayground.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
     }
 }
