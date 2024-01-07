@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/camerax" />
             <option value="$PROJECT_DIR$/legacy" />
+            <option value="$PROJECT_DIR$/slide" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
