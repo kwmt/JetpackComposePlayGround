@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.state
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.state
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Column

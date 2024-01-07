@@ -61,16 +61,16 @@ import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
-import net.kwmt27.jetpackcomposeplayground.list.ListWithUpdatableItem
-import net.kwmt27.jetpackcomposeplayground.list.SampleHorizontalList
-import net.kwmt27.jetpackcomposeplayground.list.SampleVerticalList
-import net.kwmt27.jetpackcomposeplayground.list.StickyListSample
-import net.kwmt27.jetpackcomposeplayground.list.instagram.SampleInstagramSearchListLayout
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.ListWithUpdatableItem
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.SampleHorizontalList
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.SampleVerticalList
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.StickyListSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.instagram.SampleInstagramSearchListLayout
 import net.kwmt27.jetpackcomposeplayground.livedata.SampleMutableLiveDataScreen
 import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
 import net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43.ShibuyaApk43Presentation
-import net.kwmt27.jetpackcomposeplayground.state.ExpandableCardSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.state.ExpandableCardSample
 import net.kwmt27.jetpackcomposeplayground.tablayout.TabLayoutSample
 
 private data class Group(
