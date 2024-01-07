@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.ui.theme
+package net.kwmt27.jetpackcomposeplayground.common.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

@@ -13,7 +13,8 @@ android {
 }
 
 dependencies {
-    implementation project(":camerax")
+    implementation(projects.common.ui)
+    implementation(projects.camerax)
     implementation(projects.legacy)
     implementation(projects.slide)
     implementation(libs.androidx.compose.foundation)

@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.legacy.ui.theme
+package net.kwmt27.jetpackcomposeplayground.common.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

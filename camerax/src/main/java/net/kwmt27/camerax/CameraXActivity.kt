@@ -10,7 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import net.kwmt27.camerax.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.common.ui.theme.JetpackComposePlayGroundTheme
 
 class CameraXActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -2,13 +2,11 @@ plugins {
     alias(libs.plugins.jetpackcomposeplayground.android.library)
     alias(libs.plugins.jetpackcomposeplayground.android.library.compose)
 }
-
 android {
-    namespace = "net.kwmt27.jetpackcomposeplayground.legacy"
+    namespace = "net.kwmt27.jetpackcomposeplayground.common.ui"
 }
 
 dependencies {
-    implementation(projects.common.ui)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.google.material)
@@ -20,5 +18,4 @@ dependencies {
     implementation(libs.androidx.compose.material)
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.compose.ui.tooling.preview)
-
 }

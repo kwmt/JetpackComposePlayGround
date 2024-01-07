@@ -1,4 +1,4 @@
-package net.kwmt27.camerax.ui.theme
+package net.kwmt27.jetpackcomposeplayground.common.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -7,13 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.Color
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import net.kwmt27.jetpackcomposeplayground.ui.theme.purple200
-import net.kwmt27.jetpackcomposeplayground.ui.theme.purple500
-import net.kwmt27.jetpackcomposeplayground.ui.theme.purple700
-import net.kwmt27.jetpackcomposeplayground.ui.theme.shapes
-import net.kwmt27.jetpackcomposeplayground.ui.theme.teal200
-import net.kwmt27.jetpackcomposeplayground.ui.theme.typography
+import net.kwmt27.jetpackcomposeplayground.common.ui.utils.LocalSysUiController
 
 private val DarkColorPalette = darkColors(
     primary = purple200,
@@ -21,13 +15,11 @@ private val DarkColorPalette = darkColors(
     secondary = teal200,
     background = Color(0xff121212),
 )
-
 private val LightColorPalette = lightColors(
     primary = purple500,
     primaryVariant = purple700,
     secondary = teal200,
     background = Color.White,
-
     /* Other default colors to override
 surface = Color.White,
 onPrimary = Color.White,
@@ -47,10 +39,10 @@ fun JetpackComposePlayGroundTheme(
     } else {
         LightColorPalette
     }
-    val systemUiController = rememberSystemUiController()
-    DisposableEffect(systemUiController, colors.background) {
+    val sysUiController = LocalSysUiController.current
+    DisposableEffect(sysUiController, colors.background) {
         onDispose {
-            systemUiController.setSystemBarsColor(
+            sysUiController.setSystemBarsColor(
                 color = colors.background // .copy(alpha = 0.95f)
             )
         }
