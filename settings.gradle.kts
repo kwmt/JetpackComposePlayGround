@@ -1,5 +1,8 @@
 import java.net.URI
 
+include(":feature:slide")
+
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     includeBuild("build-logic")

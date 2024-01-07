@@ -29,6 +29,7 @@
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/samples" />
+            <option value="$PROJECT_DIR$/feature/slide" />
             <option value="$PROJECT_DIR$/legacy" />
             <option value="$PROJECT_DIR$/slide" />
           </set>

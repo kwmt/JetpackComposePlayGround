@@ -14,10 +14,10 @@ android {
 
 dependencies {
     implementation(projects.core.ui)
+    implementation(projects.feature.slide)
     implementation(projects.feature.samples)
     implementation(projects.camerax)
     implementation(projects.legacy)
-    implementation(projects.slide)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.material)
     implementation(libs.constraintlayout)

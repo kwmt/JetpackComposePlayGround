@@ -7,15 +7,15 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.google.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.junit)
-    androidTestImplementation(libs.espresso)
+    api(libs.androidx.core.ktx)
+    api(libs.androidx.appcompat)
+    api(libs.google.material)
+    testApi(libs.junit)
+    androidTestApi(libs.androidx.test.junit)
+    androidTestApi(libs.espresso)
 
-    implementation(libs.androidx.compose.foundation)
-    implementation(libs.androidx.compose.material)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    implementation(libs.androidx.compose.ui.tooling.preview)
+    api(libs.androidx.compose.foundation)
+    api(libs.androidx.compose.material)
+    debugApi(libs.androidx.compose.ui.tooling)
+    api(libs.androidx.compose.ui.tooling.preview)
 }
