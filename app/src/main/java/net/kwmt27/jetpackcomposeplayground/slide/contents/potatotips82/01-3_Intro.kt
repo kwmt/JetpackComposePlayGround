@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.github.kwmt.slide.components.SlideBase
 import com.github.kwmt.slide.ui.theme.SlidePreview
 import com.github.kwmt.slide.ui.theme.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample5
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AutoRollingTextSample5
 
 @Composable
 fun Intro3() {

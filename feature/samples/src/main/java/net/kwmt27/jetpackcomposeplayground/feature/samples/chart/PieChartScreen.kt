@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.chart
+package net.kwmt27.jetpackcomposeplayground.feature.samples.chart
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
@@ -9,7 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun PieChartScreen() {
+fun PieChartScreen() {
     val chartColors = listOf(
         Color.Blue,
         Color.Green,

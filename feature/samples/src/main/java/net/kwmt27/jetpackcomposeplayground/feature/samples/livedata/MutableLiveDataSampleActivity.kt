@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.livedata
+package net.kwmt27.jetpackcomposeplayground.feature.samples.livedata
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import net.kwmt27.jetpackcomposeplayground.R
+import net.kwmt27.jetpackcomposeplayground.feature.samples.R
 
 class MutableLiveDataSampleActivity :
     AppCompatActivity(R.layout.activity_mutable_live_data_sample) {

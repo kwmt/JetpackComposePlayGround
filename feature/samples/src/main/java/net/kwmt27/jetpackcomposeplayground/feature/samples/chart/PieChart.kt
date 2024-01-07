@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.chart
+package net.kwmt27.jetpackcomposeplayground.feature.samples.chart
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.BoxWithConstraints

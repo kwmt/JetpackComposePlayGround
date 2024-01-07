@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.livedata
+package net.kwmt27.jetpackcomposeplayground.feature.samples.livedata
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

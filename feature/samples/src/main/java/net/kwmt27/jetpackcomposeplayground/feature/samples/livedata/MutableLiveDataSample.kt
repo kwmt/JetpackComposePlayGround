@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.livedata
+package net.kwmt27.jetpackcomposeplayground.feature.samples.livedata
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

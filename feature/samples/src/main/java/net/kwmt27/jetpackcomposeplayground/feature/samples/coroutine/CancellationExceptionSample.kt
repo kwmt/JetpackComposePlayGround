@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.coroutine
+package net.kwmt27.jetpackcomposeplayground.feature.samples.coroutine
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box
@@ -27,7 +27,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import net.kwmt27.jetpackcomposeplayground.core.ui.theme.JetpackComposePlayGroundTheme
-import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSampleViewModel.State
+import net.kwmt27.jetpackcomposeplayground.feature.samples.coroutine.CancellationExceptionSampleViewModel.State
 
 @Composable
 fun CancellationExceptionSample(

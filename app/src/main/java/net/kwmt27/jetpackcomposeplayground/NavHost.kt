@@ -48,14 +48,15 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_SHIBUYAAPK43
 import net.kwmt27.jetpackcomposeplayground.Destinations.UPDATABLE_ITEM_LIST
-import net.kwmt27.jetpackcomposeplayground.animation.AnimateAsStateDemo
-import net.kwmt27.jetpackcomposeplayground.animation.AnimatedContentSizeDemo
-import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
-import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
-import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
-import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
-import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
-import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AnimateAsStateDemo
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AnimatedContentSizeDemo
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AnimatedVisibilityDemo
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AutoRollingTextSample
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.CrossFadeDemo
+import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.UpdateTransitionDemo
+import net.kwmt27.jetpackcomposeplayground.feature.samples.coroutine.CancellationExceptionSample
+import net.kwmt27.jetpackcomposeplayground.feature.samples.image.CircleImageSample
+import net.kwmt27.jetpackcomposeplayground.feature.samples.livedata.SampleMutableLiveDataScreen
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.box.BoxSample
@@ -69,7 +70,6 @@ import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.StickyListSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.instagram.SampleInstagramSearchListLayout
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.state.ExpandableCardSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.tablayout.TabLayoutSample
-import net.kwmt27.jetpackcomposeplayground.livedata.SampleMutableLiveDataScreen
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
 import net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43.ShibuyaApk43Presentation
 

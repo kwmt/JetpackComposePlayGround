@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.animation
+package net.kwmt27.jetpackcomposeplayground.feature.samples.animation
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility

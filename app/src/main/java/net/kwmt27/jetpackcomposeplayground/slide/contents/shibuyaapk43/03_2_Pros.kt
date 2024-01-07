@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.github.kwmt.slide.components.SlideBase
 import com.github.kwmt.slide.ui.theme.SlidePreview
 import com.github.kwmt.slide.ui.theme.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.chart.PieChartScreen
+import net.kwmt27.jetpackcomposeplayground.feature.samples.chart.PieChartScreen
 
 internal const val PROS2_SUB_TITLE = "コードをさわりながらスライドが作れる"
 @Composable

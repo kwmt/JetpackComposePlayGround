@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.image
+package net.kwmt27.jetpackcomposeplayground.feature.samples.image
 
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
