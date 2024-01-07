@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.ambient
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.ambient
 
 import android.util.Log
 import androidx.compose.foundation.layout.Column
