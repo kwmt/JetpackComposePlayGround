@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.bottomsheet
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape

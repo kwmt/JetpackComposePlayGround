@@ -53,8 +53,8 @@ import net.kwmt27.jetpackcomposeplayground.animation.AnimatedVisibilityDemo
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample
 import net.kwmt27.jetpackcomposeplayground.animation.CrossFadeDemo
 import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
-import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetLongDataSample
-import net.kwmt27.jetpackcomposeplayground.bottomsheet.BottomSheetSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomSheetLongDataSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.box.BoxSample
 import net.kwmt27.jetpackcomposeplayground.button.ButtonSample
 import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
