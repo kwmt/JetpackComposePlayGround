@@ -58,7 +58,7 @@ import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomShee
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.box.BoxSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.button.ButtonSample
 import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
-import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
 import net.kwmt27.jetpackcomposeplayground.image.CircleImageSample
 import net.kwmt27.jetpackcomposeplayground.list.ListWithUpdatableItem

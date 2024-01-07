@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.edittext
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.edittext
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
