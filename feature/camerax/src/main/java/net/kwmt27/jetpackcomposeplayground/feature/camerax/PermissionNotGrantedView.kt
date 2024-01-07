@@ -24,7 +24,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import net.kwmt27.jetpackcomposeplayground.camerax.R
 
 @Composable
 fun PermissionNotGrantedView(callback: () -> Unit) {
