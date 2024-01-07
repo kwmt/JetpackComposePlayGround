@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.color
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.color
 
 import android.util.Log
 import androidx.compose.runtime.Composable
