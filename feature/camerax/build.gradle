@@ -9,7 +9,7 @@ android {
             useSupportLibrary true
         }
     }
-    namespace 'net.kwmt27.camerax'
+    namespace 'net.kwmt27.jetpackcomposeplayground.feature.camerax'
 }
 
 dependencies {

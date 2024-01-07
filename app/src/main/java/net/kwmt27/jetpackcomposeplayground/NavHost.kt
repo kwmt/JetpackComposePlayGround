@@ -27,7 +27,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.github.kwmt.slide.SlideApp
-import net.kwmt27.camerax.CameraXScreen
 import net.kwmt27.jetpackcomposeplayground.Destinations.INSTAGRAM_SEARCH_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.LAYOUT_TAB
 import net.kwmt27.jetpackcomposeplayground.Destinations.MAIN
@@ -48,6 +47,7 @@ import net.kwmt27.jetpackcomposeplayground.Destinations.SAMPLES_VERTICAL_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_POTATOTIPS82
 import net.kwmt27.jetpackcomposeplayground.Destinations.SLIDE_SHIBUYAAPK43
 import net.kwmt27.jetpackcomposeplayground.Destinations.UPDATABLE_ITEM_LIST
+import net.kwmt27.jetpackcomposeplayground.feature.camerax.CameraXScreen
 import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AnimateAsStateDemo
 import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AnimatedContentSizeDemo
 import net.kwmt27.jetpackcomposeplayground.feature.samples.animation.AnimatedVisibilityDemo

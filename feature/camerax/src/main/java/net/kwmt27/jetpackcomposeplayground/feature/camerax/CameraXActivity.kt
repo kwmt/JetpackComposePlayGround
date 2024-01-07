@@ -1,4 +1,4 @@
-package net.kwmt27.camerax
+package net.kwmt27.jetpackcomposeplayground.feature.camerax
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
