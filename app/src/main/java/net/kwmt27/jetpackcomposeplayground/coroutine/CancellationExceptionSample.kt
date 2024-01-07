@@ -26,7 +26,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import net.kwmt27.jetpackcomposeplayground.common.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.core.ui.theme.JetpackComposePlayGroundTheme
 import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSampleViewModel.State
 
 @Composable

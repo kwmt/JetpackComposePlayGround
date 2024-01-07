@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.common.ui.theme
+package net.kwmt27.jetpackcomposeplayground.core.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -7,7 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.Color
-import net.kwmt27.jetpackcomposeplayground.common.ui.utils.LocalSysUiController
+import net.kwmt27.jetpackcomposeplayground.core.ui.utils.LocalSysUiController
 
 private val DarkColorPalette = darkColors(
     primary = purple200,

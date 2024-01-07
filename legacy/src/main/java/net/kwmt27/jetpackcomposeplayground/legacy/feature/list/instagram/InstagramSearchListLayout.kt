@@ -27,7 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import net.kwmt27.jetpackcomposeplayground.common.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.core.ui.theme.JetpackComposePlayGroundTheme
 
 private const val TAG = "InstagramSearchList"
 

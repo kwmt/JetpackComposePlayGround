@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.common.ui.utils
+package net.kwmt27.jetpackcomposeplayground.core.ui.utils
 
 import android.os.Build
 import android.view.View

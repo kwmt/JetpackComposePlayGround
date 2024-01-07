@@ -22,5 +22,5 @@ include(":app")
 include(":legacy")
 include(":camerax")
 include(":slide")
-include(":common:ui")
+include(":core:ui")
 

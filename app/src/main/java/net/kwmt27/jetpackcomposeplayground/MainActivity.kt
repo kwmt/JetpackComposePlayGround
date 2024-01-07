@@ -14,9 +14,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import net.kwmt27.jetpackcomposeplayground.common.ui.theme.JetpackComposePlayGroundTheme
-import net.kwmt27.jetpackcomposeplayground.common.ui.utils.LocalSysUiController
-import net.kwmt27.jetpackcomposeplayground.common.ui.utils.SystemUiController
+import net.kwmt27.jetpackcomposeplayground.core.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.core.ui.utils.LocalSysUiController
+import net.kwmt27.jetpackcomposeplayground.core.ui.utils.SystemUiController
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
