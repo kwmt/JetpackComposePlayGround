@@ -1,8 +1,5 @@
 import java.net.URI
 
-include(":feature:slide")
-
-
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     includeBuild("build-logic")
@@ -27,3 +24,4 @@ include(":slide")
 include(":core:ui")
 include(":feature:camerax")
 include(":feature:samples")
+include(":slide-contents")

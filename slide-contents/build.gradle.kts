@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetpackcomposeplayground.android.library.compose)
 }
 android {
-    namespace = "net.kwmt27.jetpackcomposeplayground.slide"
+    namespace = "net.kwmt27.jetpackcomposeplayground.slide.contents"
 }
 
 dependencies {

@@ -19,7 +19,7 @@ import com.github.kwmt.slide.components.SlideBase
 import com.github.kwmt.slide.components.SlideImage
 import com.github.kwmt.slide.ui.theme.SlidePreview
 import com.github.kwmt.slide.ui.theme.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.R
+import net.kwmt27.jetpackcomposeplayground.slide.contents.R
 
 @Composable
 internal fun DetailsAndPoints3_1() {
