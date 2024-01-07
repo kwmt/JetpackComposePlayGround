@@ -11,11 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.github.kwmt.slide.components.Code
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.ui.theme.SlidePreview
+import com.github.kwmt.slide.ui.theme.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.animation.AutoRollingTextSample1
-import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.Code
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
 
 @Composable
 fun AnimationExample1_2() {

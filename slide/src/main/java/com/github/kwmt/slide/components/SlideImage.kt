@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.components
+package com.github.kwmt.slide.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -10,7 +10,7 @@ import coil.request.ImageRequest
 const val ASSET_BASE_PATH = "file:///android_asset/"
 
 @Composable
-internal fun SlideImage(
+fun SlideImage(
     data: Any?,
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.Fit,

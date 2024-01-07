@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide
+package com.github.kwmt.slide
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -37,9 +37,10 @@ import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.slide.components.Presentation
-import net.kwmt27.jetpackcomposeplayground.slide.components.Slide
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
+import com.github.kwmt.slide.components.Presentation
+import com.github.kwmt.slide.components.Slide
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.ui.theme.SlidePreview
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable

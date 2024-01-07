@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.components
+package com.github.kwmt.slide.components
 
 import androidx.compose.runtime.Composable
 

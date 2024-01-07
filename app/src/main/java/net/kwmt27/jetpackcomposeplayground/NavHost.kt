@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.github.kwmt.slide.SlideApp
 import net.kwmt27.camerax.CameraXScreen
 import net.kwmt27.jetpackcomposeplayground.Destinations.INSTAGRAM_SEARCH_LIST
 import net.kwmt27.jetpackcomposeplayground.Destinations.LAYOUT_TAB
@@ -69,7 +70,6 @@ import net.kwmt27.jetpackcomposeplayground.legacy.feature.list.instagram.SampleI
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.state.ExpandableCardSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.tablayout.TabLayoutSample
 import net.kwmt27.jetpackcomposeplayground.livedata.SampleMutableLiveDataScreen
-import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
 import net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43.ShibuyaApk43Presentation
 

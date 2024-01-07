@@ -2,9 +2,9 @@ package net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
-import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.slide.components.Code
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
+import com.github.kwmt.slide.components.Code
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.ui.theme.SlidePreview
 
 @Composable
 internal fun SlideAppTips1() {

@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.components
+package com.github.kwmt.slide.components
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,7 +11,7 @@ import com.google.accompanist.web.rememberWebViewState
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
-internal fun Code(
+fun Code(
     path: String,
 ) {
     val webViewState = rememberWebViewState(

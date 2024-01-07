@@ -7,9 +7,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.ui.theme.SlidePreview
+import com.github.kwmt.slide.ui.theme.SlideTypography
 
 internal const val CONS3_SUB_TITLE = "スライドをシェアするのが若干面倒"
 @Composable

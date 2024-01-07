@@ -15,9 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.ui.theme.SlidePreview
+import com.github.kwmt.slide.ui.theme.SlideTypography
 
 @Composable
 fun DetailsAndPoints3_2() {

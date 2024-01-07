@@ -15,7 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
+import com.github.kwmt.slide.components.SlideImage
 
 @Composable
 internal fun Pros4_2() {

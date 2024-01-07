@@ -2,9 +2,9 @@ package net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.ui.theme.SlidePreview
+import com.github.kwmt.slide.ui.theme.SlideTypography
 
 @Composable
 fun Intro() {

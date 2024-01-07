@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide
+package com.github.kwmt.slide.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.graphics.Color

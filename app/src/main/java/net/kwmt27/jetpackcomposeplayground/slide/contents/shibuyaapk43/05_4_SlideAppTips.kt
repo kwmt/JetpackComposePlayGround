@@ -8,11 +8,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.github.kwmt.slide.components.SlideBase
+import com.github.kwmt.slide.components.SlideImage
+import com.github.kwmt.slide.ui.theme.SlidePreview
+import com.github.kwmt.slide.ui.theme.SlideTypography
 import net.kwmt27.jetpackcomposeplayground.R
-import net.kwmt27.jetpackcomposeplayground.slide.SlidePreview
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideBase
-import net.kwmt27.jetpackcomposeplayground.slide.components.SlideImage
 
 @Composable
 internal fun SlideAppTips4() {

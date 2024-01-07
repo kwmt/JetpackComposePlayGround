@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.slide.components
+package com.github.kwmt.slide.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.slide.SlideTypography
+import com.github.kwmt.slide.ui.theme.SlideTypography
 
 @Composable
 fun SlideBase(
