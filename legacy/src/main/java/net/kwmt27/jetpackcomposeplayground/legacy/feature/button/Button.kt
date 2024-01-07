@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.button
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.button
 
 import android.util.Log
 import androidx.compose.foundation.BorderStroke

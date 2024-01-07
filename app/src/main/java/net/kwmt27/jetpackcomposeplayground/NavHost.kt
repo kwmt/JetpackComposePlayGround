@@ -56,7 +56,7 @@ import net.kwmt27.jetpackcomposeplayground.animation.UpdateTransitionDemo
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomSheetLongDataSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.bottomsheet.BottomSheetSample
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.box.BoxSample
-import net.kwmt27.jetpackcomposeplayground.button.ButtonSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.button.ButtonSample
 import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSample
 import net.kwmt27.jetpackcomposeplayground.edittext.OutlinedTextFieldSample
 import net.kwmt27.jetpackcomposeplayground.icon.UpIconSample
