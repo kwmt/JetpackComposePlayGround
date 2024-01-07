@@ -19,4 +19,4 @@ spotless {
     }
 }
 
-//apply(from = rootProject.file("gradle/projectDependencyGraph.gradle"))
+apply(from = rootProject.file("gradle/projectDependencyGraph.gradle"))
