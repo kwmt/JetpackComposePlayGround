@@ -23,7 +23,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "JetpackComposePlayGround"
 include(":app")
-include(":legacy")
 include(":camerax")
 include(":slide")
 include(":core:ui")

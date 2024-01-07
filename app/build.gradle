@@ -17,7 +17,6 @@ dependencies {
     implementation(projects.feature.slide)
     implementation(projects.feature.samples)
     implementation(projects.camerax)
-    implementation(projects.legacy)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.material)
     implementation(libs.constraintlayout)
