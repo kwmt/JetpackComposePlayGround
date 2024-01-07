@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.icon
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.icon
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
