@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalFoundationApi::class)
 
-package net.kwmt27.jetpackcomposeplayground.tablayout
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.tablayout
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box

@@ -71,7 +71,7 @@ import net.kwmt27.jetpackcomposeplayground.slide.SlideApp
 import net.kwmt27.jetpackcomposeplayground.slide.contents.potatotips82.PotatoTips82
 import net.kwmt27.jetpackcomposeplayground.slide.contents.shibuyaapk43.ShibuyaApk43Presentation
 import net.kwmt27.jetpackcomposeplayground.legacy.feature.state.ExpandableCardSample
-import net.kwmt27.jetpackcomposeplayground.tablayout.TabLayoutSample
+import net.kwmt27.jetpackcomposeplayground.legacy.feature.tablayout.TabLayoutSample
 
 private data class Group(
     val groupLabel: String,
