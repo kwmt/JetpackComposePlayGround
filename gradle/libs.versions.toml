@@ -54,6 +54,8 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 # Plugins defined by this project
 jetpackcomposeplayground-android-application = { id = "net.kwmt27.jetpackcomposeplayground.application", version = "unspecified" }
+jetpackcomposeplayground-android-library = { id = "net.kwmt27.jetpackcomposeplayground.library", version = "unspecified" }
 jetpackcomposeplayground-android-application-compose = { id = "net.kwmt27.jetpackcomposeplayground.application.compose", version = "unspecified" }
+jetpackcomposeplayground-android-library-compose = { id = "net.kwmt27.jetpackcomposeplayground.library.compose", version = "unspecified" }
 [bundles]
 

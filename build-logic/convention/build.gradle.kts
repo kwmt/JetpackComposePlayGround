@@ -18,11 +18,7 @@ tasks.withType<KotlinCompile>().configureEach {
 
 dependencies {
     compileOnly(libs.android.gradlePlugin)
-//    compileOnly(libs.android.tools.common)
-//    compileOnly(libs.firebase.crashlytics.gradlePlugin)
-//    compileOnly(libs.firebase.performance.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
-//    compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
@@ -31,9 +27,17 @@ gradlePlugin {
             id = "net.kwmt27.jetpackcomposeplayground.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
+        register("androidLibraryCompose") {
+            id = "net.kwmt27.jetpackcomposeplayground.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
         register("androidApplication") {
             id = "net.kwmt27.jetpackcomposeplayground.application"
             implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = "net.kwmt27.jetpackcomposeplayground.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
         }
     }
 }
