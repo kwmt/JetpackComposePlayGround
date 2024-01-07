@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.list
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.list
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement

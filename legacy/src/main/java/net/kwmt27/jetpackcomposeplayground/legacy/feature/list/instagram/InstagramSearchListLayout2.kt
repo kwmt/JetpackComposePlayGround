@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.list.instagram
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.list.instagram
 
 import android.util.Log
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.list.instagram
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.list.instagram
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -15,7 +15,6 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Stable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -31,51 +30,8 @@ import net.kwmt27.jetpackcomposeplayground.legacy.ui.theme.JetpackComposePlayGro
 
 private const val TAG = "InstagramSearchList"
 
-enum class MoviePosition {
-    LEFT, RIGHT
-}
-
-data class GridRowData(
-    val list: List<ItemData>,
-)
-
-sealed interface ItemData {
-    val id: Int
-
-    @Stable
-    data class ItemImage(
-        override val id: Int,
-        val list: List<String> = emptyList()
-    ) : ItemData
-
-    @Stable
-    data class ItemMovie(
-        override val id: Int,
-    ) : ItemData
-}
-
-data class GridListData(
-    val list: List<GridRowData>,
-) {
-    companion object {
-        fun createData(): GridListData {
-            return (1..1000).mapIndexed { index, i ->
-                if (index % 5 == 0 && index != 0) {
-                    ItemData.ItemMovie(i)
-                } else {
-                    ItemData.ItemImage(i)
-                }
-            }.chunked(5).map { items ->
-                GridRowData(items)
-            }.run {
-                GridListData(this)
-            }
-        }
-    }
-}
-
 @Composable
-fun SampleInstagramSearchListLayout() {
+fun SampleInstagramSearchListLayout4() {
     InstagramSearchListLayout(GridListData.createData())
 }
 
@@ -84,16 +40,7 @@ private fun InstagramSearchListLayout(
     gridListData: GridListData,
 ) {
     val listState = rememberLazyListState()
-    // NG例
-    // listState.firstVisibleItemScrollOffsetやlistState.firstVisibleItemIndexはスクロールの状態によって変化するもので、
-    // この場合だと、firstVisibleItemScrollOffsetが0かそれ以外かでしか関心がないが、
-    // このコードだとスクロールのたびにRecomposeされてします。
-    val playMovieIndex =
-        if (listState.firstVisibleItemScrollOffset == 0) {
-            listState.firstVisibleItemIndex
-        } else {
-            listState.firstVisibleItemIndex + 1
-        }
+    // OK例
 
     BoxWithConstraints {
         LazyColumn(
@@ -114,10 +61,6 @@ private fun InstagramSearchListLayout(
                     moviePosition = moviePosition,
                     listState = listState,
                     index = index,
-//                    // [isPlay]はスクロールの状態によって変化するため、
-//                    // Booleanを直接渡すと、recomposeされてしまう。
-//                    // そのため、関数を渡すことによりCompositionを防ぐ
-                    isPlay = index == playMovieIndex
                 )
             }
         }
@@ -131,19 +74,7 @@ private fun GridRowItem(
     moviePosition: MoviePosition,
     listState: LazyListState,
     index: Int,
-    isPlay: Boolean,
 ) {
-//    val playMovieIndex by remember {
-//        derivedStateOf {
-//            if (listState.firstVisibleItemScrollOffset == 0) {
-//                listState.firstVisibleItemIndex
-//            } else {
-//                listState.firstVisibleItemIndex + 1
-//            }
-//        }
-//    }
-//
-//    val isPlay = { playMovieIndex ==index }
     /**
      * [item][item][ItemImage]
      * [item][item] ---
@@ -155,14 +86,12 @@ private fun GridRowItem(
         horizontalArrangement = Arrangement.spacedBy(1.dp),
     ) {
         if (moviePosition == MoviePosition.LEFT) {
-            ItemMovie(itemMovieData, width, isPlay)
-//            ItemMovie(itemMovieData, width, listState, index)
+            ItemMovie(itemMovieData, width, listState, index)
         }
         GridItemImages(itemImageDataList, width)
 
         if (moviePosition == MoviePosition.RIGHT) {
-            ItemMovie(itemMovieData, width, isPlay)
-//            ItemMovie(itemMovieData, width, listState, index)
+            ItemMovie(itemMovieData, width, listState, index)
         }
     }
 }
@@ -189,6 +118,7 @@ private fun GridItemImages(
 
 @Composable
 private fun ItemImage(item: ItemData, width: Dp) {
+
     Box(
         modifier = Modifier
             .size(width = width, height = width)
@@ -197,29 +127,6 @@ private fun ItemImage(item: ItemData, width: Dp) {
     ) {
         Text(
             text = "${item.id} 画像",
-            style = TextStyle(fontSize = 20.sp, color = Color.White)
-        )
-    }
-}
-
-@Composable
-private fun ItemMovie(item: ItemData, width: Dp, isPlay: Boolean) {
-    Log.d(TAG, "ItemMovie: id=${item.id},  isPlay=$isPlay")
-    val color = if (isPlay) Color.Green else Color.Red
-    Column(
-        modifier = Modifier
-            .size(width = width, height = width * 2 + 1.dp)
-            .background(color = color),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "${item.id} 動画",
-            style = TextStyle(fontSize = 20.sp, color = Color.White)
-        )
-        val text = if (isPlay) "Playing" else "Stop"
-        Text(
-            text = text,
             style = TextStyle(fontSize = 20.sp, color = Color.White)
         )
     }
@@ -261,31 +168,8 @@ private fun ItemMovie(item: ItemData, width: Dp, listState: LazyListState, index
 
 @Preview(showBackground = true, device = "spec:width=320dp,height=640dp")
 @Composable
-private fun PreviewInstagramSearchList() {
+private fun PreviewInstagramSearchList4() {
     JetpackComposePlayGroundTheme {
-        InstagramSearchListLayout(GridListData.createData())
-    }
-}
-
-@Preview(showBackground = true, device = "spec:width=320dp,height=640dp")
-@Composable
-private fun PreviewGridItemImages() {
-    JetpackComposePlayGroundTheme {
-        BoxWithConstraints {
-            GridItemImages(
-                GridListData.createData().list.get(2).list.take(4).chunked(2),
-                320.dp / 3
-            )
-        }
-    }
-}
-
-@Preview(showBackground = true, device = "spec:width=320dp,height=640dp")
-@Composable
-private fun PreviewItemMovie() {
-    JetpackComposePlayGroundTheme {
-        BoxWithConstraints {
-            ItemMovie(GridListData.createData().list.get(2).list.last(), 320.dp / 3, isPlay = false)
-        }
+        SampleInstagramSearchListLayout4()
     }
 }

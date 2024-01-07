@@ -1,4 +1,4 @@
-package net.kwmt27.jetpackcomposeplayground.list
+package net.kwmt27.jetpackcomposeplayground.legacy.feature.list
 
 import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
