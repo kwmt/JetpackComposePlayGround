@@ -14,4 +14,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.espresso)
+
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.material)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+
 }

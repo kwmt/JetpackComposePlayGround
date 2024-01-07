@@ -27,7 +27,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import net.kwmt27.jetpackcomposeplayground.coroutine.CancellationExceptionSampleViewModel.State
-import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.legacy.ui.theme.JetpackComposePlayGroundTheme
 
 @Composable
 fun CancellationExceptionSample(

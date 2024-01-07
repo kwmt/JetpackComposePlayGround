@@ -31,7 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import net.kwmt27.jetpackcomposeplayground.ui.theme.JetpackComposePlayGroundTheme
+import net.kwmt27.jetpackcomposeplayground.legacy.ui.theme.JetpackComposePlayGroundTheme
 
 @Composable
 fun SampleVerticalList() {
