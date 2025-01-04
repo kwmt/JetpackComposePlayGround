@@ -57,5 +57,6 @@ jetpackcomposeplayground-android-application = { id = "net.kwmt27.jetpackcompose
 jetpackcomposeplayground-android-library = { id = "net.kwmt27.jetpackcomposeplayground.library", version = "unspecified" }
 jetpackcomposeplayground-android-application-compose = { id = "net.kwmt27.jetpackcomposeplayground.application.compose", version = "unspecified" }
 jetpackcomposeplayground-android-library-compose = { id = "net.kwmt27.jetpackcomposeplayground.library.compose", version = "unspecified" }
+com-github-kwmt-publish = { id = "com.github.kwmt.publish", version = "unspecified" }
 [bundles]
 
