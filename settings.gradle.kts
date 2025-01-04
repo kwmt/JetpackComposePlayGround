@@ -15,6 +15,10 @@ dependencyResolutionManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+//        mavenLocal()
+        maven {
+            url = uri("/Users/kwmt/personal/dev/JetpackComposePlayGround/slide/build/repo")
+        }
     }
 }
 

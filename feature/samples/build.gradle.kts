@@ -4,7 +4,21 @@ plugins {
 }
 android {
     namespace = "net.kwmt27.jetpackcomposeplayground.feature.samples"
+
+    flavorDimensions += listOf("default")
+    productFlavors {
+        register("exposed") {
+            dimension = "default"
+        }
+        register("paid") {
+            dimension = "default"
+        }
+        register("free") {
+            dimension = "default"
+        }
+    }
 }
+
 
 dependencies {
     implementation(projects.core.ui)
@@ -24,4 +38,6 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)
+
+    implementation("io.my-company:my-library:1.0")
 }
